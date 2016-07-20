@@ -22,8 +22,8 @@
 </head>
 <body> 
 	    <div class="container">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_1">Registro de entrada</button>  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_2" >Registro de salida</button>
+    <!--    <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_1">Registro de entrada</button>  
+        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_2" >Registro de salida</button>  -->
         <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3">Ver Entradas/Salidas</button> 
         <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_4">Reporte Entradas/Salidas</button> 
 <!--**************************************************************Registro de entrada***************************************** -->  
