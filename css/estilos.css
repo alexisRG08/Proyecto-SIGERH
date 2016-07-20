@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+
+*
+{
+	padding:0;
+	margin:0;
+}
+
+body
+{
+	background:#CCC;
+	padding-top:80px;
+}
+#tam
+{
+	width: 150px;
+	height: 45px;
+
+}
+
+#im
+{
+	max-width:150%;
+	width:35%;
+	height:auto;
+	display:block;
+	margin-top:-13px;
+	margin-left: 90px;
+}
+img #estrella
+{
+	width: 250px;
+	height: 150px;
+}
+
+/*---Colores del Social--*/
+
+.list-group a:hover
+{
+	color:#FFF;
+}
+
+.list-group a h4:hover
+{
+	background:#0FF;
+}
+
+.list-group a.list-group-item.primero:hover
+{
+	background:#3b5998;
+}
+
+.list-group a.list-group-item.segundo:hover
+{
+	background:#00abf0;
+}
+.list-group a.list-group-item.tercero:hover
+{
+	background:#d95232;
+}
+.list-group a.list-group-item.cuarto:hover
+{
+	background:#ae181f;
+}
+.list-group a.list-group-item.quinto:hover
+{
+	background:#666666;
+}
+
+/*---SlideShow--*/
+.menu
+{
+	width:100%;
+	max-width:950px;
+	margin:20px auto;
+}
+
+.slides
+{
+	width:100%;
+}
+
+.slides img
+{
+	width:100%;
+}
+
+.slidesjs-pagination
+{
+	background:#424242;
+	list-style:none;
+	overflow:hidden;
+}
+
+.slidesjs-pagination li
+{
+	float:left;
+}
+
+.slidesjs-pagination li a
+{
+	display:block;
+	padding:7px 20px;
+	color:#fff;
+	text-decoration:none;
+}
+
+.slidesjs-pagination li a:hover
+{
+	background:#000;
+}
+
+.slides .active
+{
+	background:#000;
+}
+
+.slidesjs-navigation
+{
+	background:#000;
+	color:#FFF;
+	text-decoration:none;
+	display:inline-block;
+	padding:10px;
+	float:right;
+	margin-top:-1px;
+}
