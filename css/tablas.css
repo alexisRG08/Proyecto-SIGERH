@@ -1,0 +1,28 @@
+table {
+ border:1px black solid;
+ border-radius:5px;
+ min-width:400px;
+ font-family: Helvetica,Arial;
+}
+ table th{
+ 	text-align: center;
+ 	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 8px;
+	color: black;
+	font-weight: bold;
+ }
+table td {
+ padding:6px;
+	color: black;
+	background: #e8edff; 
+
+}
+table tr{
+	background-color: red;
+}
+#exampleModalLabel{
+	text-align: center;
+	font-weight: bold;
+}
+ 
