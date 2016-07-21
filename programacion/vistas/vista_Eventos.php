@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
 	<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../../css/estilos.css"/>  
-   <script src="../ProyectoRH/programacion/JavaScript/EmpleadosJs.js"></script>
+   <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
 
 </head>
 <body>
@@ -24,8 +24,8 @@
 				<button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="exampleModalLabel">Nuevo Evento</h4>
                 <div class="modal-body">
-                <form name="form" action="programacion/controlador/ControllerEmpleados.php" method="post" >
-                                      
+              <!--  <form name="form" action="programacion/controlador/ControllerEmpleados.php" method="post" >  -->
+                            <form>          
                           <div class="form-group">
                             <label for="info-dia" class="control-label">Nombre del evento:</label>
                             <input type="text" class="form-control" id="evtnombre" name="evtnombre" placeholder="Nombre del evento" required="required"  onpaste="return false" autocomplete="off">
@@ -42,18 +42,13 @@
                             <label for="depart-name" class="control-label">Descripción:</label>
                            <textarea class="form-control" id="evtdescripcion" name="evtdescripcion" placeholder="Descripción del evento" required="required" ></textarea>
                           </div>
-                          <div class="form-group">
-                            <label for="area-name" class="control-label" >Empleado</label>
-                            <select class="form-control" id="evtidempleado" name="evtidempleado">
-                              <option>1</option> 
-                               <option>2</option> 
-                            </select>
-                          </div>
-                    
+                         
+                    </form>
                      <div class="modal-footer">
         				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-               <input type="submit"  class="btn btn-success"    value="Agregar Evento">
-                </form>
+             <!--  <input type="submit"  class="btn btn-success"    value="Agregar Evento"> -->
+                <button type="submit" class="btn btn-success" onClick="agregareventos()" value="Agregar-Evento">Agregar Evento</button>
+                
       				</div>
                     <div id="resultadoevento">
                     

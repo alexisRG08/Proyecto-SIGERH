@@ -7,8 +7,8 @@
 <script language="javascript" src="programacion/JavaScript/JsMenu.js" type="text/javascript"> </script>
 <link rel="stylesheet" href="../ProyectoRH/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="../ProyectoRH/css/estilos.css"/>
-<script language="JavaScript" type="text/javascript" src="../JavaScript/empleados.js"></script>
 <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
+ <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
 <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
 
 <script type="text/javascript">
