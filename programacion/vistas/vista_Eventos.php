@@ -28,23 +28,22 @@ require_once('../../programacion/clases/Administrador.php');
 				<button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="exampleModalLabel">Nuevo Evento</h4>
                 <div class="modal-body">
-              <!--  <form name="form" action="programacion/controlador/ControllerEmpleados.php" method="post" >  -->
-                            <form>          
+              
                           <div class="form-group">
-                            <label for="nombre-evento" class="control-label">Nombre del evento:</label>
-                            <input type="text" class="form-control" id="evtnombre" name="evtnombre" placeholder="Nombre del evento" required="required"  onpaste="return false" autocomplete="off">
+                            <label for="evtnombre" class="control-label">Nombre del evento:</label>
+                            <input type="text" class="form-control" id="evtnombre"  placeholder="Nombre del evento" required="required"  onpaste="return false" autocomplete="off">
                           </div>
                           <div class="form-group">
                             <label for="fecha-evento" class="control-label">Fecha:</label>
-                            <input type="date" class="form-control" id="evtfecha" name="evtfecha">
+                            <input type="date" class="form-control" id="evtfecha" >
                           </div>
                           <div class="form-group">
                             <label for="hora-evento" class="control-label">Hora:</label>
-                            <input type="time" class="form-control" id="evthora" name="evthora">
+                            <input type="time" class="form-control" id="evthora">
                           </div>
                           <div class="form-group">
                             <label for="depart-name" class="control-label">Descripción:</label>
-                           <textarea class="form-control" id="evtdescripcion" name="evtdescripcion" placeholder="Descripción del evento" required="required" ></textarea>
+                           <textarea class="form-control" id="evtdescripcion"  placeholder="Descripción del evento" required="required" ></textarea>
                           </div>
                          
                     </form>

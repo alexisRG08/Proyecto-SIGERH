@@ -1,26 +1,25 @@
-var conexion1;
+var conexion2;
 
 function agregareventos()
 {
   var nom_evento=document.getElementById('evtnombre').value;
-  var nom_fecha=document.getElementById('evtfecha').value;
-  var nom_hora=document.getElementById('evthora').value;
+ var nom_fecha=document.getElementById('evtfecha').value;
+  /*var nom_hora=document.getElementById('evthora').value;
   var nom_descripcion=document.getElementById('evtdescripcion').value;
-
   var valor= window.event.srcElement.getAttribute('value');
-  conexion1=crearXMLHttpRequest2();
+  conexion2=crearXMLHttpRequest2();
 
-  conexion1.onreadystatechange =procesarAgregarEvento;  
-   var variables="lugar="+nomb_evento+"&fecha="+nom_fecha+"&hora="+nom_hora+"&descripcion="+nom_descripcion;
-  conexion1.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
-  conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  conexion1.send(variables);   
-  limpiar_textito();
+  conexion2.onreadystatechange =procesarAgregarEvento;  
+   var datoseventos="lugar="+nomb_evento+"&fecha="+nom_fecha+"&hora="+nom_hora+"&descripcion="+nom_descripcion;
+  conexion2.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+  conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  conexion2.send(datoseventos);       */
+   limpiar_textito(nom_evento);
 }
 
-function limpiar_textito()
+function limpiar_textito(datonombre, nomfecha)
 {
-  alert("lalala");
+  alert("nombre:"+datonombre+"y la fecha de hoy es "+nomfecha);
 }
 
 function procesarAgregarEvento()
@@ -28,9 +27,9 @@ function procesarAgregarEvento()
 {
   var resultad = document.getElementById('resultadoevento'); 
 
-  if(conexion1.readyState == 4)
+  if(conexion2.readyState == 4)
   {
-    resultad.innerHTML = conexion1.responseText;
+    resultad.innerHTML = conexion2.responseText;
 
   } 
   else 
