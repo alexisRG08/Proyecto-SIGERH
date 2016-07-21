@@ -1,3 +1,7 @@
+<?php
+require_once('../../programacion/conexion/DataBase.php');
+require_once('../../programacion/clases/Administrador.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +31,7 @@
               <!--  <form name="form" action="programacion/controlador/ControllerEmpleados.php" method="post" >  -->
                             <form>          
                           <div class="form-group">
-                            <label for="info-dia" class="control-label">Nombre del evento:</label>
+                            <label for="nombre-evento" class="control-label">Nombre del evento:</label>
                             <input type="text" class="form-control" id="evtnombre" name="evtnombre" placeholder="Nombre del evento" required="required"  onpaste="return false" autocomplete="off">
                           </div>
                           <div class="form-group">
@@ -48,7 +52,6 @@
         				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
              <!--  <input type="submit"  class="btn btn-success"    value="Agregar Evento"> -->
                 <button type="submit" class="btn btn-success" onClick="agregareventos()" value="Agregar-Evento">Agregar Evento</button>
-                
       				</div>
                     <div id="resultadoevento">
                     

@@ -2,19 +2,19 @@ var conexion1;
 
 function agregareventos()
 {
-  var nomb=document.getElementById('evtnombre').value;
-  var apep=document.getElementById('evtfecha').value;
-  var amm=document.getElementById('evthora').value;
-  var corr=document.getElementById('evtdescripción').value;
+  var nom_evento=document.getElementById('evtnombre').value;
+  var nom_fecha=document.getElementById('evtfecha').value;
+  var nom_hora=document.getElementById('evthora').value;
+  var nom_descripcion=document.getElementById('evtdescripcion').value;
 
   var valor= window.event.srcElement.getAttribute('value');
   conexion1=crearXMLHttpRequest2();
 
   conexion1.onreadystatechange =procesarAgregarEvento;  
-   var variables="nombre="+nomb+"&apellidop="+apep+"&apellidomater="+amm+"&email="+corr+"&user_name="+userr;
+   var variables="lugar="+nomb_evento+"&fecha="+nom_fecha+"&hora="+nom_hora+"&descripcion="+nom_descripcion;
   conexion1.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
   conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  conexion1.send(variables);
+  conexion1.send(variables);   
   limpiar_textito();
 }
 
