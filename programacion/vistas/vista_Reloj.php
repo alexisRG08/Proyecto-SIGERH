@@ -17,6 +17,15 @@
   height: 50px;
   border-radius: 2px;
   margin-left: 10px;
+   font-size: 20px;
+}
+#control-reloj{
+font-weight: bold;
+font-size: 20px;
+color: black;
+}
+.seleccionaropcion select{
+width: 200px;
 }
  </style>
 </head>
@@ -32,12 +41,13 @@
 
 
                     <form>
-                    <div class="form-group">
+                    <div class="form-group" id="seleccionaropcion">
+                      <label for="entrada-empleado" id="control-reloj">Elija una opción:</label>
                       <select class="form-control">
                       <option>entrada</option>
                       <option>Salida</option>
                       </select>
-                      <label for="entrada-empleado" class="control-label">Numero de empleado:</label>
+                      <label for="entrada-empleado" class="control-label"  id="control-reloj">Numero de empleado:</label><br> <br>
                       <input type="number" id="numberemployee" placeholder="Numero del empleado"><br>
                        <button type="button" class="btn btn-success" data-dismiss="modal">Registrar Entrada</button>
                     </div>
