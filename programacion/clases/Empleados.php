@@ -6,7 +6,9 @@ require_once('../../programacion/conexion/DataBase.php');
   	$bd = new Database();
     $consulta="INSERT INTO eventoss (nombre,fecha,hora,descripcion,empleados_id_empleado) values ('$nombre','$fecha','$hora','$descripcion','$idempleado');";
 		$bd->ejecutar($consulta);
-		Header("Location: ../../index.php");
+    echo "lalal";
+   
+	//	Header("Location: ../../index.php");
 	
        
   }

@@ -11,7 +11,11 @@ require_once('../../programacion/clases/Administrador.php');
 	<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../../css/estilos.css"/>  
    <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
-
+ <style type="text/css">
+#resultadoevento{
+  background: red;
+}
+ </style>
 </head>
 <body>
 	<!-------------------------Inicio de botones para el modal-------------------------------------->                           
@@ -28,7 +32,7 @@ require_once('../../programacion/clases/Administrador.php');
 				<button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="exampleModalLabel">Nuevo Evento</h4>
                 <div class="modal-body">
-              
+               
                           <div class="form-group">
                             <label for="evtnombre" class="control-label">Nombre del evento:</label>
                             <input type="text" class="form-control" id="evtnombre"  placeholder="Nombre del evento" required="required"  onpaste="return false" autocomplete="off">
@@ -51,10 +55,12 @@ require_once('../../programacion/clases/Administrador.php');
         				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
              <!--  <input type="submit"  class="btn btn-success"    value="Agregar Evento"> -->
                 <button type="submit" class="btn btn-success" onClick="agregareventos()" value="Agregar-Evento">Agregar Evento</button>
-      				</div>
-                    <div id="resultadoevento">
-                    
+
+                <div id="resultadoevento">
+
                     </div>
+      				</div>
+                   
                 </div><!-- cierra modal-body-->
 			</div><!-- cierra modal-header-->
 		</div><!-- cierra modal-content-->

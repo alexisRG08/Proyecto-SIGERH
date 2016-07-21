@@ -126,3 +126,6 @@ img #estrella
 	float:right;
 	margin-top:-1px;
 }
+#resultadoevento{
+	background: red;
+}
