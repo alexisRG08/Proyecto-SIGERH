@@ -75,7 +75,7 @@ $bd=new Database();
                             <select id="puesto-empleado" class="form-control">
                             <option selected="selected" value="">Selecciona puestos</option>
                               <?php
-                               $sql = "select distinct idTipo_empleo,Tipo from tipo_empleo;";
+                               	$sql= "select distinct idTipo_empleo,Tipo from tipo_empleo;";
                              	$resultado=$bd->ejecutar($sql);
                                while($row=mysqli_fetch_array($resultado))
                                 {
@@ -134,11 +134,14 @@ $bd=new Database();
           <h4 class="modal-title" id="exampleModalLabel"><center>CONTROL DE EMPLEADOS</center></h4>
                 <div class="modal-body">
                   <form>
+                  		<div class="form-group">
+                            <label for="buscar-empleado" class="control-label">Buscar empleado:</label>
+                            <input type="text" class="form-control" id="buscar-empleado" placeholder="Buscar empleado">
+                        </div>
+                        <div class="form-group">
+                        	<button   class="btn btn-primary" type="submit"   value="agregar-empleado">Buscar</button>
+                        </div>
                       <div class="form-group">
-                            <label for="curp-empleado" class="control-label">Buscar</label>
-                         <a href="#" data-toggle="tooltip" title="Hooray!"><input type="text" class="form-control" id="buscar" placeholder="Buscar-empleado"></a> <br>
-                            <button   class="btn btn-primary btn-lg" type="submit"   value="agregar-empleado">Buscar</button>
-                          </div>
                         <div class="table-responsive">
                           <table class="table table-bordered table-hover table-condensed table table-striped">
                           <tr>
@@ -148,10 +151,10 @@ $bd=new Database();
                           <?php
                           $mostrar=new Administrador();
                           $mostrar->mostrar_empleados();
-                     
                            ?>       
                           </table>
                         </div>  
+                       </div>
                   </form>
 
                   
@@ -224,7 +227,7 @@ $bd=new Database();
     </div>
   </div>
 </div>
-<!------------------------------------------Javascript----------------------------------------------------------------- -->
+<!------------------------------------------Javascript------------------------------------------------------------------->
 <!--<script src="../../js/jquery.js"></script>
 <script src="../../js/bootstrap.min.js"></script>-->
 </body>
