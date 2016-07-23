@@ -9,16 +9,14 @@ $bd=new Database();
 	<title>Control de empleados</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
 	<!--<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="../../css/estilos.css"/>-->
-  <link rel="stylesheet" type="text/css" href="../../css/tablas.css">
-  <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
-  
+  	<link rel="stylesheet" href="../../css/estilos.css"/>-->
+  <script src="../../programacion/JavaScript/JsEmpleados.js"></script>
 </head>
 <body>
 	<div class="container">
     	<div class="row">
         	<div class="col-md-8">
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Nuevo Empleado</button>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Nuevo Empleado</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Ver Empleados</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" data-whatever="@getbootstrap">Bajas / Altas de Empleados</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4" data-whatever="@getbootstrap">Reporte de Empleados</button>
@@ -147,8 +145,10 @@ $bd=new Database();
                           <tr>
                             <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
                             <th>Nivel de estudio</th><th>Numero de empleado</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th>
+                            <th>Actualizar</th><th>Eliminar</th>
                           </tr>
                           <?php
+                          require_once ('../../programacion/clases/Administrador.php');
                           $mostrar=new Administrador();
                           $mostrar->mostrar_empleados();
                            ?>       

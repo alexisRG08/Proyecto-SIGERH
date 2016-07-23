@@ -23,9 +23,6 @@ if($_REQUEST['valor']=='agregar-empleado')
 
 	$admin=new Administrador();
 	$admin->agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$numeroEmpleado,$puesto,$departamento,$curp,$numsocial);
-	}
-    
-	//$admin->mostrar_empleados();
-	
+	}	
 }
 ?>

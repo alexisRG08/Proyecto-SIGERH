@@ -31,11 +31,10 @@ class Database{
   }
   
     
-  public function ejecutar($consulta)
+  public function ejecutar($sql)
   {
-     mysqli_query($this->conexion,$consulta);
+    return  mysqli_query($this->conexion,$sql);
   }
 
  }
-
- ?>
+?>
