@@ -1,8 +1,4 @@
-<?php 
-require_once('../../programacion/conexion/DataBase.php');
-require_once('../../programacion/clases/Administrador.php');
-$bd=new Database();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
