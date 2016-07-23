@@ -1,12 +1,15 @@
-
+<?php 
+require_once('../../programacion/conexion/DataBase.php');
+$bd=new Database();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Control de empleados</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="../../css/estilos.css"/>
+	<!--<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../../css/estilos.css"/>-->
   <link rel="stylesheet" type="text/css" href="../../css/tablas.css">
   <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
   
@@ -73,9 +76,7 @@
                             <option selected="selected" value="">Selecciona puestos</option>
                               <?php
                                $sql = "select distinct idTipo_empleo,Tipo from tipo_empleo;";
-                             //  $resultado=$bd->ejecutar($sql);
-                               $conectar=mysqli_connect("localhost","root","root","mydb");
-                               $resultado=mysqli_query($conectar,$sql);
+                             	$resultado=$bd->ejecutar($sql);
                                while($row=mysqli_fetch_array($resultado))
                                 {
                                   echo"<option value='".$row['idTipo_empleo']."'>";
@@ -90,13 +91,14 @@
                             <select id="departamento-empleado" class="form-control">
                             <option selected="selected" value="">Selecciona departamento</option>
                               <?php
-                          
-                                   $conectar=mysqli_connect("localhost","root","root","mydb");
-                                   $consulta_mysql="select  iddepartamentos,nombre_departamento from departamentos;";
-                                   $resultado_consulta_mysql=mysqli_query($conectar,$consulta_mysql);
-                                   while($fila=mysqli_fetch_array($resultado_consulta_mysql)){
-                                   echo "<option value='".$fila['iddepartamentos']."'>".$fila['nombre_departamento']."</option>";
-                                   }
+                                  	$sql="select  iddepartamentos,nombre_departamento from departamentos;";
+                                  	$resultado=$bd->ejecutar($sql);
+                                    while($row=mysqli_fetch_array($resultado))
+                                	{
+                                  		echo"<option value='".$row['iddepartamentos']."'>";
+                                  		echo $row['nombre_departamento'];
+                                  		echo "</option>";
+                                   	}
                                 
                               ?>
                             </select>
@@ -223,7 +225,7 @@
   </div>
 </div>
 <!------------------------------------------Javascript----------------------------------------------------------------- -->
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+<!--<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.min.js"></script>-->
 </body>
 </html>
