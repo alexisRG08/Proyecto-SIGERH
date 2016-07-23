@@ -61,7 +61,44 @@ function procesarAgregarEmpleado()
   }
 }
 
+function actualizarEmpleado()
+{
+  alert('mi boton');
+}
 
+function eliminar_fila(fila)
+{
+var td=fila.parentNode;
+var tr=td.parentNode;
+var tabla=tr.parentNode;
+tabla.removeChild(tr);
+}
+
+
+function eliminarEmpleado(id,t)
+{
+alert (id);
+
+   conexionU=crearXMLHttpRequest3();
+   var valu= window.event.srcElement.getAttribute('value');
+   var variables="valor="+valu+"&id_empleado="+id;
+   conexionU.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
+   conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+   var mensaje=confirm("¿Desea marcar este dato como realizado?");
+
+   if(mensaje==true)
+   {
+    conexionU.send(variables);
+    eliminar_fila(t);
+   conexionU.responseText;
+
+   }
+   else
+   {
+    return;
+   }
+}
 
 
 //***************************************
