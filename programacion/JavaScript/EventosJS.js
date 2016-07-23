@@ -20,7 +20,8 @@ function agregareventos()
 
 function limpiar_textito(datonombre,nomfecha,hora,descripc)
 {
-  alert("nombre:"+datonombre+"--y la fecha de hoy es "+nomfecha+"-- la hora:"+hora+"--descripcion:"+descripc);
+  alert("llegando al js");
+ // alert("nombre:"+datonombre+"--y la fecha de hoy es "+nomfecha+"-- la hora:"+hora+"--descripcion:"+descripc);
 }
 
 function procesarAgregarEvento()

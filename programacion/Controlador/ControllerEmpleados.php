@@ -14,14 +14,18 @@ if($_REQUEST['valor']=='Agregar-Evento'){
  $descripcion=$_POST['evtdescripcion'];
   //$userr= mysql_real_escape_string(strip_tags($_POST['user_name'])); //$_POST['user_name'];
   $idempleados="1";
- /* if ($lugar==null) {
+/* if ($lugar==null) {
   	echo "Ingresa el nombre del evento";
   }else{
   	$Empleados=new Empleados();
  $Empleados->agregar_evento($lugar,$fecha,$hora,$descripcion,$idempleados);
  echo "pruebakakka";
-  }     */
- 
+  }        */
+ ?>
+ <script type="text/javascript">
+  alert("llegando al controlador");
+ </script>
+ <?php
 }
 
 ?>

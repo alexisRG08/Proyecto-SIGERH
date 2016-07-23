@@ -26,13 +26,13 @@ require_once('../../programacion/clases/Administrador.php');
 
 <!-- ------------------------------ Formulario de Nuevo evento--------------------- -->            
 <div class="modal fade" id="informacion" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-	<div class="modal-dialog" >
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content" >
 			<div class="modal-header">
 				<button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="exampleModalLabel">Nuevo Evento</h4>
                 <div class="modal-body">
-               
+                       <form>
                           <div class="form-group">
                             <label for="evtnombre" class="control-label">Nombre del evento:</label>
                             <input type="text" class="form-control" id="evtnombre"  placeholder="Nombre del evento" required="required"  onpaste="return false" autocomplete="off">
@@ -69,7 +69,7 @@ require_once('../../programacion/clases/Administrador.php');
 </div><!--cierra container--> 
 <!-- ------------------------------ Formulario de Ver eventos--------------------- -->            
 <div class="modal fade" id="informacion2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+  <div class="modal-dialog modal-lg" >
     <div class="modal-content" >
       <div class="modal-header">
         <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -78,7 +78,7 @@ require_once('../../programacion/clases/Administrador.php');
                         <div class="form-group">
                             <label for="curp-empleado" class="control-label">Buscar eventos</label>
                          <a href="#" data-toggle="tooltip" title="Busca un evento"><input type="text" class="form-control" id="buscar" placeholder="Busca un evento"></a> <br>
-                            <button   class="btn btn-primary btn-lg" type="submit"   value="agregar-empleado">Buscar</button>
+                          
                           </div>
                           <div class="form-group">
                           <table class="table table-bordered" >
