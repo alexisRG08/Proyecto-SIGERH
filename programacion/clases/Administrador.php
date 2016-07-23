@@ -20,11 +20,9 @@ class Administrador
        	echo $sql;
 	}
 	function mostrar_empleados(){
-		$bd=new Database();
+		   $bd=new Database();
        $sql="select * from empleados";
-        $conectar=mysqli_connect("localhost","root","root","mydb");
-        $resultado=mysqli_query($conectar,$sql);
-       //  $resultado=$bd->ejecutar($sql);
+       $resultado=$bd->ejecutar($sql);
         while($fila=mysqli_fetch_array($resultado))
            {
              $campo1 = $fila['nombre'];
