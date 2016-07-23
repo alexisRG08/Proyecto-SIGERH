@@ -14,9 +14,13 @@ if($_REQUEST['valor']=='Agregar-Evento'){
  $nom_descripcion=$_POST['nom_descripcion'];
   //$userr= mysql_real_escape_string(strip_tags($_POST['user_name'])); //$_POST['user_name'];
   $idempleados="1";
-
+if ($nom_evento==null) {
+  echo "Escribe el nombre del evento";
+}else{
   $Empleados=new Empleados();
   $Empleados->agregar_evento($nom_evento,$nom_fecha,$nom_hora,$nom_descripcion,$idempleados);
+}
+  
   
     }   
 ?>
