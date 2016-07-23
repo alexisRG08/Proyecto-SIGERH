@@ -8,8 +8,8 @@ require_once('../../programacion/clases/Administrador.php');
 	<meta charset="utf-8">
 	<title>Eventos</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="../../css/estilos.css"/>  
+<!--	<link rel="stylesheet" href="../../css/bootstrap.min.css"/> -->
+<!--	<link rel="stylesheet" href="../../css/estilos.css"/>   -->
    <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
  <style type="text/css">
 #resultadoevento{

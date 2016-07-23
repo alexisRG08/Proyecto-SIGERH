@@ -4,28 +4,19 @@ require_once ('../../programacion/clases/Empleados.php');
 if($_REQUEST['valor']=='Agregar-Evento'){
 
 //if(isset($_POST["submit"])){
-	$lugar=$_POST['evtnombre'];
+	$nom_evento=$_POST['nom_evento'];
 
 //$apep=//mysql_real_escape_string(strip_tags($_POST['apellidop']));  //$_POST['apellidop'];
-  $fecha=$_POST['evtfecha'];
+  $nom_fecha=$_POST['nom_fecha'];
   //$amm=mysql_real_escape_string(strip_tags($_POST['apellidomater']));  //$_POST['apellidom'];
-  $hora=$_POST['evthora'];
+  $nom_hora=$_POST['nom_hora'];
   //$corr= mysql_real_escape_string(strip_tags($_POST['email'])); //$_POST['correo'];
- $descripcion=$_POST['evtdescripcion'];
+ $nom_descripcion=$_POST['nom_descripcion'];
   //$userr= mysql_real_escape_string(strip_tags($_POST['user_name'])); //$_POST['user_name'];
   $idempleados="1";
-/* if ($lugar==null) {
-  	echo "Ingresa el nombre del evento";
-  }else{
-  	$Empleados=new Empleados();
- $Empleados->agregar_evento($lugar,$fecha,$hora,$descripcion,$idempleados);
- echo "pruebakakka";
-  }        */
- ?>
- <script type="text/javascript">
-  alert("llegando al controlador");
- </script>
- <?php
-}
 
+  $Empleados=new Empleados();
+  $Empleados->agregar_evento($nom_evento,$nom_fecha,$nom_hora,$nom_descripcion,$idempleados);
+  
+    }   
 ?>

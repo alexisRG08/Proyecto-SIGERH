@@ -11,17 +11,16 @@ function agregareventos()
   conexion2=crearXMLHttpRequest2();
 
   conexion2.onreadystatechange =procesarAgregarEvento;  
-   var variables="valor="+valor+"lugar="+nom_evento+"&fecha="+nom_fecha+"&hora="+nom_hora+"&descripcion="+nom_descripcion;
+   var variables="valor="+valor+"&nom_evento="+nom_evento+"&nom_fecha="+nom_fecha+"&nom_hora="+nom_hora+"&nom_descripcion="+nom_descripcion;
   conexion2.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
   conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  conexion2.send(variables);          
- //  limpiar_textito(nom_evento,nom_fecha,nom_hora,nom_descripcion);
+  conexion2.send(variables);        
 }
 
 function limpiar_textito(datonombre,nomfecha,hora,descripc)
 {
-  alert("llegando al js");
- // alert("nombre:"+datonombre+"--y la fecha de hoy es "+nomfecha+"-- la hora:"+hora+"--descripcion:"+descripc);
+ // alert("llegando al js");
+  alert("nombre:"+datonombre+"--y la fecha de hoy es "+nomfecha+"-- la hora:"+hora+"--descripcion:"+descripc);
 }
 
 function procesarAgregarEvento()
