@@ -88,7 +88,7 @@ function ver(){
               </div>
               <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                <input type="password" class="form-control" id="password">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary" onclick="sesion()">Iniciar Sesion</button>
