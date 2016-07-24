@@ -127,6 +127,10 @@ img #estrella
 	margin-top:-1px;
 }
 #resultadoevento{
+	
 	text-align: center;
 	color: red;
+	font-size: 20px;
+	font-weight: inherit;
+	 box-shadow: 0 8px 6px -6px black;
 }

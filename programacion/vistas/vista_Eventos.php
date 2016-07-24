@@ -11,11 +11,6 @@ require_once('../../programacion/clases/Administrador.php');
 <!--	<link rel="stylesheet" href="../../css/bootstrap.min.css"/> -->
 <!--	<link rel="stylesheet" href="../../css/estilos.css"/>   -->
    <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
- <style type="text/css">
-#resultadoevento{
-  background: red;
-}
- </style>
 </head>
 <body>
 	<!-------------------------Inicio de botones para el modal-------------------------------------->                           
