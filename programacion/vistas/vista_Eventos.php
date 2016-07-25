@@ -9,8 +9,15 @@ require_once('../../programacion/clases/Administrador.php');
 	<title>Eventos</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
 <!--	<link rel="stylesheet" href="../../css/bootstrap.min.css"/> -->
-<!--	<link rel="stylesheet" href="../../css/estilos.css"/>   -->
+<link rel="stylesheet" href="../../css/tablas.css"/>  
    <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
+   <script src="../ProyectoRH/programacion/vistas/paginador.js"></script>
+    <style type="text/css">
+   a{
+  text-decoration:underline;
+  cursor:pointer;
+}
+    </style>
 </head>
 <body>
 	<!-------------------------Inicio de botones para el modal-------------------------------------->                           
@@ -76,7 +83,7 @@ require_once('../../programacion/clases/Administrador.php');
                           
                           </div>
                           <div class="form-group">
-                          <table class="table table-bordered" >
+                          <table id="tablaeventos" class="table table-bordered" >
                             <thead >
                          <tr>
                          <th>Nombre</th>
@@ -87,8 +94,11 @@ require_once('../../programacion/clases/Administrador.php');
                           <th>Eliminar</th>
                         </tr>
                         </thead>
-                         <?php 
-                    $query = "SELECT * FROM  eventoss;";
+                      
+                        <?php   
+
+                       
+                   $query = "SELECT * FROM  eventoss;";
                     $conectar=mysqli_connect("localhost","root","root","mydb");
                     $tildes = $conectar->query("SET NAMES 'utf8'"); 
                     $result = mysqli_query($conectar, $query);
@@ -105,13 +115,16 @@ require_once('../../programacion/clases/Administrador.php');
                    echo "<td><center> $descripcion</center></td>";
                    echo "<td><center> $idempleado</center></td>";
                    echo "<td><button   class='btn btn-primary  type='submit'   value='agregar-empleado'>Eliminar</button></td>"; 
-                    echo "</tr>";    
+                    echo "</tr>";   
      }
-                    mysqli_free_result($result);
+                   mysqli_free_result($result);
                    mysqli_close($conectar);
-?>     
-                        </table>
+
+                    ?>     
+                      
+                         </table>
                           </div>
+                        
                     
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="btn btn-success">Cerrar</button>
@@ -119,7 +132,7 @@ require_once('../../programacion/clases/Administrador.php');
                     <div id="resultadoDia">
                     
                     </div>
-                </div><!-- cierra modal-body-->
+                </div><!--cierra modal-body--> 
       </div><!-- cierra modal-header-->
     </div><!-- cierra modal-content-->
   </div><!-- cierra modal-dialog-->
@@ -158,7 +171,6 @@ require_once('../../programacion/clases/Administrador.php');
 </div>  <!-- cierra modal-fade-->
 </div><!--cierra container--> 
 <!------------------------------------------Javascript----------------------------------------------------------------- -->
-<script src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -77,7 +77,7 @@ tabla.removeChild(tr);
 
 function eliminarEmpleado(id,t)
 {
-alert (id);
+alert(id);
 
    conexionU=crearXMLHttpRequest3();
    var valu= window.event.srcElement.getAttribute('value');

@@ -1,4 +1,4 @@
-table {
+#tablaeventos {
  border:1px black solid;
  border-radius:5px;
  min-width:400px;
@@ -15,11 +15,11 @@ table {
 table td {
  padding:6px;
 	color: black;
-	background: #e8edff; 
+	background: rgba(255,255,255,1);
 
 }
 table tr{
-	background-color: red;
+	background-color: #e8edff;
 }
 #exampleModalLabel{
 	text-align: center;

@@ -10,7 +10,7 @@
 <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
  <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
 <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
-
+<script src="../ProyectoRH/programacion/vistas/paginador.js"></script>
 <script type="text/javascript">
 function cerrar(){
  document.getElementById("slides").style.display="none"; 
