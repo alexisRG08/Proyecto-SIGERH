@@ -10,7 +10,6 @@
 <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
  <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
 <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
-<script src="../ProyectoRH/programacion/vistas/paginador.js"></script>
 <script type="text/javascript">
 function cerrar(){
  document.getElementById("slides").style.display="none"; 
@@ -21,6 +20,10 @@ function ver(){
  document.getElementById("slides").style.display=""; 
  document.getElementById("list-group").style.display=""; 
 }
+
+ window.onload = function() {
+document.getElementById("ocultarempleados").style.display="none"; 
+};
 </script>
 </head>
 
@@ -36,22 +39,22 @@ function ver(){
                         <span class="icon-bar"></span>
                     </button>
                     <a href="#" target="_blank" class="navbar-brand" id="tam">
-                    <img id="im" class="img-responsive img-thumbnail" src="../ProyectoRH/img/logo3.jpg">
+                    <img id="im" class="img-responsive img-thumbnail" src="../ProyectoRH/img/logo4.png">
                     </a>
                 </div>
                 <!--Aqui Inicia Menu -->
                 <div class="collapse navbar-collapse" id="navegacion-fm"><!--navbar-->
                 	<ul class="nav navbar-nav">
                        <li><a href="../programacion/Controlador/referencias?" id="referencia1"  value="Informacion">
-                        <span value="Eventos" class="glyphicon glyphicon-list-alt"  onclick="ver()"> Eventos</span></a></li>
+                        <span id="" value="Eventos" class="glyphicon glyphicon-list-alt"  onclick="ver()"> Eventos</span></a></li>
                         <li><a  href="../programacion/Controlador/referencias?" id="referencia2"  value="Archivos">
-                          <span value="Control" class="glyphicon glyphicon-file"  onclick="ver()"> Control de Empleados</span></a></li>
+                          <span  id="ocultarempleados" value="Control" class="glyphicon glyphicon-file"  onclick="ver()"> Control de Empleados</span></a></li>
                        
                         <li><a href="../../programacion/Controlador/referencias?" id="referencia3"  value="Reporteador">
-                          <span class="glyphicon glyphicon-exclamation-sign"  onclick="cerrar()" value="Reloj">Reloj Checador </span></a></li>
+                          <span  id="" class="glyphicon glyphicon-exclamation-sign"  onclick="cerrar()" value="Reloj">Reloj Checador </span></a></li>
                          <li>
                         	<a href="../../programacion/Controlador/referencias?" id="referencia4"  value="InventarioEquipo">
-                            <span class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion"> Capacitacion</span>
+                            <span  id="" class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion"> Capacitacion</span>
                             </a>
                            
                         </li>
