@@ -36,6 +36,7 @@ document.getElementById("forminicio").style.display="none";
 document.getElementById("mostrarmsj").style.display="none"; 
 document.getElementById("btnsesion").style.display="none";
 document.getElementById("btncontinuar").style.display="none";
+document.getElementById("ocultarlogout").style.display="";
 }
 function nivelnormal(){
 document.getElementById("ocultarcapcitacion").style.display=""; 
@@ -43,6 +44,7 @@ document.getElementById("forminicio").style.display="none";
 document.getElementById("mostrarmsj").style.display="none"; 
 document.getElementById("btnsesion").style.display="none";
 document.getElementById("btncontinuar").style.display="none";
+document.getElementById("ocultarlogout").style.display="";
 }
 function procesariniciosesion()
 

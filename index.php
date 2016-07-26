@@ -25,7 +25,9 @@ function ver(){
  window.onload = function() {
 document.getElementById("ocultarempleados").style.display="none";  
 document.getElementById("ocultarcapcitacion").style.display="none"; 
-document.getElementById("ocultarusuarios").style.display="none"; 
+document.getElementById("ocultarusuarios").style.display="none";
+document.getElementById("ocultarlogout").style.display="none";
+
 };
 </script>
 <style type="text/css">
@@ -72,6 +74,16 @@ document.getElementById("ocultarusuarios").style.display="none";
                         </li>
                         
                         <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user"> Usuarios</span></a></li>
+                        <li>
+                          <a href="../../programacion/Controlador/referencias?" id="referencia4"  value="InventarioEquipo">
+                            <span  id="ocultarlogout"   value="Capacitacion"> Cerrar Sesión</span>
+                            </a>
+                           
+                        </li>
+
+
+
+
                     </ul>
                 </div>
             </div>
@@ -142,7 +154,7 @@ document.getElementById("ocultarusuarios").style.display="none";
 
        <div class="row">
                 <div class="col-xs-12"><br> <br>
-                <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91</h6>
+                <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
                 </div>  
          <!--    </div>
              <div class="row">
