@@ -61,9 +61,28 @@ function procesarAgregarEmpleado()
   }
 }
 
-function actualizarEmpleado()
+function actualizarEmpleado(id,cont)
 {
-  alert('mi boton');
+  alert(cont);
+  alert('id:'+id);
+  var celdas= document.getElementByTagName('td');
+  for (var i = cont; i < celdas.length; i++) 
+  {
+    var x=0;
+    while(x<13)
+    {
+     alert(celdas[i+x].innerHTML);
+     x++;
+    }
+    conexion1=crearXMLHttpRequest2();
+    conexion1.onreadystatechange=procesar;
+    var btn=window.event.srcElement.getAttribute('value');
+    var variables=
+    conexion1.open("POST", "../ORM/update.php", true);
+    conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    conexion1.send(variables);
+    break;
+  }
 }
 
 function eliminar_fila(fila)
