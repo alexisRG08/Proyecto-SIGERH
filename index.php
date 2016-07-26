@@ -108,7 +108,7 @@ document.getElementById("ocultarusuarios").style.display="none";
               </div>
                </form>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
+                <button type="submit" id="btnsesion"class="btn btn-primary" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
                 
               </div>
              

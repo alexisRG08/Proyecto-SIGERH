@@ -75,15 +75,34 @@ class Administrador
   function sesion_login($usuario,$contrasena){
   $bd=new Database();
  $sql= "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contrasena='".$contrasena."';";
+
   $resultado=$bd->ejecutar($sql);
    $count = mysqli_num_rows($resultado);
            if($count >= 1){
            $_SESSION['usuario'] = $usuario;  
            echo "<br> Bienvenido! " . $_SESSION['usuario'];
-           echo "<br><button type='submit' class='btn btn-primary' onclick='formulario()'>continuar</button>";
+           $this->validartipo($usuario);
            }else{
             echo "Datos erroneos<br>";
               }   
+  }
+  function validartipo($dato){
+     $bd=new Database();
+     $sql="SELECT * FROM usuarios WHERE usuario = '".$dato."';";
+    $result=$bd->ejecutar($sql);
+     while($fila=mysqli_fetch_array($result))
+      {
+        $tipo = $fila['tipo'];
+        $this->controltipo($tipo);
+        
+      }
+  }
+  function controltipo($nivel){
+    if ($nivel==1) {
+      echo "<br><button type='submit' id='btncontinuar' class='btn btn-primary' onclick='niveladmin()'>continuar</button>"; 
+    }else{
+      echo "<br><button type='submit' id='btncontinuar' class='btn btn-primary' onclick='nivelnormal()'>continuar</button>"; 
+    }
   }
 }
 ?>
