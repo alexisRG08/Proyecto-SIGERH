@@ -97,7 +97,7 @@ document.getElementById("ocultarusuarios").style.display="none";
               </br>
               </br>
               </br>
-              <form>
+              <form id="forminicio">
                <div class="form-group">
                <label class="sr-only" for="exampleInputEmail3">Usuario</label>
                 <input type="text" class="form-control" id="usuario" placeholder="Usuario">

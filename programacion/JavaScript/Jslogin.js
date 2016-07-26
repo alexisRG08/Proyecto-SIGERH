@@ -28,6 +28,15 @@ if(usuario==0){
 }
        
 }
+function formulario(){
+ document.getElementById("ocultarempleados").style.display="";  
+document.getElementById("ocultarcapcitacion").style.display=""; 
+document.getElementById("ocultarusuarios").style.display="";   
+document.getElementById("forminicio").style.display="none";  
+document.getElementById("mostrarmsj").style.display="none"; 
+document.getElementById("btnsesion").style.display="none";
+document.getElementById("btncontinuar").style.display="none";
+}
 function procesariniciosesion()
 
 {

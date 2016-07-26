@@ -1,3 +1,10 @@
+<script type="text/javascript">
+function formulario(){
+  document.getElementById("contrasena").style.display="none";  
+  
+}
+</script>
+
 <?php
 require_once('../../programacion/conexion/DataBase.php');
 
@@ -73,7 +80,7 @@ class Administrador
            if($count >= 1){
            $_SESSION['usuario'] = $usuario;  
            echo "<br> Bienvenido! " . $_SESSION['usuario'];
-           echo "<button type='submit' class='btn btn-primary' onclick='mostrarbotones()'>Iniciar Sesion</button>";
+           echo "<br><button type='submit' class='btn btn-primary' onclick='formulario()'>continuar</button>";
            }else{
             echo "Datos erroneos<br>";
               }   
