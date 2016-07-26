@@ -65,5 +65,18 @@ class Administrador
             
 
 	}
+  function sesion_login($usuario,$contrasena){
+  $bd=new Database();
+ $sql= "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contrasena='".$contrasena."';";
+  $resultado=$bd->ejecutar($sql);
+   $count = mysqli_num_rows($resultado);
+           if($count >= 1){
+           $_SESSION['usuario'] = $usuario;  
+           echo "<br> Bienvenido! " . $_SESSION['usuario'];
+           echo "<button type='submit' class='btn btn-primary' onclick='mostrarbotones()'>Iniciar Sesion</button>";
+           }else{
+            echo "Datos erroneos<br>";
+              }   
+  }
 }
 ?>

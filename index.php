@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../ProyectoRH/css/estilos.css"/>
 <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
  <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
+ <script src="../ProyectoRH/programacion/JavaScript/Jslogin.js"></script>
 <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
 <script type="text/javascript">
 function cerrar(){
@@ -22,9 +23,20 @@ function ver(){
 }
 
  window.onload = function() {
-document.getElementById("ocultarempleados").style.display="none"; 
+document.getElementById("ocultarempleados").style.display="none";  
+document.getElementById("ocultarcapcitacion").style.display="none"; 
+document.getElementById("ocultarusuarios").style.display="none"; 
 };
 </script>
+<style type="text/css">
+#mostrarmsj{
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: red;
+}
+</style>
 </head>
 
 <body>
@@ -54,12 +66,12 @@ document.getElementById("ocultarempleados").style.display="none";
                           <span  id="" class="glyphicon glyphicon-exclamation-sign"  onclick="cerrar()" value="Reloj">Reloj Checador </span></a></li>
                          <li>
                         	<a href="../../programacion/Controlador/referencias?" id="referencia4"  value="InventarioEquipo">
-                            <span  id="" class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion"> Capacitacion</span>
+                            <span  id="ocultarcapcitacion" class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion"> Capacitacion</span>
                             </a>
                            
                         </li>
                         
-                        <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span value="Usuarios" class="glyphicon glyphicon-user"> Usuarios</span></a></li>
+                        <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user"> Usuarios</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -85,22 +97,27 @@ document.getElementById("ocultarempleados").style.display="none";
               </br>
               </br>
               </br>
-              <div class="form-group">
+              <form>
+               <div class="form-group">
                <label class="sr-only" for="exampleInputEmail3">Usuario</label>
                 <input type="text" class="form-control" id="usuario" placeholder="Usuario">
               </div>
               <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
               </div>
+               </form>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary" onclick="sesion()">Iniciar Sesion</button>
+                <button type="submit" class="btn btn-primary" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
                 
+              </div>
+             
+              <div id="mostrarmsj">
               </div>
         
      					
      		</aside>
-        <aside class="col-md-3">
+  <!--     <aside class="col-md-3">
           <h4 style="color:#06C;">Siguenos en:</h4>
               <div class="list-group" id="list-group">
                 <a href="http://www.facebook.com" target="_blank" class="list-group-item primero">
@@ -114,7 +131,7 @@ document.getElementById("ocultarempleados").style.display="none";
             <a href="http://www.instagram.com" target="_blank" class="list-group-item quinto">
                         <img src="fonts/glyphicons_social/png/social-33-instagram.png"> Instagram</a>
               </div>
-        </aside>      
+        </aside>    --> 
     
          </div>
 	
@@ -122,21 +139,22 @@ document.getElementById("ocultarempleados").style.display="none";
      <br>
      <footer>
      	<div class="container">
-        <div class="row">
-                <div class="col-xs-12">
-                	<!-- <a href="#" target="_blank"><img class="img-responsive center-block" src="../ProyectoRH/img/logo2.png"></a>-->
+
+       <div class="row">
+                <div class="col-xs-12"><br> <br>
+                <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91</h6>
                 </div>  
-            </div>
+         <!--    </div>
              <div class="row">
             	<div class="col-xs-6">
                 	
                 </div>
                 <div class="col-xs-6">
-                	<ul class="list-inline text-right">
+                	<ul class="list-inline text-left">
                     	<li><a href="">Cerrar Sesion</a></li>
                     </ul>
                 </div>
-            </div>
+            </div>  -->
            </div> 
          
     </footer>

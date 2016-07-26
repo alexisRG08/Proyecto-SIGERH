@@ -35,6 +35,5 @@ class Database{
   {
     return  mysqli_query($this->conexion,$sql);
   }
-
  }
 ?>
