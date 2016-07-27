@@ -1,4 +1,5 @@
 var conexion2;
+var conexion3;
 
 function agregareventos()
 {
@@ -16,12 +17,22 @@ function agregareventos()
   conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion2.send(variables);        
 }
+function deletevento(id_evento){
+  var eliminar = confirm("¿Esta Seguro de  eliminar este usuario?")
+  if ( eliminar ) {
+    ajax=crearXMLHttpRequest2();
+    ajax.onreadystatechange =procesarEliminarEvento;  
+    ajax.open("GET", "../ProyectoRH/programacion/Controlador/deleteevento.php?id_evento="+id_evento);
+ //   ajax.onreadystatechange=function() {
+  //    if (ajax.readyState==4) {
+  //      divResultado.innerHTML = ajax.responseText
+   //   }
+  //  }
+    ajax.send(null)
+  }
 
-function limpiar_textito(datonombre,nomfecha,hora,descripc)
-{
- // alert("llegando al js");
-  alert("nombre:"+datonombre+"--y la fecha de hoy es "+nomfecha+"-- la hora:"+hora+"--descripcion:"+descripc);
 }
+
 
 function procesarAgregarEvento()
 
@@ -39,7 +50,22 @@ function procesarAgregarEvento()
     resultad.innerHTML = 'Cargando......';
   }
 }
+function procesarEliminarEvento()
 
+{
+  var resultad = document.getElementById('resultadoevento'); 
+
+  if(ajax.readyState == 4)
+  {
+    resultad.innerHTML = conexion2.responseText;
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
+  }
+}
 
 
 

@@ -10,7 +10,35 @@ require_once('../../programacion/conexion/DataBase.php');
 
 class Administrador
 {
-	
+	function mostrareventos(){
+    $bd=new Database();
+    $sql="select * from eventoss";
+      $resultado=$bd->ejecutar($sql);
+       while($fila=mysqli_fetch_array($resultado))
+      {
+                  $id_evento=$fila['id_eventos'];
+                   $nombre = $fila['nombre'];
+                    $fecha = $fila['fecha']; 
+                    $hora = $fila['hora'];
+                    $descripcion = $fila['descripcion']; 
+                    $idempleado = $fila['empleados_id_empleado']; 
+                   echo "<tr>";
+                    echo "<td><center> $nombre</center></td>";
+                    echo "<td> <center>$fecha</center></td>";
+                   echo "<td><center> $hora</center></td>";
+                   echo "<td><center> $descripcion</center></td>";
+                   echo "<td><center> $idempleado</center></td>";
+                   echo "<td><button type='submit'  class='btn btn-primary' onclick='deletevento($id_evento)' value='eliminar-evento'>Eliminar</button></td>"; 
+                    echo "</tr>";    
+      }
+                  
+  }
+  function eliminar_evento($id_evento){
+   $bd=new Database();
+   $sql="delete from eventoss where id_eventos=$id_evento";
+   $bd->ejecutar($sql);
+   echo "eliminado evento";
+  }
 	function agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$numeroEmpleado,$puesto,$departamento,$curp,$numsocial)
 	{
 		$bd=new Database();
@@ -83,7 +111,7 @@ class Administrador
            echo "<br> Bienvenido! " . $_SESSION['usuario'];
            $this->validartipo($usuario);
            }else{
-            echo "Datos erroneos<br>";
+            echo "Información Incorrecta<br>";
               }   
   }
   function validartipo($dato){

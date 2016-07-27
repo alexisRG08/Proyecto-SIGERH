@@ -17,13 +17,15 @@ if(usuario==0){
   if(contrasena==0){
     document.getElementById('usuario').style.borderColor = "black";
     document.getElementById('contrasena').style.borderColor = "red";
-    document.getElementById("usuario").placeholder= "Escribir contraseña";
+    document.getElementById("contrasena").placeholder= "Escribir contraseña";
   }else{
     conexion3.onreadystatechange =procesariniciosesion;  
    var variables="valor="+valor+"&usuario="+usuario+"&contrasena="+contrasena;
   conexion3.open("POST", "../ProyectoRH/programacion/Controlador/login.php", true);
   conexion3.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion3.send(variables);     
+  var user=document.getElementById('usuario').value="";
+  var contrasena=document.getElementById('contrasena').value="";
   }
 }
        

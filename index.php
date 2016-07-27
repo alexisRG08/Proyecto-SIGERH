@@ -75,7 +75,7 @@ document.getElementById("ocultarlogout").style.display="none";
                         
                         <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user"> Usuarios</span></a></li>
                         <li>
-                          <a href="../../programacion/Controlador/referencias?" id="referencia4"  value="InventarioEquipo">
+                          <a href="#" id="referencia4"  value="InventarioEquipo">
                             <span  id="ocultarlogout"   value="Capacitacion"> Cerrar Sesión</span>
                             </a>
                            

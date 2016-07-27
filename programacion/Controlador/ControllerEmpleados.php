@@ -1,5 +1,6 @@
 <?php
 require_once ('../../programacion/clases/Empleados.php');
+require_once('../../programacion/clases/Administrador.php');
 
 if($_REQUEST['valor']=='Agregar-Evento'){
 
@@ -24,4 +25,6 @@ if ($nom_evento==null) {
   
   
     }   
+
+
 ?>
