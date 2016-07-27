@@ -22,16 +22,29 @@ $Empleados=new Empleados();
     }   
 
 if($_REQUEST['valor']=='actualizar-evento'){
+  $id_evento=strip_tags($_POST['id_evento']);
   $nombre =strip_tags($_POST['nombre']);
   $fecha =strip_tags($_POST['fecha']); 
   $hora = strip_tags($_POST['hora']);
   $descripcion = strip_tags($_POST['descripcion']);
 
   if($nombre==null){
-    echo "Ingresa el nombre del evento";
+    echo "<center>Ingresa el nombre del evento</center>";
   }else{
     if ($fecha==null) {
-      echo "Ingresa la fecha del evento";
+      echo "<center>Ingresa la fecha del evento</center>";
+    }else{
+      if ($hora==null) {
+        echo "<center>Ingresa la hora del evento</center>";
+      }else{
+       if ($descripcion==null) {
+         echo "<center>Ingrese la descripcion del evento</center>";
+       }else{
+        $sql="UPDATE eventoss SET descripcion=0 WHERE  id_detail=$id_evento ;";
+        $actualizar=new Administrador();
+        $actualizar->actualizar_evento($sql);
+       }
+      }
     }
   }
 }
