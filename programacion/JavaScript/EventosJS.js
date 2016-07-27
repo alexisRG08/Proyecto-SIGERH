@@ -1,5 +1,7 @@
 var conexion2;
 var conexion3;
+var conexionU;
+var ajax;
 
 function agregareventos()
 {
@@ -23,14 +25,30 @@ function deletevento(id_evento){
     ajax=crearXMLHttpRequest2();
     ajax.onreadystatechange =procesarEliminarEvento;  
     ajax.open("GET", "../ProyectoRH/programacion/Controlador/deleteevento.php?id_evento="+id_evento);
- //   ajax.onreadystatechange=function() {
-  //    if (ajax.readyState==4) {
-  //      divResultado.innerHTML = ajax.responseText
-   //   }
-  //  }
     ajax.send(null)
   }
 
+}
+function updatevento(id_evento,cont){
+  var celdas=document.getElementsByTagName('td');
+  for(var i=cont;i<celdas.length;i++)   // desde contador es menor al numero de celdas 
+      { 
+        var x=0;
+        while(x<6)
+          {
+        //    alert(celdas[i+x].innerHTML);
+            x++;
+          }
+    
+      conexionU=crearXMLHttpRequest2();
+      conexionU.onreadystatechange= procesar;
+      var btn=window.event.srcElement.getAttribute('value');
+     var variables='valor='+btn+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML;
+     conexionU.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+    conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+     conexionU.send(variables);
+     break;
+  }
 }
 
 
@@ -50,14 +68,30 @@ function procesarAgregarEvento()
     resultad.innerHTML = 'Cargando......';
   }
 }
+function procesar()
+
+{
+  var resultad = document.getElementById('resultadodatos'); 
+
+  if(conexionU.readyState == 4)
+  {
+    resultad.innerHTML = conexionU.responseText;
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
+  }
+}
 function procesarEliminarEvento()
 
 {
-  var resultad = document.getElementById('resultadoevento'); 
+  var resultad = document.getElementById('resultadodatos'); 
 
   if(ajax.readyState == 4)
   {
-    resultad.innerHTML = conexion2.responseText;
+    resultad.innerHTML = ajax.responseText;
 
   } 
   else 

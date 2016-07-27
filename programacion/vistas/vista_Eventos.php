@@ -92,6 +92,7 @@ require_once('../../programacion/clases/Administrador.php');
                           <th>Descripción</th>
                           <th>Empleado</th>
                           <th>Eliminar</th>
+                          <th>Actualizar</th>
                         </tr>
                         </thead>
                       
@@ -106,7 +107,7 @@ require_once('../../programacion/clases/Administrador.php');
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="btn btn-success">Cerrar</button>
               </div>
-                    <div id="resultadoevento">
+                    <div id="resultadodatos">
                    
                     </div>
                 </div><!--cierra modal-body--> 

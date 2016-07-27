@@ -112,7 +112,7 @@ document.getElementById("ocultarlogout").style.display="none";
               <form id="forminicio">
                <div class="form-group">
                <label class="sr-only" for="exampleInputEmail3">Usuario</label>
-                <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                <input type="text" class="form-control" id="usuario" placeholder="Usuario" autocomplete="off">
               </div>
               <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword3">Contraseña</label>

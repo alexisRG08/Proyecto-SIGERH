@@ -14,6 +14,8 @@ class Administrador
     $bd=new Database();
     $sql="select * from eventoss";
       $resultado=$bd->ejecutar($sql);
+      $cont1=0;
+     $cont=0;
        while($fila=mysqli_fetch_array($resultado))
       {
                   $id_evento=$fila['id_eventos'];
@@ -23,13 +25,16 @@ class Administrador
                     $descripcion = $fila['descripcion']; 
                     $idempleado = $fila['empleados_id_empleado']; 
                    echo "<tr>";
-                    echo "<td><center> $nombre</center></td>";
-                    echo "<td> <center>$fecha</center></td>";
-                   echo "<td><center> $hora</center></td>";
-                   echo "<td><center> $descripcion</center></td>";
-                   echo "<td><center> $idempleado</center></td>";
+                    echo "<td contenteditable><center> $nombre</center></td>";
+                    echo "<td contenteditable> <center>$fecha</center></td>";
+                   echo "<td contenteditable><center> $hora</center></td>";
+                   echo "<td contenteditable><center> $descripcion</center></td>";
+                   echo "<td contenteditable><center> $idempleado</center></td>";
                    echo "<td><button type='submit'  class='btn btn-primary' onclick='deletevento($id_evento)' value='eliminar-evento'>Eliminar</button></td>"; 
-                    echo "</tr>";    
+                  echo " <td><button type='submit' class='btn btn-primary' onclick='updatevento($id_evento,$cont1)' value='actualizar-evento'>Actualizar</button></td>";
+                    echo "</tr>"; 
+                    $cont++;
+                   $cont1=$cont1+7;   
       }
                   
   }
