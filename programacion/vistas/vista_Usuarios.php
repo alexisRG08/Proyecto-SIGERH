@@ -60,10 +60,10 @@ $bd=new DataBase();
                                <label for="area-name" class="control-label">Tipo usuario:</label>
                                <select  id="tipo_usuario" class="form-control">
                                   <option value=""  selected="selected">Seleccionar Usuario</option>
-                                 <option value="room-service">Room-service</option>
-                                 <option value="roperia">Roperia</option>
-                                 <option value="seguridad">Seguridad</option>
-                                 <option value="generales">Generales</option>
+                                 <option value="1">Administrador</option>
+                                 <option value="1">Gerente</option>
+                                 <option value="2">Usuario</option>
+                                 <option value="2">Empleado</option>
                                </select>
 		                      </div>
                          </form>

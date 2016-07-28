@@ -90,7 +90,6 @@ require_once('../../programacion/clases/Administrador.php');
                           <th>Fecha</th>
                           <th>Hora</th>
                           <th>Descripción</th>
-                          <th>Empleado</th>
                           <th>Eliminar</th>
                           <th>Actualizar</th>
                         </tr>

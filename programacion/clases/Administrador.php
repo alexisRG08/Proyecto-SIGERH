@@ -12,24 +12,23 @@ class Administrador
 {
 	function mostrareventos(){
     $bd=new Database();
-    $sql="select * from eventoss";
+    $sql="select * from eventos";
       $resultado=$bd->ejecutar($sql);
       $cont1=0;
      $cont=0;
        while($fila=mysqli_fetch_array($resultado))
       {
-                  $id_evento=$fila['id_eventos'];
+                  $id_evento=$fila['ideventos'];
                    $nombre = $fila['nombre'];
                     $fecha = $fila['fecha']; 
                     $hora = $fila['hora'];
                     $descripcion = $fila['descripcion']; 
-                    $idempleado = $fila['empleados_id_empleado']; 
+                    
                    echo "<tr>";
                     echo "<td contenteditable><center> $nombre</center></td>";
                     echo "<td contenteditable> <center>$fecha</center></td>";
                    echo "<td contenteditable><center> $hora</center></td>";
                    echo "<td contenteditable><center> $descripcion</center></td>";
-                   echo "<td contenteditable><center> $idempleado</center></td>";
                    echo "<td><button type='submit'  class='btn btn-primary' onclick='deletevento($id_evento)' value='eliminar-evento'>Eliminar</button></td>"; 
                   echo " <td><button type='submit' class='btn btn-primary' onclick='updatevento($id_evento,$cont1)' value='actualizar-evento'>Actualizar</button></td>";
                     echo "</tr>"; 
