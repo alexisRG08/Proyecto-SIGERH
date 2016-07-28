@@ -20,7 +20,8 @@ if($_REQUEST['valor']=='mostrar_departamento')
    $area=$_REQUEST['area'];
    require_once('../../programacion/conexion/DataBase.php');
    $bd=new DataBase();
-   $sql="select * from departamentos";
+   $sql="select d.iddepartamentos, d.nombre_departamento from departamentos d innner join area a on d.iddepartamentos=a.departamentos_iddepartamentos where idarea='$area';";
+   //$sql="select from departamentos";
    $bd->ejecutar($sql);
    $resultados=$bd->ejecutar($sql);
    echo '<select class="form-control" id="dep_r">';

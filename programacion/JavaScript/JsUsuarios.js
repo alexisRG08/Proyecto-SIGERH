@@ -2,12 +2,12 @@ var conexionU;
 /******************************FUNCION PARA MOSTRAR EL DEPARTAMENTO***************************************************************/
 function mostrar_departamento()
 {
-  var area_r=document.getElementById("area_usuario").value;
+  var area=document.getElementById("area_usuario").value;
   var n=document.getElementById('depto_r').style.disabled='false';
   var valu= window.event.srcElement.getAttribute('value');
   conexionU=crearXMLHttpRequest3();
   conexionU.onreadystatechange =procesarMostrarDepto_r;
-  var variables="valor="+valu+"&area="+area_r;
+  var variables="valor="+valu+"&area="+area;
   conexionU.open("POST", "../ProyectoRH/programacion/Controlador/usuarios.php", true);
   conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexionU.send(variables);
