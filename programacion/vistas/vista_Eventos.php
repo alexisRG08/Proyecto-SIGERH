@@ -92,45 +92,23 @@ require_once('../../programacion/clases/Administrador.php');
                           <th>Descripción</th>
                           <th>Empleado</th>
                           <th>Eliminar</th>
+                          <th>Actualizar</th>
                         </tr>
                         </thead>
                       
                         <?php   
-
-                       
-                   $query = "SELECT * FROM  eventoss;";
-                    $conectar=mysqli_connect("localhost","root","root","mydb");
-                    $tildes = $conectar->query("SET NAMES 'utf8'"); 
-                    $result = mysqli_query($conectar, $query);
-                    while ($fila = mysqli_fetch_array($result)){
-                    $nombre = $fila['nombre'];
-                    $fecha = $fila['fecha']; 
-                    $hora = $fila['hora'];
-                    $descripcion = $fila['descripcion']; 
-                    $idempleado = $fila['empleados_id_empleado']; 
-                   echo "<tr>";
-                    echo "<td><center> $nombre</center></td>";
-                    echo "<td> <center>$fecha</center></td>";
-                   echo "<td><center> $hora</center></td>";
-                   echo "<td><center> $descripcion</center></td>";
-                   echo "<td><center> $idempleado</center></td>";
-                   echo "<td><button   class='btn btn-primary  type='submit'   value='agregar-empleado'>Eliminar</button></td>"; 
-                    echo "</tr>";   
-     }
-                   mysqli_free_result($result);
-                   mysqli_close($conectar);
-
+                         $mostrar=new Administrador();
+                          $mostrar->mostrareventos();
                     ?>     
                       
                          </table>
-                          </div>
-                        
+                       
                     
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" class="btn btn-success">Cerrar</button>
               </div>
-                    <div id="resultadoDia">
-                    
+                    <div id="resultadodatos">
+                   
                     </div>
                 </div><!--cierra modal-body--> 
       </div><!-- cierra modal-header-->

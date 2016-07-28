@@ -1,4 +1,7 @@
 var conexion2;
+var conexion3;
+var conexionU;
+var ajax;
 
 function agregareventos()
 {
@@ -16,12 +19,38 @@ function agregareventos()
   conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion2.send(variables);        
 }
+function deletevento(id_evento){
+  var eliminar = confirm("¿Esta Seguro de  eliminar este usuario?")
+  if ( eliminar ) {
+    ajax=crearXMLHttpRequest2();
+    ajax.onreadystatechange =procesarEliminarEvento;  
+    ajax.open("GET", "../ProyectoRH/programacion/Controlador/deleteevento.php?id_evento="+id_evento);
+    ajax.send(null)
+  }
 
-function limpiar_textito(datonombre,nomfecha,hora,descripc)
-{
- // alert("llegando al js");
-  alert("nombre:"+datonombre+"--y la fecha de hoy es "+nomfecha+"-- la hora:"+hora+"--descripcion:"+descripc);
 }
+function updatevento(id_evento,cont){
+  var celdas=document.getElementsByTagName('td');
+  for(var i=cont;i<celdas.length;i++)   // desde contador es menor al numero de celdas 
+      { 
+        var x=0;
+        while(x<6)
+          {
+        //    alert(celdas[i+x].innerHTML);
+            x++;
+          }
+    
+      conexionU=crearXMLHttpRequest2();
+      conexionU.onreadystatechange= procesar;
+      var btn=window.event.srcElement.getAttribute('value');
+     var variables='valor='+btn+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id;
+     conexionU.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+    conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+     conexionU.send(variables);
+     break;
+  }
+}
+
 
 function procesarAgregarEvento()
 
@@ -39,7 +68,38 @@ function procesarAgregarEvento()
     resultad.innerHTML = 'Cargando......';
   }
 }
+function procesar()
 
+{
+  var resultad = document.getElementById('resultadodatos'); 
+
+  if(conexionU.readyState == 4)
+  {
+    resultad.innerHTML = conexionU.responseText;
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
+  }
+}
+function procesarEliminarEvento()
+
+{
+  var resultad = document.getElementById('resultadodatos'); 
+
+  if(ajax.readyState == 4)
+  {
+    resultad.innerHTML = ajax.responseText;
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
+  }
+}
 
 
 

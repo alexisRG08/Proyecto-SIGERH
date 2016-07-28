@@ -10,7 +10,45 @@ require_once('../../programacion/conexion/DataBase.php');
 
 class Administrador
 {
-	
+	function mostrareventos(){
+    $bd=new Database();
+    $sql="select * from eventoss";
+      $resultado=$bd->ejecutar($sql);
+      $cont1=0;
+     $cont=0;
+       while($fila=mysqli_fetch_array($resultado))
+      {
+                  $id_evento=$fila['id_eventos'];
+                   $nombre = $fila['nombre'];
+                    $fecha = $fila['fecha']; 
+                    $hora = $fila['hora'];
+                    $descripcion = $fila['descripcion']; 
+                    $idempleado = $fila['empleados_id_empleado']; 
+                   echo "<tr>";
+                    echo "<td contenteditable><center> $nombre</center></td>";
+                    echo "<td contenteditable> <center>$fecha</center></td>";
+                   echo "<td contenteditable><center> $hora</center></td>";
+                   echo "<td contenteditable><center> $descripcion</center></td>";
+                   echo "<td contenteditable><center> $idempleado</center></td>";
+                   echo "<td><button type='submit'  class='btn btn-primary' onclick='deletevento($id_evento)' value='eliminar-evento'>Eliminar</button></td>"; 
+                  echo " <td><button type='submit' class='btn btn-primary' onclick='updatevento($id_evento,$cont1)' value='actualizar-evento'>Actualizar</button></td>";
+                    echo "</tr>"; 
+                    $cont++;
+                   $cont1=$cont1+7;   
+      }
+                  
+  }
+  function eliminar_evento($id_evento){
+   $bd=new Database();
+   $sql="delete from eventoss where id_eventos=$id_evento";
+   $bd->ejecutar($sql);
+   echo "eliminado evento";
+  }
+  function actualizar_evento($sql){
+$bd=new Database();
+$bd->ejecutar($sql);
+echo "Actualizado Correctamente";
+  }
 	function agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$numeroEmpleado,$puesto,$departamento,$curp,$numsocial)
 	{
 		$bd=new Database();
@@ -83,7 +121,7 @@ class Administrador
            echo "<br> Bienvenido! " . $_SESSION['usuario'];
            $this->validartipo($usuario);
            }else{
-            echo "Datos erroneos<br>";
+            echo "Información Incorrecta<br>";
               }   
   }
   function validartipo($dato){
