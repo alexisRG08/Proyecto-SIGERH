@@ -35,7 +35,7 @@ $bd=new DataBase();
                            </div>
          			          	 <div class="form-group">
          			               <label for="area-name" class="control-label">Area:</label>
-                             <select  id="area" class="form-control" value="mostrar_departamento" onchange="mostrar_departamento();" autocomplete="on">
+                             <select  id="area_usuario" class="form-control" value="mostrar_departamento" onchange="mostrar_departamento();" autocomplete="on">
                                 <option value="" selected="true">Selecciona el area</option>
                                  <?php
                                     
@@ -51,8 +51,8 @@ $bd=new DataBase();
                               </select>
                            </div>
                            <label for="departamento-name" class="control-label">Departamento:</label>
-                           <div class="form-group" id="depto">
-                              <select name="" disabled="disabled" id="dep" class="form-control">
+                           <div class="form-group" id="depto_r">
+                              <select name="" disabled="disabled" id="dep_r" class="form-control">
                               <option value=""  selected="selected"></option>
                               </select>
                            </div>

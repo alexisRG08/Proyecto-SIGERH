@@ -138,7 +138,6 @@ function eliminarEmpleado(id,t)
     conexionU.send(variables);
     eliminar_fila(t);
    conexionU.responseText;
-   refrescar_tabla();
    }
    else
    {

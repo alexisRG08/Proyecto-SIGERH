@@ -38,6 +38,7 @@ class Administrador
       }
                   
   }
+  
   function eliminar_evento($id_evento){
    $bd=new Database();
    $sql="delete from eventoss where id_eventos=$id_evento";

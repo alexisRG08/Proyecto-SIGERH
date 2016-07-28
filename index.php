@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../ProyectoRH/css/estilos.css"/>
 <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
  <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
+ <script src="../ProyectoRH/programacion/JavaScript/JsUsuarios.js"></script>
  <script src="../ProyectoRH/programacion/JavaScript/Jslogin.js"></script>
 <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
 <script type="text/javascript">
