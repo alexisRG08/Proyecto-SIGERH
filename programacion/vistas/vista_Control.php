@@ -131,7 +131,7 @@ $bd=new Database();
   </div><!-- cierra modal-dialog-->
 </div>  <!-- cierra modal-fade-->
 </div><!--cierra container--> 
-<!-- ------------------------------ Formulario de Ver empleados--------------------- -->            
+<!-- ------------------------------ Tabla de Ver empleados--------------------- -->            
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" >
     <div class="modal-content" >
@@ -145,23 +145,23 @@ $bd=new Database();
                             <input type="text" class="form-control" id="buscar-empleado" placeholder="Buscar empleado">
                         </div>
                         <div class="form-group">
-                        	<button   class="btn btn-primary" type="submit"   value="agregar-empleado">Buscar</button>
+                        	<button   class="btn btn-primary" type="submit"   value="">Buscar</button>
                         </div>
-                      <div class="form-group">
-                        <div class="table-responsive">
+                      <div class="form-group" id="tabla_empleados">
+                       <!-- <div class="table-responsive">
                           <table class="table table-bordered table-hover table-condensed table table-striped">
                           <tr>
                             <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
                             <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
                             <th>Actualizar</th><th>Eliminar</th>
-                          </tr>
+                          </tr>-->
                           <?php
                           require_once ('../../programacion/clases/Administrador.php');
                           $mostrar=new Administrador();
                           $mostrar->mostrar_empleados();
                            ?>       
-                          </table>
-                        </div>  
+                         <!-- </table>
+                        </div> --> 
                        </div>
                   </form>
 
