@@ -38,12 +38,10 @@ $bd=new DataBase();
                                           echo "<option value='".$row['departamentos_iddepartamentos']."'>";
                                           echo $row['nombre_area'];
                                           echo "</option>";
-                                          llenardepar($row['departamentos_iddepartamentos']);
+                                         
                                         } 
 
-                                        function llenardepar($depa){
-                                          echo $depa;
-                                        }
+                                  
                                  ?>
                               </select>
                            </div>

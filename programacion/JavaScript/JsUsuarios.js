@@ -76,9 +76,9 @@ var usuario=document.getElementById('usuario').value='';
 function mostrar_departamento()
 {
 
-  var area=document.getElementById("area").value;
+  var areaa=document.getElementById("area").value;
   var valu= window.event.srcElement.getAttribute('value');
-  alert(area);
+  alert(areaa);
   alert("mostrar");
    var n=document.getElementById('depto').style.disabled='false';
    conexionU=crearXMLHttpRequest3();
