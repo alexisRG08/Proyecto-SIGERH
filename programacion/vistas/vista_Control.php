@@ -61,12 +61,13 @@ $bd=new Database();
                             <input type="text" class="form-control" id="rfc-empleado" placeholder="RFC del empleado">
                           </div>
                           <div class="form-group">
-                            <label for="estudio-empleado" class="control-label">Nivel de estudio del empleado:</label>
-                            <input type="text" class="form-control" id="estudio-empleado" placeholder="Nivel de estudio del empleado">
-                          </div>
-                          <div class="form-group">
-                            <label for="num-empleado" class="control-label">Numero de empleado:</label>
-                            <input type="number" class="form-control" id="num-empleado" placeholder="Numero del empleado">
+                            <label for="estudio-empleado" class="control-label">Nivel de estudio:</label>
+                            <select id="estudio-empleado" class="form-control">
+                              <option selected="selected" value="">Selecciona nivel de estudio</option>
+                              <option value="ingenieria">Ingenieria</option>
+                              <option value="tecnico">Tecnico</option>
+                              <option value="preparatoria">Preparatoria</option>
+                            </select>
                           </div>
                           <div class="form-group">
                             <label for="puesto-empleado" class="control-label">Puesto del empleado:</label>
@@ -108,6 +109,13 @@ $bd=new Database();
                           <div class="form-group">
                             <label for="numsocial-empleado" class="control-label">Numero del seguro social del empleado:</label>
                             <input type="number" class="form-control" id="numsocial-empleado" placeholder="Numero del seguro social del empleado">
+                          </div>
+                          <div class="form-group">
+                            <label for="estado-empleado" class="control-label">Estado del empleado:</label>
+                            <select id="estado-empleado" class="form-control">
+                              <option selected="selected" value="">selecciona el estado del empleado</option>
+                              <option value="Alta">Alta</option>
+                            </select>
                           </div>
                      </form>
                      <div class="modal-footer">

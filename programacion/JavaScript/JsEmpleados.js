@@ -10,11 +10,11 @@ function agregarEmpleado()
   var fechaNacimiento=document.getElementById('fecha-nac').value;
   var rfcEmpleado=document.getElementById('rfc-empleado').value;
   var estudio=document.getElementById('estudio-empleado').value;
-  var numeroEmpleado=document.getElementById('num-empleado').value;
   var puesto=document.getElementById('puesto-empleado').value;
   var departamento=document.getElementById('departamento-empleado').value;
   var curp=document.getElementById('curp-empleado').value;
   var numsocial=document.getElementById('numsocial-empleado').value;
+  var estado=document.getElementById('estado-empleado').value;
   var valor= window.event.srcElement.getAttribute('value');
   conexion1=crearXMLHttpRequest2();
 
