@@ -12,17 +12,17 @@ if($_REQUEST['valor']=='agregar-empleado')
 	$fechaNacimiento = $_REQUEST['fechaNacimiento'];
 	$rfcEmpleado = $_REQUEST['rfcEmpleado'];
 	$estudio = $_REQUEST['estudio'];
-	$numeroEmpleado = $_REQUEST['numeroEmpleado'];
 	$puesto = $_REQUEST['puesto'];
 	$departamento = $_REQUEST['departamento'];
 	$curp = $_REQUEST['curp'];
 	$numsocial = $_REQUEST['numsocial'];
+	$estado= $_REQUEST['estado'];
 	if($nombre==null){
      echo "<font color='red'>**Ingresa el nombre del empleado <font>";
 	}else{
 
 	$admin=new Administrador();
-	$admin->agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$numeroEmpleado,$puesto,$departamento,$curp,$numsocial);
+	$admin->agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$puesto,$departamento,$curp,$numsocial,$estado);
 	}	
 }
 ?>

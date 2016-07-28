@@ -152,7 +152,7 @@ $bd=new Database();
                           <table class="table table-bordered table-hover table-condensed table table-striped">
                           <tr>
                             <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
-                            <th>Nivel de estudio</th><th>Numero de empleado</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th>
+                            <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
                             <th>Actualizar</th><th>Eliminar</th>
                           </tr>
                           <?php

@@ -19,8 +19,8 @@ function agregarEmpleado()
   conexion1=crearXMLHttpRequest2();
 
   conexion1.onreadystatechange =procesarAgregarEmpleado;
-  var variables="valor="+valor+"&nombre="+nombre+"&apellido="+apellido+"&direccion="+direccion+"&telefono="+telefono+"&edad="+edad+"&fechaNacimiento="+fechaNacimiento+"&rfcEmpleado="+rfcEmpleado+"&estudio="+estudio+"&numeroEmpleado="+numeroEmpleado+
-  "&puesto="+puesto+"&departamento="+departamento+"&curp="+curp+"&numsocial="+numsocial;
+  var variables="valor="+valor+"&nombre="+nombre+"&apellido="+apellido+"&direccion="+direccion+"&telefono="+telefono+"&edad="+edad+"&fechaNacimiento="+fechaNacimiento+"&rfcEmpleado="+rfcEmpleado+"&estudio="+estudio+
+  "&puesto="+puesto+"&departamento="+departamento+"&curp="+curp+"&numsocial="+numsocial+"&estado="+estado;
   conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
   conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion1.send(variables);
@@ -37,11 +37,11 @@ function limpiar_texto()
   var fechaNacimiento=document.getElementById('fecha-nac').value="";
   var rfcEmpleado=document.getElementById('rfc-empleado').value="";
   var estudio=document.getElementById('estudio-empleado').value="";
-  var numeroEmpleado=document.getElementById('num-empleado').value="";
   var puesto=document.getElementById('puesto-empleado').value="";
   var departamento=document.getElementById('departamento-empleado').value="";
   var curp=document.getElementById('curp-empleado').value="";
   var numsocial=document.getElementById('numsocial-empleado').value="";
+  var estado=document.getElementById('estado-empleado').value="";
 }
 
 function procesarAgregarEmpleado()

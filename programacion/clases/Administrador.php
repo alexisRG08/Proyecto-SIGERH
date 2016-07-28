@@ -49,11 +49,11 @@ $bd=new Database();
 $bd->ejecutar($sql);
 echo "Actualizado Correctamente";
   }
-	function agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$numeroEmpleado,$puesto,$departamento,$curp,$numsocial)
+	function agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$puesto,$departamento,$curp,$numsocial,$estado)
 	{
 		$bd=new Database();
-       	$sql="insert into empleados (nombre,apellidos,direccion,telefono,edad,fechanacimiento,rfc,escolaridad,numero_empleado,Tipo_empleo_idTipo_empleo,departamentos_iddepartamentos,curp,nsocial) values
-       		('$nombre','$apellido','$direccion','$telefono','$edad','$fechaNacimiento','$rfcEmpleado','$estudio','$numeroEmpleado','$puesto','$departamento','$curp','$numsocial')";
+       	$sql="insert into empleados (nombre,apellidos,direccion,telefono,edad,fechanacimiento,rfc,escolaridad,Tipo_empleo_idTipo_empleo,departamentos_iddepartamentos,curp,nsocial,status) values
+       		('$nombre','$apellido','$direccion','$telefono','$edad','$fechaNacimiento','$rfcEmpleado','$estudio','$puesto','$departamento','$curp','$numsocial','$estado')";
        	$bd->ejecutar($sql);
 	}
 
@@ -82,11 +82,11 @@ echo "Actualizado Correctamente";
         $campo6 = $fila['fechanacimiento'];
         $campo7 = $fila['rfc'];
         $campo8 = $fila['escolaridad'];
-        $campo9 = $fila['numero_empleado'];
-        $campo10 = $fila['Tipo_empleo_idTipo_empleo'];
-        $campo11 = $fila['departamentos_iddepartamentos'];
-        $campo12 = $fila['curp'];
-        $campo13 = $fila['nsocial'];
+        $campo9 = $fila['Tipo_empleo_idTipo_empleo'];
+        $campo10 = $fila['departamentos_iddepartamentos'];
+        $campo11 = $fila['curp'];
+        $campo12 = $fila['nsocial'];
+        $campo13 = $fila['status'];
         echo"<tr>";
               echo"<td>$campo1</td>";
               echo"<td>$campo2</td>";
