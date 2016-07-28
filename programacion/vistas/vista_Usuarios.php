@@ -25,6 +25,42 @@ $bd=new DataBase();
                             <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="exampleModalLabel">Nuevo usuario</h4>
          			              <form>
+                               <div class="form-group">
+                             <label for="area-name" class="control-label">Area:</label>
+                             <select  name="area" id="area" class="form-control" value="mostrar_departamento" onchange=" mostrar_departamento();" autocomplete="on">
+                                <option value="" selected="true">Selecciona el area</option>
+                                 <?php
+        
+                                    $sql="select * from area";
+                                    $resultados=$bd->ejecutar($sql);
+                                    while($row=mysqli_fetch_array($resultados))
+                                        {
+                                          echo "<option value='".$row['departamentos_iddepartamentos']."'>";
+                                          echo $row['nombre_area'];
+                                          echo "</option>";
+                                          llenardepar($row['departamentos_iddepartamentos']);
+                                        } 
+
+                                        function llenardepar($depa){
+                                          echo $depa;
+                                        }
+                                 ?>
+                              </select>
+                           </div>
+                             <label for="departamento-name" class="control-label">Departamento:</label>
+                           <div class="form-group" id="depto">
+                              <select name=""  id="dep" class="form-control">
+                              <option value=""  selected="selected">selecciona una opción</option>
+                              </select>
+                           </div>
+                             
+                             <label for="empleado-name" class="control-label">Empleado:</label>
+                           <div class="form-group" id="depto">
+                              <select name=""  id="dep" class="form-control">
+                              <option value=""  selected="selected"></option>
+                              </select>
+                           </div>
+
                             <div class="form-group">
                               <label for="usuario-name" class="control-label">Usuario:</label>
                               <input type="text" class="form-control" id="usuario" placeholder="Usuario del empleado">
@@ -33,37 +69,12 @@ $bd=new DataBase();
                              <label for="password-name" class="control-label">Password:</label>
                              <input type="text" class="form-control" id="password" placeholder="Password del empleado">
                            </div>
-         			          	 <div class="form-group">
-         			               <label for="area-name" class="control-label">Area:</label>
-                             <select  id="area" class="form-control" value="mostrar_departamento" onchange="mostrar_departamento();" autocomplete="on">
-                                <option value="" selected="true">Selecciona el area</option>
-                                 <?php
-                                    
-                                    $sql="select * from area";
-                                    $resultados=$bd->ejecutar($sql);
-                                    while($row=mysqli_fetch_array($resultados))
-                                        {
-                                          echo "<option value='".$row['id_area']."'>";
-                                          echo $row['nombre_area'];
-                                          echo "</option>";
-                                        } 
-                                 ?>
-                              </select>
-                           </div>
-                           <label for="departamento-name" class="control-label">Departamento:</label>
-                           <div class="form-group" id="depto">
-                              <select name="" disabled="disabled" id="dep" class="form-control">
-                              <option value=""  selected="selected"></option>
-                              </select>
-                           </div>
+         			          	
                           <div class="form-group">
                                <label for="area-name" class="control-label">Tipo usuario:</label>
                                <select  id="tipo_usuario" class="form-control">
                                   <option value=""  selected="selected">Seleccionar Usuario</option>
-                                 <option value="room-service">Room-service</option>
-                                 <option value="roperia">Roperia</option>
-                                 <option value="seguridad">Seguridad</option>
-                                 <option value="generales">Generales</option>
+                                 <option value="room-service">Administrador</option>
                                </select>
 		                      </div>
                          </form>

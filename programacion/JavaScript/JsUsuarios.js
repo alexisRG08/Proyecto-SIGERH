@@ -79,11 +79,12 @@ function mostrar_departamento()
   var area=document.getElementById("area").value;
   var valu= window.event.srcElement.getAttribute('value');
   alert(area);
+  alert("mostrar");
    var n=document.getElementById('depto').style.disabled='false';
    conexionU=crearXMLHttpRequest3();
    conexionU.onreadystatechange =procesarMostrarDepto;
    var variables="valor="+valu+"&area="+area;
-   conexionU.open("POST", "../SecretsTheVine/programacion/Controlador/usuarios.php", true);
+   conexionU.open("POST", "../ProyectoRH/programacion/Controlador/usuarios.php", true);
    conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
    conexionU.send(variables);
 }
