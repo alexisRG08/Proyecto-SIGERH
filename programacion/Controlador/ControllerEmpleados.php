@@ -40,7 +40,8 @@ if($_REQUEST['valor']=='actualizar-evento'){
        if ($descripcion==null) {
          echo "<center>Ingrese la descripcion del evento</center>";
        }else{
-        $sql="UPDATE eventoss SET descripcion=0 WHERE  id_detail=$id_evento ;";
+
+        $sql="UPDATE eventoss SET nombre='$nombre', fecha='$fecha',  hora='$hora', descripcion='$descripcion' WHERE  id_eventos=$id_evento ;";
         $actualizar=new Administrador();
         $actualizar->actualizar_evento($sql);
        }

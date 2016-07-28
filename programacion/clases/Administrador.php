@@ -47,7 +47,7 @@ class Administrador
   function actualizar_evento($sql){
 $bd=new Database();
 $bd->ejecutar($sql);
-echo "Actualizado Correctamente";
+echo "Datos actualizados";
   }
 	function agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$puesto,$departamento,$curp,$numsocial,$estado)
 	{

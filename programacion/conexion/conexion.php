@@ -2,6 +2,6 @@
 define("host","localhost");
 define("usuario","root");
 
-define("contrasenia", "");
-define("nombre_basedatos","recursosh");
+define("contrasenia", "root");
+define("nombre_basedatos","mydb");
 ?>

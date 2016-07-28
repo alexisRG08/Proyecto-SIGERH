@@ -14,7 +14,7 @@
 <script type="text/javascript">
 function cerrar(){
  document.getElementById("slides").style.display="none"; 
- document.getElementById("list-group").style.display="none"; 
+ document.getElementById("list-group").style.display="none";
  
 }
 function ver(){
@@ -26,19 +26,13 @@ function ver(){
 document.getElementById("ocultarempleados").style.display="none";  
 document.getElementById("ocultarcapcitacion").style.display="none"; 
 document.getElementById("ocultarusuarios").style.display="none";
-document.getElementById("ocultarlogout").style.display="none";
+document.getElementById("ocultarlogout").style.display="none";  
+document.getElementById("redessociales").style.display="none"; 
+
 
 };
 </script>
-<style type="text/css">
-#mostrarmsj{
-  width: 250px;
-  height: 30px;
-  text-align: center;
-  font-size: 20px;
-  color: red;
-}
-</style>
+
 </head>
 
 <body>
@@ -105,11 +99,20 @@ document.getElementById("ocultarlogout").style.display="none";
             
             </section>
                       
-             <aside class="col-md-3">
+             <aside class="col-md-3" id="loginform">
+               <h3>INICIO DE SESIÓN</h3>
               </br>
-              </br>
-              </br>
+             <img class="img-circle" id="img_logo" src="img/user.png">
               <form id="forminicio">
+
+                    
+                  <div class="form-group">  
+                <div id="div-login-msg">
+                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                <span id="text-login-msg">Escribe tu usuario y contraseña.</span>
+                </div>
+              </div>
+
                <div class="form-group">
                <label class="sr-only" for="exampleInputEmail3">Usuario</label>
                 <input type="text" class="form-control" id="usuario" placeholder="Usuario" autocomplete="off">
@@ -118,6 +121,13 @@ document.getElementById("ocultarlogout").style.display="none";
                 <label class="sr-only" for="exampleInputPassword3">Contraseña</label>
                 <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
               </div>
+               <div class="form-group">
+                <div class="checkbox">
+                <label>
+                <input type="checkbox"> Remember me
+                </label>
+                </div>
+               </div>
                </form>
               <div class="form-group">
                 <button type="submit" id="btnsesion"class="btn btn-primary" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
@@ -129,21 +139,21 @@ document.getElementById("ocultarlogout").style.display="none";
         
      					
      		</aside>
-  <!--     <aside class="col-md-3">
+      <aside class="col-md-3" id="redessociales"><br><br>
           <h4 style="color:#06C;">Siguenos en:</h4>
               <div class="list-group" id="list-group">
                 <a href="http://www.facebook.com" target="_blank" class="list-group-item primero">
                         <img src="fonts/glyphicons_social/png/social-31-facebook.png"> Facebook</a>
-            <a href="http://www.twitter.com" target="_blank" class="list-group-item segundo">
+          <a href="http://www.twitter.com" target="_blank" class="list-group-item segundo">
                         <img src="fonts/glyphicons_social/png/social-32-twitter.png">Twitter</a>
             <a href="http://www.youtube.com" target="_blank"  class="list-group-item tercero">
                         <img src="fonts/glyphicons_social/png/social-23-youtube.png"> Youtube</a>
             <a href="http://www.pinterest.com" target="_blank" class="list-group-item cuarto">
                         <img src="fonts/glyphicons_social/png/social-1-pinterest.png"> Pinterest</a>
-            <a href="http://www.instagram.com" target="_blank" class="list-group-item quinto">
-                        <img src="fonts/glyphicons_social/png/social-33-instagram.png"> Instagram</a>
+            <a href="http://www.instagram.com" target="_blank" class="list-group-item quinto"> 
+                       <img src="fonts/glyphicons_social/png/social-33-instagram.png"> Instagram</a>  
               </div>
-        </aside>    --> 
+        </aside>    
     
          </div>
 	

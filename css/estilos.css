@@ -9,7 +9,9 @@
 
 body
 {
-	background:#CCC;
+	/*background:#CCC;  */
+	background-image: url("../img/fondo.jpg");
+	background-attachment:fixed;
 	padding-top:80px;
 }
 #tam
@@ -133,4 +135,38 @@ img #estrella
 	font-size: 20px;
 	font-weight: inherit;
 	 box-shadow: 0 8px 6px -6px black;
+}
+#mostrarmsj{
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: red;
+}
+#div-login-msg{
+  border: 1px solid #dadfe1;
+    height: 30px;
+    line-height: 28px;
+    transition: all ease-in-out 500ms;
+
+}
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: 50px;
+}
+#loginform{
+ border-radius: 10px 10px 10px 10px;
+  /*  border-left: 1px solid #4A4A4A;
+    border-right: 1px solid #4A4A4A;  */
+    padding-left: 10px;
+    margin-top: 15px;
+      box-shadow:0px 0px 15px 0px rgba(0,0,0,0.8); 
+}
+#loginform h3{
+  text-align: center;
+  font-family: verdana;
+}
+#btnsesion{
+  margin-left: 30px;
 }
