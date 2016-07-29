@@ -8,15 +8,10 @@ if($_REQUEST['valor']=='agregar_usuario')
 	$departamento=$_REQUEST['departamento'];
 	$tipo_usuario=$_REQUEST['tipo_usuario'];
     
-     echo $departamento;
+  echo $departamento;
 	$Administrador=new Administrador();
-     $Administrador-> agregar_usuario($nickname,$password,$departamento,$tipo_usuario);
-      
-     /*echo '<div class=modal-body>';
-     echo '<div class=alert-success>';
-     echo '<br>REPORTE ENVIADO EXITOSAMENTE <br> <br>';
-     echo  '</div>';
-     echo  '</div>';*/
+  $Administrador-> agregar_usuario($nickname,$password,$departamento,$tipo_usuario);
+    
 
 }
 
@@ -25,39 +20,18 @@ if($_REQUEST['valor']=='mostrar_departamento')
    $area=$_REQUEST['area'];
    require_once('../../programacion/conexion/DataBase.php');
    $bd=new DataBase();
-   $sql="select * from departamentos where area_idarea=$area;";
+   $sql="select * from departamentos";
    $bd->ejecutar($sql);
    $resultados=$bd->ejecutar($sql);
-   echo '<select class="form-control" id="departamento">';
+   echo '<select class="form-control" id="dep_r">';
    while($row=mysqli_fetch_array($resultados))
        {
-         echo "<option value='".$row['id_departamento']."'>";
+         echo "<option value='".$row['iddepartamento']."'>";
          echo $row['nombre_departamento'];
          echo "</option>";
       } 
        echo '</select>';
     
-}
-
-if($_REQUEST['valor']=='eliminar_usuario')
-{
-   
-    $id_colaborador=$_REQUEST['colaborador'];
-    $Administrador=new Administrador();
-    $Administrador->eliminar_usuario($id_colaborador);
-      
-}
-
-
-if($_REQUEST['valor']=='actualizar_usuario')
-{
-   
-    $usuario=$_REQUEST['usuario'];
-     $contrasenia=$_REQUEST['contrasenia'];
-      $id_colaborador=$_REQUEST['id'];
-    $Administrador=new Administrador();
-    $Administrador->actualizar_usuario($usuario,$contrasenia,$id_colaborador);
-      
 }
 
  ?>

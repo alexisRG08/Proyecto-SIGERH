@@ -147,7 +147,6 @@ require_once('../../programacion/clases/Administrador.php');
   </div><!-- cierra modal-dialog-->
 </div>  <!-- cierra modal-fade-->
 </div><!--cierra container--> 
-<!------------------------------------------Javascript----------------------------------------------------------------- -->
 
 </body>
 </html>
