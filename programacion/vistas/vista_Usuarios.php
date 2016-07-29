@@ -35,12 +35,12 @@ $bd=new DataBase();
                            </div>
          			          	 <div class="form-group">
          			               <label for="area-name" class="control-label">Area:</label>
-                             <select  id="area_usuario" class="form-control" value="mostrar_departamento" onchange="mostrar_departamento();" autocomplete="on">
-                                <option value="" selected="true">Selecciona el area</option>
+                             <select  id="area_usu" class="form-control" value="mostrar_departamento" onchange="mostrar_departamento();" autocomplete="on">
+                                <option  selected="true">Selecciona el area</option>
                                  <?php
                                     
                                     $sql="select * from area";
-                                    $resultados=$bd->ejecutar($sql);
+                                    $resultados=$bd->ejecutar($sql); 
                                     while($row=mysqli_fetch_array($resultados))
                                         {
                                           echo "<option value='".$row['id_area']."'>";

@@ -20,18 +20,19 @@ if($_REQUEST['valor']=='mostrar_departamento')
    $area=$_REQUEST['area'];
    require_once('../../programacion/conexion/DataBase.php');
    $bd=new DataBase();
-   $sql="select * from departamentos";
+   $sql="select d.iddepartamentos, d.nombre_departamento from departamentos d INNER JOIN area a on d.iddepartamentos=a.departamentos_iddepartamentos where a.idarea=$area";
+   //$sql="select * from departamentos";
+   echo $sql;
    $bd->ejecutar($sql);
    $resultados=$bd->ejecutar($sql);
    echo '<select class="form-control" id="dep_r">';
    while($row=mysqli_fetch_array($resultados))
        {
-         echo "<option value='".$row['iddepartamento']."'>";
+         echo "<option value='".$row['iddepartamentos']."'>";
          echo $row['nombre_departamento'];
          echo "</option>";
       } 
-       echo '</select>';
-    
+       echo '</select>'; 
 }
 
  ?>
