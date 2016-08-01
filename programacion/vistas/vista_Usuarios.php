@@ -47,12 +47,7 @@ $bd=new DataBase();
                                           echo $row['nombre_area'];
                                           echo "</option>";
                                          
-                                        } 
-
-                                  
-
-                                        
-
+                                        }  
                                  ?>
                               </select>
                            </div>

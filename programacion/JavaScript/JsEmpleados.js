@@ -13,6 +13,7 @@ function agregarEmpleado()
   var puesto=document.getElementById('puesto-empleado').value;
   var departamento=document.getElementById('departamento-empleado').value;
   var curp=document.getElementById('curp-empleado').value;
+  var numsocial=document.getElementById('numsocial-empleado').value
   var estado=document.getElementById('estado-empleado').value;
   var valor= window.event.srcElement.getAttribute('value');
   conexion1=crearXMLHttpRequest2();
@@ -89,24 +90,26 @@ function procesarAgregarEmpleado()
   }
 }
 
-function actualizarEmpleado(id,cont)
+function actualizarEmpleado(id,cont) 
 {
-  alert(cont);
-  alert('id:'+id);
-  var celdas= document.getElementByTagName('td');
+  alert(cont); 
+  alert('id:'+id); 
+  var celdas= document.getElementsByTagName('td'); 
   for (var i = cont; i < celdas.length; i++) 
   {
     var x=0;
-    while(x<13)
+    while(x<13) 
     {
      alert(celdas[i+x].innerHTML);
      x++;
     }
     conexion1=crearXMLHttpRequest2();
-    conexion1.onreadystatechange=procesar;
+    conexion1.onreadystatechange=procesar1;
     var btn=window.event.srcElement.getAttribute('value');
-    var variables=
-    conexion1.open("POST", "../ORM/update.php", true);
+    var variables='&id='+id+'valor='+btn+'&nombre='+celdas[i].innerHTML+'&apellido='+celdas[i+1].innerHTML+'&direccion='+celdas[i+2].innerHTML+'&telefono='+celdas[i+3].innerHTML+
+    '&edad='+celdas[i+4].innerHTML+'&fechaNacimiento='+celdas[i+5].innerHTML+'&rfcEmpleado='+celdas[i+6].innerHTML+'&estudio='+celdas[i+7].innerHTML+'&curp='+celdas[i+10].innerHTML+
+    '&numsocial='+celdas[i+11].innerHTML+'&estado='+celdas[i+12].innerHTML;
+    conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);
     break;

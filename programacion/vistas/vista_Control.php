@@ -70,7 +70,7 @@ $bd=new Database();
                             </select>
                           </div>
                           <div class="form-group">
-                            <label for="puesto-empleado" class="control-label">Puesto del empleado:</label>
+                            <label for="puesto-empleado" class="control-label">Puesto del empleado:</label> 
                             <select id="puesto-empleado" class="form-control">
                             <option selected="selected" value="">Selecciona puestos</option>
                               <?php
@@ -178,16 +178,25 @@ $bd=new Database();
   </div><!-- cierra modal-dialog-->
 </div>  <!-- cierra modal-fade-->
 </div><!--cierra container--> 
-<!-- ------------------------------ Formulario de bajas / altas de empleados--------------------- -->            
+<!-- ------------------------------ Tabla de bajas / altas de empleados--------------------- -->            
 <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+  <div class="modal-dialog modal-lg" >
     <div class="modal-content" >
       <div class="modal-header">
         <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="exampleModalLabel">Altas / Bajas de empleados</h4>
                 <div class="modal-body">
                   <form>
-                         
+                         <div class="form-group">
+                            <label for="consult-em" class="control-label">Consultar empleados:</label>
+                             <select name="" id="" class="form-control" onchange="">
+                                <option value="Altas">Altas</option>
+                                <option value="Bajas">Bajas</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <button   class="btn btn-primary" type="submit"   value="">Buscar</button>
+                          </div>
                   </form>
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

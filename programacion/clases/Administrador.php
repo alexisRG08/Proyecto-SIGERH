@@ -62,6 +62,10 @@ echo "Datos actualizados";
         $sql="update empleados set status='Baja' where id_empleado=$id_empleado;";
         $bd->ejecutar($sql);
         echo $sql;
+  }
+  function actualizar_empleado()
+  {
+
   }      
 
 	function agregar_usuario($nickname,$password,$tipo_usuario)
@@ -74,7 +78,7 @@ echo "Datos actualizados";
 	}
 	function mostrar_empleados(){ 
 		  $bd=new Database();
-      $sql="select * from empleados where status='activo'";
+      $sql="select * from empleados where status='alta'";
       $resultado=$bd->ejecutar($sql);
       $cont=0;
       $cont1=0;
@@ -88,6 +92,7 @@ echo "Datos actualizados";
       while($fila=mysqli_fetch_array($resultado))
       {
         $cont=0;
+        $cont1=0;
         $idd = $fila['id_empleado'];
         $campo1 = $fila['nombre'];
         $campo2 = $fila['apellidos'];
@@ -104,25 +109,25 @@ echo "Datos actualizados";
         $campo13 = $fila['status'];
      
         echo"<tr>";
-              echo"<td>$campo1</td>";
-              echo"<td>$campo2</td>";
-              echo"<td>$campo3</td>";
-              echo"<td>$campo4</td>";
-              echo"<td>$campo5</td>";
-              echo"<td>$campo6</td>";
-              echo"<td>$campo7</td>";
-              echo"<td>$campo8</td>";
-              echo"<td>$campo9</td>";
-              echo"<td>$campo10</td>";
-              echo"<td>$campo11</td>";
-              echo"<td>$campo12</td>";
-              echo"<td>$campo13</td>";
-              echo"<td><button type='button' class='btn btn-primary' value='actualizarEmpleado' onclick='actualizarEmpleado($idd,$cont1);'>Actualizar</button></td>";
+              echo"<td contenteditable>$campo1</td>";
+              echo"<td contenteditable>$campo2</td>";
+              echo"<td contenteditable>$campo3</td>";
+              echo"<td contenteditable>$campo4</td>";
+              echo"<td contenteditable>$campo5</td>";
+              echo"<td contenteditable>$campo6</td>";
+              echo"<td contenteditable>$campo7</td>";
+              echo"<td contenteditable>$campo8</td>";
+              echo"<td >$campo9</td>";
+              echo"<td >$campo10</td>";
+              echo"<td contenteditable>$campo11</td>";
+              echo"<td contenteditable>$campo12</td>";
+              echo"<td contenteditable>$campo13</td>";
+              echo"<td><button type='button' class='btn btn-primary' value='actualizar' onclick='actualizarEmpleado($idd,$cont1);'>Actualizar</button></td>";
               echo"<td><button type='button' class='btn btn-primary' value='eliminar-empleado' onclick='eliminarEmpleado($idd,$cont)'>Eliminar</button></td>";
         echo"</tr>";
        
               $cont++;
-              $cont1=$cont1+13;
+              $cont1=$cont1+14;
       } 
        echo"</table>
              </div>";     
