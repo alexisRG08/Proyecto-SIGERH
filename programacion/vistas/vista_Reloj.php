@@ -41,15 +41,18 @@ width: 200px;
 
 
                     <form>
-                    <div class="form-group" id="seleccionaropcion">
+                    <div class="form-group col-md-4" id="seleccionaropcion" >
                       <label for="entrada-empleado" id="control-reloj">Elija una opción:</label>
                       <select class="form-control">
-                      <option>entrada</option>
+                      <option>Entrada</option>
                       <option>Salida</option>
                       </select>
-                      <label for="entrada-empleado" class="control-label"  id="control-reloj">Numero de empleado:</label><br> <br>
-                      <input type="number" id="numberemployee" placeholder="Numero del empleado"><br>
-                       <button type="button" class="btn btn-success" data-dismiss="modal">Registrar Entrada</button>
+                      <br>
+                      <div class="form-group">
+                            <label for="num-empleado" class="control" id="control-reloj">Numero del empleado:</label>
+                            <input type="number" class="form-control" id="" placeholder="Numero del empleado">
+                      </div>
+                       <button type="button" class="btn btn-primary" data-dismiss="modal">Registrar Entrada</button>
                     </div>
                   </form>
 
