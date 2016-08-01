@@ -98,7 +98,7 @@ function actualizarEmpleado(id,cont)
   for (var i = cont; i < celdas.length; i++) 
   {
     var x=0;
-    while(x<13) 
+    while(x<14) 
     {
      alert(celdas[i+x].innerHTML);
      x++;

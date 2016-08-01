@@ -26,7 +26,7 @@ function ver(){
  window.onload = function() {
 document.getElementById("ocultarempleados").style.display="none";  
 document.getElementById("ocultarcapcitacion").style.display="none"; 
-//document.getElementById("ocultarusuarios").style.display="none";
+document.getElementById("ocultarusuarios").style.display="none";
 document.getElementById("ocultarlogout").style.display="none";  
 document.getElementById("redessociales").style.display="none"; 
 
