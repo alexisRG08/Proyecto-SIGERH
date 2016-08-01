@@ -47,8 +47,9 @@ function limpiar_texto()
 function refrescar_tabla()
 {
  
-  conexion1.onreadystatechange =procesar1;
+  
   var valor="Refrescar";
+  var valor= window.event.srcElement.getAttribute('value');
   var variables="valor="+valor;
   conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
   conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
@@ -98,7 +99,7 @@ function actualizarEmpleado(id,cont)
   for (var i = cont; i < celdas.length; i++) 
   {
     var x=0;
-    while(x<14) 
+    while(x<13) 
     {
      alert(celdas[i+x].innerHTML);
      x++;
@@ -106,9 +107,10 @@ function actualizarEmpleado(id,cont)
     conexion1=crearXMLHttpRequest2();
     conexion1.onreadystatechange=procesar1;
     var btn=window.event.srcElement.getAttribute('value');
-    var variables='&id='+id+'valor='+btn+'&nombre='+celdas[i].innerHTML+'&apellido='+celdas[i+1].innerHTML+'&direccion='+celdas[i+2].innerHTML+'&telefono='+celdas[i+3].innerHTML+
+    alert('bton'+btn);
+    var variables="&id_empleado="+id+'&valor='+btn+'&nombre='+celdas[i].innerHTML+'&apellido='+celdas[i+1].innerHTML+'&direccion='+celdas[i+2].innerHTML+'&telefono='+celdas[i+3].innerHTML+
     '&edad='+celdas[i+4].innerHTML+'&fechaNacimiento='+celdas[i+5].innerHTML+'&rfcEmpleado='+celdas[i+6].innerHTML+'&estudio='+celdas[i+7].innerHTML+'&curp='+celdas[i+10].innerHTML+
-    '&numsocial='+celdas[i+11].innerHTML+'&estado='+celdas[i+12].innerHTML;
+    '&numsocial='+celdas[i+11].innerHTML;
     conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);

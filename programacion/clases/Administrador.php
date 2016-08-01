@@ -63,10 +63,14 @@ echo "Datos actualizados";
         $bd->ejecutar($sql);
         echo $sql;
   }
-  function actualizar_empleado()
+  function actualizar_empleado($id_empleado,$nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$curp,$numsocial)
   {
-
-  }      
+    $bd=new Database();
+    $sql="update empleados set nombre='$nombre',apellidos='$apellido',direccion='$direccion',telefono='$telefono',edad=$edad,fechanacimiento='$fechaNacimiento',rfc='$rfcEmpleado',escolaridad='$estudio',curp='$curp',nsocial='$numsocial'
+     where id_empleado=$id_empleado;";
+    $bd->ejecutar($sql);
+    echo $sql;
+  }     
 
 	function agregar_usuario($nickname,$password,$tipo_usuario)
 	{
@@ -91,8 +95,6 @@ echo "Datos actualizados";
                           </tr>";
       while($fila=mysqli_fetch_array($resultado))
       {
-        $cont=0;
-        $cont1=0;
         $idd = $fila['id_empleado'];
         $campo1 = $fila['nombre'];
         $campo2 = $fila['apellidos'];
@@ -121,13 +123,13 @@ echo "Datos actualizados";
               echo"<td >$campo10</td>";
               echo"<td contenteditable>$campo11</td>";
               echo"<td contenteditable>$campo12</td>";
-              echo"<td contenteditable>$campo13</td>";
-              echo"<td><button type='button' class='btn btn-primary' value='actualizar' onclick='actualizarEmpleado($idd,$cont1);'>Actualizar</button></td>";
+              echo"<td >$campo13</td>";
+              echo"<td><button type='button' class='btn btn-primary' value='actualizar-empleado' onclick='actualizarEmpleado($idd,$cont1)'>Actualizar</button></td>";
               echo"<td><button type='button' class='btn btn-primary' value='eliminar-empleado' onclick='eliminarEmpleado($idd,$cont)'>Eliminar</button></td>";
         echo"</tr>";
        
               $cont++;
-              $cont1=$cont1+14;
+              $cont1=$cont1+15;
       } 
        echo"</table>
              </div>";     
