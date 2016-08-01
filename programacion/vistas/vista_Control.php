@@ -64,9 +64,9 @@ $bd=new Database();
                             <label for="estudio-empleado" class="control-label">Nivel de estudio:</label>
                             <select id="estudio-empleado" class="form-control">
                               <option selected="selected" value="">Selecciona nivel de estudio</option>
-                              <option value="ingenieria">Ingenieria</option>
-                              <option value="tecnico">Tecnico</option>
-                              <option value="preparatoria">Preparatoria</option>
+                              <option value="Ingenieria">Ingenieria</option>
+                              <option value="Tecnico">Tecnico</option>
+                              <option value="Preparatoria">Preparatoria</option>
                             </select>
                           </div>
                           <div class="form-group">
@@ -169,7 +169,7 @@ $bd=new Database();
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
-                    <div id="resultadoDia">
+                    <div id="resultadoActualizar">
                     
                     </div>
                 </div><!-- cierra modal-body-->

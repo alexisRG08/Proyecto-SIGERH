@@ -43,20 +43,12 @@ $bd=new DataBase();
                                     $resultados=$bd->ejecutar($sql); 
                                     while($row=mysqli_fetch_array($resultados))
                                         {
-                                           echo "<option value='".$row['id_area']."'>".$row['nombre_area']."</option>";
-                                       //   echo "<option value='".$row['id_area']."'>";
-                                       //   echo $row['nombre_area'];
-                                       //   echo "</option>";
-                                         
-<<<<<<< HEAD
+                                          echo "<option value='".$row['id_area']."'>";
+                                          echo $row['nombre_area'];
+                                          echo "</option>";
                                         }  
                                  ?>
-=======
-                                        } 
 
-                                                                   ?>
-
->>>>>>> origin/master
                               </select>
                            </div>
                            <label for="departamento-name" class="control-label">Departamento:</label>
