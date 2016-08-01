@@ -23,7 +23,6 @@ class Administrador
                     $fecha = $fila['fecha']; 
                     $hora = $fila['hora'];
                     $descripcion = $fila['descripcion']; 
-                    
                    echo "<tr>";
                     echo "<td contenteditable><center> $nombre</center></td>";
                     echo "<td contenteditable> <center>$fecha</center></td>";
@@ -32,6 +31,7 @@ class Administrador
                    echo "<td><button type='submit'  class='btn btn-primary' onclick='deletevento($id_evento)' value='eliminar-evento'>Eliminar</button></td>"; 
                   echo " <td><button type='submit' class='btn btn-primary' onclick='updatevento($id_evento,$cont1)' value='actualizar-evento'>Actualizar</button></td>";
                     echo "</tr>"; 
+                  
                     $cont++;
                    $cont1=$cont1+7;   
       }
@@ -40,7 +40,7 @@ class Administrador
   
   function eliminar_evento($id_evento){
    $bd=new Database();
-   $sql="delete from eventoss where id_eventos=$id_evento";
+   $sql="delete from eventos where ideventos=$id_evento";
    $bd->ejecutar($sql);
    echo "eliminado evento";
   }

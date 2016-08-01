@@ -102,7 +102,6 @@ function procesarEliminarEvento()
 }
 
 
-
 //***************************************
 //Funciones comunes a todos los problemas
 //***************************************
@@ -121,6 +120,7 @@ function addEvent2(elemento,nomevento,funcion,captura)
     else
     return false;
 }
+
 
 function crearXMLHttpRequest2() 
 {

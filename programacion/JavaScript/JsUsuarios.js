@@ -2,12 +2,14 @@ var conexionU;
 /******************************FUNCION PARA MOSTRAR EL DEPARTAMENTO***************************************************************/
 function mostrar_departamento()
 {
-  var area=document.getElementById('area_usu').options.selectedIndex;
-  alert('area'+area);
+   var area=document.getElementById('area_usu').value;
+  alert("lal"+area);
+
+ 
   var n=document.getElementById('depto_r').style.disabled='false';
   var valu= window.event.srcElement.getAttribute('value');
   conexionU=crearXMLHttpRequest3();
-  conexionU.onreadystatechange =procesarMostrarDepto_r;
+  conexionU.onreadystatechange =procesarMostrarDepto;
   var variables="valor="+valu+"&area="+area;
  
   conexionU.open("POST", "../ProyectoRH/programacion/Controlador/usuarios.php", true);
@@ -15,26 +17,26 @@ function mostrar_departamento()
   conexionU.send(variables);
 
 }
-function procesarMostrarDepto_r()
+function mostrar_empleado()
 {
 
-  var areaa=document.getElementById("area").value;
+   var empleado=document.getElementById('empleado3').options.selectedIndex;
+   alert("no es mi id  "+empleado);
+ alert(empleado+"estoy llegando");
   var valu= window.event.srcElement.getAttribute('value');
-  alert(areaa);
-  alert("mostrar");
    var n=document.getElementById('depto').style.disabled='false';
    conexionU=crearXMLHttpRequest3();
    conexionU.onreadystatechange =procesarMostrarDepto;
    var variables="valor="+valu+"&area="+area;
    conexionU.open("POST", "../ProyectoRH/programacion/Controlador/usuarios.php", true);
    conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-   conexionU.send(variables);
+   conexionU.send(variables);  
 }
 
 function procesarMostrarDepto()
 {
-  var resultad = document.getElementById('depto');
   var resultad = document.getElementById('depto_r');
+//  var resultad = document.getElementById('depto_r');
 
   if(conexionU.readyState == 4)
   {

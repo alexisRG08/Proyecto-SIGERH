@@ -31,7 +31,7 @@ $bd=new DataBase();
                            </div>
                            <div class="form-group">
                              <label for="password-name" class="control-label">Password:</label>
-                             <input type="text" class="form-control" id="password" placeholder="Password del empleado">
+                             <input type="password" class="form-control" id="password" placeholder="Password del empleado">
                            </div>
          			          	 <div class="form-group">
          			               <label for="area-name" class="control-label">Area:</label>
@@ -43,33 +43,37 @@ $bd=new DataBase();
                                     $resultados=$bd->ejecutar($sql); 
                                     while($row=mysqli_fetch_array($resultados))
                                         {
-                                          echo "<option value='".$row['id_area']."'>";
-                                          echo $row['nombre_area'];
-                                          echo "</option>";
+                                           echo "<option value='".$row['id_area']."'>".$row['nombre_area']."</option>";
+                                       //   echo "<option value='".$row['id_area']."'>";
+                                       //   echo $row['nombre_area'];
+                                       //   echo "</option>";
                                          
                                         } 
 
-                                  
+                                                                   ?>
 
-                                        
-
-                                 ?>
                               </select>
                            </div>
                            <label for="departamento-name" class="control-label">Departamento:</label>
                            <div class="form-group" id="depto_r">
-                              <select name="" disabled="disabled" id="dep_r" class="form-control">
-                              <option value=""  selected="selected"></option>
+                              <select   id="empleado3" class="form-control"  value="mostrar_empleado" onchange="mostrar_empleado();">
+                              <option value=""  selected="selected">mostrar</option>
                               </select>
                            </div>
-                          <div class="form-group">
-                               <label for="area-name" class="control-label">Tipo usuario:</label>
+                             <div class="form-group">
+                               <label for="area-name" class="control-label">Empleado:</label>
                                <select  id="tipo_usuario" class="form-control">
-                                  <option value=""  selected="selected">Seleccionar Usuario</option>
-                                 <option value="1">Administrador</option>
-                                 <option value="1">Gerente</option>
-                                 <option value="2">Usuario</option>
-                                 <option value="2">Empleado</option>
+                                  <option value=""  selected="selected"></option>
+                               </select>
+                          </div>
+
+                          <div class="form-group">
+                               <label for="area-name" class="control-label">Nivel usuario:</label>
+                               <select  id="tipo_usuario" class="form-control">
+                                  <option value=""  selected="selected">Seleccionar opción</option>
+                                 <option value="1">1</option>
+                                 <option value="2">2</option>
+                                 
                                </select>
 		                      </div>
                          </form>

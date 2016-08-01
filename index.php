@@ -26,7 +26,7 @@ function ver(){
  window.onload = function() {
 document.getElementById("ocultarempleados").style.display="none";  
 document.getElementById("ocultarcapcitacion").style.display="none"; 
-document.getElementById("ocultarusuarios").style.display="none";
+//document.getElementById("ocultarusuarios").style.display="none";
 document.getElementById("ocultarlogout").style.display="none";  
 document.getElementById("redessociales").style.display="none"; 
 
@@ -48,7 +48,7 @@ document.getElementById("redessociales").style.display="none";
                         <span class="icon-bar"></span>
                     </button>
                     <a href="#" target="_blank" class="navbar-brand" id="tam">
-                    <img id="im" class="img-responsive img-thumbnail" src="../ProyectoRH/img/logo4.png">
+                    <img id="im" class="img-responsive img-thumbnail" src="../ProyectoRH/img/logoa.png">
                     </a>
                 </div>
                 <!--Aqui Inicia Menu -->
