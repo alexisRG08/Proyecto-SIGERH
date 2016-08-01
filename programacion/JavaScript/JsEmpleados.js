@@ -105,7 +105,7 @@ function actualizarEmpleado(id,cont)
      x++;
     }
     conexion1=crearXMLHttpRequest2();
-    conexion1.onreadystatechange=procesar1;
+    conexion1.onreadystatechange=procesarActualizarEmpleado;
     var btn=window.event.srcElement.getAttribute('value');
     alert('bton'+btn);
     var variables="&id_empleado="+id+'&valor='+btn+'&nombre='+celdas[i].innerHTML+'&apellido='+celdas[i+1].innerHTML+'&direccion='+celdas[i+2].innerHTML+'&telefono='+celdas[i+3].innerHTML+
@@ -115,6 +115,23 @@ function actualizarEmpleado(id,cont)
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);
     break;
+  }
+}
+function procesarActualizarEmpleado()
+
+{
+  var resultad = document.getElementById('resultadoActualizar');
+
+  if(conexion1.readyState == 4)
+  {
+    resultad.innerHTML = conexion1.responseText;
+    refrescar_tabla();
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
   }
 }
 
@@ -142,6 +159,7 @@ function eliminarEmpleado(id,t)
     conexionU.send(variables);
     eliminar_fila(t);
    conexionU.responseText;
+   refrescar_tabla();
    }
    else
    {
