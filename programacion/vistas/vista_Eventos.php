@@ -22,8 +22,8 @@ require_once('../../programacion/clases/Administrador.php');
 <body>
 	<!-------------------------Inicio de botones para el modal-------------------------------------->                           
 	<div class="container">
-    	<button class="btn btn-primary" data-toggle="modal" data-target="#informacion">Nuevo evento</button>  
-      <button class="btn btn-primary" data-toggle="modal" data-target="#informacion2">Ver eventos</button>
+    	<button class="btn btn-primary" data-toggle="modal" data-target="#informacion" >Nuevo evento</button>  
+      <button class="btn btn-primary" data-toggle="modal" data-target="#informacion2" >Ver eventos</button>
       <button class="btn btn-primary" data-toggle="modal" data-target="#informacion3">Reporte de eventos</button>
 
 <!-- ------------------------------ Formulario de Nuevo evento--------------------- -->            
@@ -82,8 +82,8 @@ require_once('../../programacion/clases/Administrador.php');
                          <a href="#" data-toggle="tooltip" title="Busca un evento"><input type="text" class="form-control" id="buscar" placeholder="Busca un evento"></a> <br>
                           
                           </div>
-                          <div class="form-group">
-                          <table id="tablaeventos" class="table table-bordered" >
+                          <div class="form-group" >
+                       <table id="tablaeventos" class="table table-bordered" >
                             <thead >
                          <tr>
                          <th>Nombre</th>
@@ -93,14 +93,14 @@ require_once('../../programacion/clases/Administrador.php');
                           <th>Eliminar</th>
                           <th>Actualizar</th>
                         </tr>
-                        </thead>
+                        </thead>  
                       
-                        <?php   
-                         $mostrar=new Administrador();
+                       <?php   
+                        $mostrar=new Administrador();
                           $mostrar->mostrareventos();
                     ?>     
                       
-                         </table>
+                         </table> 
                        
                     
                      <div class="modal-footer">
