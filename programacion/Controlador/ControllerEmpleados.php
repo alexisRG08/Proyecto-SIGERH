@@ -50,4 +50,10 @@ if($_REQUEST['valor']=='actualizar-evento'){
   }
 }
 
+if($_REQUEST['valor']=='refrescar_tabla'){
+   $mostrar=new Administrador();
+  $mostrar->mostrareventos();
+echo "refrescando hee";
+}
+
 ?>

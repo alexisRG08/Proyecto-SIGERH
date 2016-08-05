@@ -82,7 +82,7 @@ require_once('../../programacion/clases/Administrador.php');
                          <a href="#" data-toggle="tooltip" title="Busca un evento"><input type="text" class="form-control" id="buscar" placeholder="Busca un evento"></a> <br>
                           
                           </div>
-                          <div class="form-group" >
+                          <div class="form-group" id="tabla_eventos" >
                <!--        <table id="tablaeventos" class="table table-bordered" >
                             <thead >
                          <tr>
@@ -124,14 +124,14 @@ require_once('../../programacion/clases/Administrador.php');
           <h4 class="modal-title" id="exampleModalLabel">Reporte de Eventos</h4>
                 <div class="modal-body">
                   <form>
-                          <div class="form-group">
-                            <label for="info-dia" class="control-label">Consultar eventos:</label>
-                             <select name="" id="" class="form-control" onchange="mostrar();">
-                                <option value="">Sistemas</option>
-                                <option value="">Adminstracion</option>
-                                <option value="">Recursos Humanos</option>
-                            </select>
-                          </div>
+                    <div class="form-group">
+                      <label for="info-dia" class="control-label">Consultar eventos:</label>
+                      <select name="" id="" class="form-control" onchange="mostrar();">
+                        <option value="">Sistemas</option>
+                        <option value="">Adminstracion</option>
+                        <option value="">Recursos Humanos</option>
+                      </select>
+                    </div>
                           
                      </form>
                      <div class="modal-footer">

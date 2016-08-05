@@ -140,6 +140,7 @@ function eliminarEmpleado(id,t)
     conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);
+    refrescar_tabla();
    
    }
     else

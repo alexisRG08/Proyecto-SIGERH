@@ -16,8 +16,12 @@ class Administrador
       $resultado=$bd->ejecutar($sql);
       $cont1=0;
      $cont=0;
-     echo "<table id='tablaeventos' class='table table-bordered' ";
-     echo "1";
+
+     echo" <div class='table-responsive' id='tabla_eventos'>
+                          <table id='tablaeventos' class='table table-bordered table-hover table-condensed table table-striped'>
+                          <tr>
+                            <th>Nombre</th><th>Fecha</th><th>Hora</th><th>Descripción</th><th>Eliminar</th><th>Editar</th>
+                          </tr>";
        while($fila=mysqli_fetch_array($resultado))
       {
                   $id_evento=$fila['ideventos'];
@@ -37,14 +41,15 @@ class Administrador
                     $cont++;
                    $cont1=$cont1+7;   
       }
-                  
+         echo"</table>";  
+         echo "</div>";        
   }
-  
+
   function eliminar_evento($id_evento){
    $bd=new Database();
    $sql="delete from eventos where ideventos=$id_evento";
    $bd->ejecutar($sql);
-   echo "eliminado evento";
+ //  echo "eliminado evento";
   }
   function actualizar_evento($sql){
 $bd=new Database();
@@ -148,7 +153,7 @@ echo "Datos actualizados";
             session_start();
            $_SESSION['usuario'] = $usuario;  
            echo "<br> Bienvenido! " . $_SESSION['usuario'];
-        //   $this->validartipo($usuario);
+           $this->validartipo($usuario);
            }else{
             echo("Usuario Incorrecto");
 
