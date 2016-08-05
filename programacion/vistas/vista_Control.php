@@ -139,13 +139,14 @@ $bd=new Database();
         <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="exampleModalLabel"><center>CONTROL DE EMPLEADOS</center></h4>
                 <div class="modal-body">
-                  <form>
+                  <form>  
                   		<div class="form-group">
                             <label for="buscar-empleado" class="control-label">Buscar empleado:</label>
                             <input type="text" class="form-control" id="buscar-empleado" placeholder="Buscar empleado">
-                        </div>
+                        </div> 
                         <div class="form-group">
-                        	<button type="submit" class="btn btn-primary" onClick="buscarEmpleado()" value="buscar-empleado">Buscar empleado</button>
+                        	<button type="button" class="btn btn-primary" onClick="buscarEmpleado()" value="buscar-empleado">Buscar empleado</button>
+                          <!--<button class="btn btn-default" type="button" onclick="buscarEmpleado();" value="buscar-empleado"><span>Busca empleador</span></button>-->
                         </div>
                       <div class="form-group" id="tabla_empleados">
                        <!-- <div class="table-responsive">

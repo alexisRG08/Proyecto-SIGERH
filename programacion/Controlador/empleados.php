@@ -56,7 +56,13 @@ if($_REQUEST['valor']=='eliminar-empleado')
 if($_REQUEST['valor']=='Refrescar')
 {
    $admin=new Administrador();
-   $admin->mostrar_empleados();
+   $admin-> mostrar_empleados();
+}
+if ($_REQUEST['valor']=='buscar-empleado') 
+{
+	$buscaEmpleado = $_REQUEST['buscaEmpleado']; 
+	$admin=new Administrador();
+   	$admin->buscar_empleado($buscaEmpleado); 
 }
 
 ?>

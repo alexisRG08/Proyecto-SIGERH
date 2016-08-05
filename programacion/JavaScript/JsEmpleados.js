@@ -167,8 +167,10 @@ function procesareliminar()
 }
 
 function buscarEmpleado()
-{
-  var buscaEmpleado = document.getElementById('buscar-empleado');
+{ 
+  var buscaEmpleado = document.getElementById('buscar-empleado').value;
+  alert(buscaEmpleado);
+
   var valor= window.event.srcElement.getAttribute('value');
   conexion1=crearXMLHttpRequest2();
   conexion1.onreadystatechange =procesarBuscarEmpleado;
@@ -176,16 +178,17 @@ function buscarEmpleado()
     conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion1.send(variables);
-}
 
+
+}
 function procesarBuscarEmpleado()
 {
-  var resultad = document.getElementById('');
+  var resultad = document.getElementById('tabla_empleados');
 
   if(conexion1.readyState == 4)
   {
     resultad.innerHTML = conexion1.responseText;
-
+    
   } 
   else 
   {
