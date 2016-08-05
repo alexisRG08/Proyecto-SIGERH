@@ -141,7 +141,6 @@ function eliminarEmpleado(id,t)
     conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);
-    
    }
     else
    {
@@ -162,9 +161,7 @@ function procesareliminar()
   } 
   else 
   {
-    //resultad.innerHTML = 'Cargando......';
-    refrescar_tabla();
-
+    resultad.innerHTML = 'Cargando......';
   }
 }
 
