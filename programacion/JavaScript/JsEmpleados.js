@@ -162,7 +162,9 @@ function procesareliminar()
   } 
   else 
   {
-    resultad.innerHTML = 'Cargando......';
+    //resultad.innerHTML = 'Cargando......';
+    refrescar_tabla();
+
   }
 }
 

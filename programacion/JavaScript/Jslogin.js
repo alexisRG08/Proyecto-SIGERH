@@ -36,6 +36,7 @@ document.getElementById("loginform").style.display="none";
 document.getElementById("ocultarlogout").style.display=""; 
 document.getElementById("img_logo").style.display="none";
 document.getElementById("redessociales").style.display="";
+document.getElementById("ocultareventos").style.display=""; 
 }
 function nivelnormal(){
 document.getElementById("ocultarcapcitacion").style.display=""; 
@@ -46,6 +47,7 @@ document.getElementById("btncontinuar").style.display="none";
 document.getElementById("ocultarlogout").style.display="";
 document.getElementById("loginform").style.display="none";
 document.getElementById("redessociales").style.display="";
+document.getElementById("ocultareventos").style.display=""; 
 }
 function procesariniciosesion()
 
