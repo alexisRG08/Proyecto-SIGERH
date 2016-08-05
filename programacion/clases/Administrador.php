@@ -17,6 +17,7 @@ class Administrador
       $cont1=0;
      $cont=0;
      echo "<table id='tablaeventos' class='table table-bordered' ";
+     echo "1";
        while($fila=mysqli_fetch_array($resultado))
       {
                   $id_evento=$fila['ideventos'];

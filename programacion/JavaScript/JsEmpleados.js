@@ -47,14 +47,13 @@ function limpiar_texto()
 function refrescar_tabla()
 {
  
-  
+  alert('entre ale metodo refrwcar');
   var valor="Refrescar";
   var valor= window.event.srcElement.getAttribute('value');
   var variables="valor="+valor;
   conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
   conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion1.send(variables);
-
 }
 
 function procesar1()
@@ -66,6 +65,7 @@ function procesar1()
   if(conexion1.readyState == 4)
   {
     t.innerHTML = conexion1.responseText;
+    refrescar_tabla();
   } 
   else 
   { 
@@ -105,7 +105,7 @@ function actualizarEmpleado(id,cont)
      x++;
     }
     conexion1=crearXMLHttpRequest2();
-    conexion1.onreadystatechange=procesarActualizarEmpleado;
+    conexion1.onreadystatechange=procesar1;
     var btn=window.event.srcElement.getAttribute('value');
     alert('bton'+btn);
     var variables="&id_empleado="+id+'&valor='+btn+'&nombre='+celdas[i].innerHTML+'&apellido='+celdas[i+1].innerHTML+'&direccion='+celdas[i+2].innerHTML+'&telefono='+celdas[i+3].innerHTML+
@@ -117,15 +117,73 @@ function actualizarEmpleado(id,cont)
     break;
   }
 }
-function procesarActualizarEmpleado()
 
+
+function eliminar_fila(fila)
 {
-  var resultad = document.getElementById('resultadoActualizar');
+  var td=fila.parentNode;
+  var tr=td.parentNode;
+  var tabla=tr.parentNode;
+  tabla.removeChild(tr);
+}
+
+
+function eliminarEmpleado(id,t)
+{
+   var mensaje=confirm("¿Desea marcar este dato como realizado?");
+   if(mensaje==true)
+   {
+    conexion1=crearXMLHttpRequest2();
+    var valu= window.event.srcElement.getAttribute('value');
+    var variables="valor="+valu+"&id_empleado="+id;
+    conexion1.onreadystatechange=procesareliminar;
+    conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
+    conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    conexion1.send(variables);
+   
+   }
+    else
+   {
+    return;
+   }
+}
+
+function procesareliminar()
+{
+  
+  var contenedor=document.getElementById('tabla_empleados');
+
+  if(conexion1.readyState == 4)
+  {
+    contenedor.innerHTML=conexion1.responseText;
+    refrescar_tabla();
+
+  } 
+  else 
+  {
+    resultad.innerHTML = 'Cargando......';
+  }
+}
+
+function buscarEmpleado()
+{
+  var buscaEmpleado = document.getElementById('buscar-empleado');
+  var valor= window.event.srcElement.getAttribute('value');
+  conexion1=crearXMLHttpRequest2();
+  conexion1.onreadystatechange =procesarBuscarEmpleado;
+  var variables="valor="+valor+"&buscaEmpleado="+buscaEmpleado;
+    conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
+    conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  conexion1.send(variables);
+}
+
+function procesarBuscarEmpleado()
+{
+  var resultad = document.getElementById('');
 
   if(conexion1.readyState == 4)
   {
     resultad.innerHTML = conexion1.responseText;
-    refrescar_tabla();
 
   } 
   else 
@@ -133,40 +191,8 @@ function procesarActualizarEmpleado()
    
     resultad.innerHTML = 'Cargando......';
   }
+  
 }
-
-function eliminar_fila(fila)
-{
-var td=fila.parentNode;
-var tr=td.parentNode;
-var tabla=tr.parentNode;
-tabla.removeChild(tr);
-}
-
-
-function eliminarEmpleado(id,t)
-{
-   conexionU=crearXMLHttpRequest2();
-   var valu= window.event.srcElement.getAttribute('value');
-   var variables="valor="+valu+"&id_empleado="+id;
-   conexionU.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
-   conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-
-   var mensaje=confirm("¿Desea marcar este dato como realizado?");
-
-   if(mensaje==true)
-   {
-    conexionU.send(variables);
-    eliminar_fila(t);
-   conexionU.responseText;
-   refrescar_tabla();
-   }
-   else
-   {
-    return;
-   }
-}
-
 
 //***************************************
 //Funciones comunes a todos los problemas
