@@ -43,7 +43,8 @@ function updatevento(id_evento,cont){
         x++;
       }
 
-      conexionU=crearXMLHttpRequest2();
+   
+        conexionU=crearXMLHttpRequest2();
       conexionU.onreadystatechange= procesar;
       var btn=window.event.srcElement.getAttribute('value');
       var variables='valor='+btn+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id_evento;
@@ -51,6 +52,8 @@ function updatevento(id_evento,cont){
       conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
       conexionU.send(variables);
       break;
+      
+      
     }  
   }
   function refrescareventos(){
@@ -101,7 +104,6 @@ function updatevento(id_evento,cont){
     if(ajax.readyState == 4)
     {
       resultad.innerHTML = ajax.responseText;
-     refrescareventos();
     } 
     else 
     {

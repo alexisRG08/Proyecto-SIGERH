@@ -29,6 +29,7 @@
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 
+  document.getElementById("ocultareventos").style.display="none"; 
 
 
 };
@@ -55,7 +56,7 @@
     <div class="collapse navbar-collapse" id="navegacion-fm"><!--navbar-->
      <ul class="nav navbar-nav">
        <li><a href="../programacion/Controlador/referencias?" id="referencia1"  value="Informacion">
-        <span id="" value="Eventos" class="glyphicon glyphicon-list-alt"  onclick="ver()"> Eventos</span></a></li>
+        <span id="ocultareventos" value="Eventos" class="glyphicon glyphicon-list-alt"  onclick="ver()"> Eventos</span></a></li>
         <li><a  href="../programacion/Controlador/referencias?" id="referencia2"  value="Archivos">
           <span  id="ocultarempleados" value="Control" class="glyphicon glyphicon-file"  onclick="ver()"> Control de Empleados</span></a></li>
           

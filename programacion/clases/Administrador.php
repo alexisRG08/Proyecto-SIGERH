@@ -17,8 +17,7 @@ class Administrador
       $cont1=0;
      $cont=0;
 
-     echo" <div class='table-responsive' id='tabla_eventos'>
-                          <table id='tablaeventos' class='table table-bordered table-hover table-condensed table table-striped'>
+     echo"  <table id='tablaeventos' class='table table-bordered table-hover table-condensed table table-striped'>
                           <tr>
                             <th>Nombre</th><th>Fecha</th><th>Hora</th><th>Descripción</th><th>Eliminar</th><th>Editar</th>
                           </tr>";
@@ -42,7 +41,7 @@ class Administrador
                    $cont1=$cont1+7;   
       }
          echo"</table>";  
-         echo "</div>";        
+            
   }
 
   function eliminar_evento($id_evento){
