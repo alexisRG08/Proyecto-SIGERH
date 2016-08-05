@@ -120,7 +120,7 @@ $bd=new Database();
                      </form>
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-success" onClick="agregarEmpleado()" value="agregar-empleado">Agregar empleado</button>
+                <button type="submit" class="btn btn-primary" onClick="agregarEmpleado()" value="agregar-empleado">Agregar empleado</button>
               </div>
                     <div id="resultadoEmpleado">
                     
@@ -145,7 +145,7 @@ $bd=new Database();
                             <input type="text" class="form-control" id="buscar-empleado" placeholder="Buscar empleado">
                         </div>
                         <div class="form-group">
-                        	<button   class="btn btn-primary" type="submit"   value="">Buscar</button>
+                        	<button type="submit" class="btn btn-primary" onClick="buscarEmpleado()" value="buscar-empleado">Buscar empleado</button>
                         </div>
                       <div class="form-group" id="tabla_empleados">
                        <!-- <div class="table-responsive">

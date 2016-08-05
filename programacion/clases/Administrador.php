@@ -2,7 +2,7 @@
 function formulario(){
   document.getElementById("contrasena").style.display="none";  
   
-}
+} 
 </script>
 
 <?php
@@ -61,7 +61,7 @@ echo "Datos actualizados";
         $bd=new Database();
         $sql="update empleados set status='Baja' where id_empleado=$id_empleado;";
         $bd->ejecutar($sql);
-        echo $sql;
+        echo $sql; 
   }
   function actualizar_empleado($id_empleado,$nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$curp,$numsocial)
   {
@@ -82,7 +82,7 @@ echo "Datos actualizados";
 	}
 	function mostrar_empleados(){ 
 		  $bd=new Database();
-      $sql="select * from empleados where status='alta'";
+      $sql="select * from empleados where status='alta';";
       $resultado=$bd->ejecutar($sql);
       $cont=0;
       $cont1=0;

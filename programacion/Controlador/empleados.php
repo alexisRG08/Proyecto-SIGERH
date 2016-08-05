@@ -47,9 +47,10 @@ if($_REQUEST['valor']=='actualizar-empleado')
 if($_REQUEST['valor']=='eliminar-empleado')
 {
 	$id_empleado=$_REQUEST['id_empleado'];
-	echo "Datos eliminados correctamente";
    	$admin=new Administrador();
    	$admin->eliminar_empleado($id_empleado);
+   	$admin->mostrar_empleados();
+   	echo "Datos eliminados correctamente";
 }
 
 if($_REQUEST['valor']=='Refrescar')

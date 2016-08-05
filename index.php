@@ -101,16 +101,16 @@ document.getElementById("redessociales").style.display="none";
             </section>
                       
              <aside class="col-md-3" id="loginform">
-               <h3>INICIO DE SESIÓN</h3>
+               <h4 class="text-center">INICIO DE SESIÓN</h4>
               </br>
-             <img class="img-circle" id="img_logo" src="img/user.png">
+             <img class="img-circle img-responsive center-block" id="img_logo" src="img/user.png">
               <form id="forminicio">
 
                     
                   <div class="form-group">  
                 <div id="div-login-msg">
-                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                <span id="text-login-msg">Escribe tu usuario y contraseña.</span>
+                <div id="icon-login-msg" class="glyphicon glyphicon-home"></div>
+                <span id="text-login-msg">Escribe tu usuario y contraseña</span>
                 </div>
               </div>
 
