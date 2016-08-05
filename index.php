@@ -29,7 +29,7 @@
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 
-  document.getElementById("ocultareventos").style.display="none"; 
+  //document.getElementById("ocultareventos").style.display="none"; 
 
 
 };
@@ -48,9 +48,10 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-       <a href="#" target="_blank" class="navbar-brand" id="tam">
-        <img id="im" class="img-responsive img-thumbnail" src="../ProyectoRH/img/logoa.png">
-      </a>
+       <!--<a href="" target="" class="navbar-brand" id="tam">
+        <img id="im" class="img-responsive img-thumbnail" src="../ProyectoRH/img/logoa.png"> 
+      </a>-->
+      <a target="" class="navbar-brand" id="tam">SIGERH</a>
     </div>
     <!--Aqui Inicia Menu -->
     <div class="collapse navbar-collapse" id="navegacion-fm"><!--navbar-->
