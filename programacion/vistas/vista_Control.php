@@ -156,6 +156,19 @@ $bd=new Database();
              <button type="submit" class="btn btn-primary" onClick="buscarEmpleado()" value="buscar-empleado">Buscar empleado</button>
            </div>
            <div class="form-group" id="tabla_empleados">
+
+          <h4 class="modal-title" id="exampleModalLabel"><center>CONTROL DE EMPLEADOS</center></h4>
+                <div class="modal-body">
+                  <form>  
+                  		<div class="form-group">
+                            <label for="buscar-empleado" class="control-label">Buscar empleado:</label>
+                            <input type="text" class="form-control" id="buscar-empleado" placeholder="Buscar empleado">
+                        </div> 
+                        <div class="form-group">
+                        	<button type="button" class="btn btn-primary" onClick="buscarEmpleado()" value="buscar-empleado">Buscar empleado</button>
+                          <!--<button class="btn btn-default" type="button" onclick="buscarEmpleado();" value="buscar-empleado"><span>Busca empleador</span></button>-->
+                        </div>
+                      <div class="form-group" id="tabla_empleados">
                        <!-- <div class="table-responsive">
                           <table class="table table-bordered table-hover table-condensed table table-striped">
                           <tr>
@@ -224,6 +237,50 @@ $bd=new Database();
       <div class="modal-content" >
         <div class="modal-header">
           <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div><!-- cierra modal-header-->
+    </div><!-- cierra modal-content-->
+  </div><!-- cierra modal-dialog-->
+</div>  <!-- cierra modal-fade-->
+</div><!--cierra container--> 
+<!-- ------------------------------ Tabla de bajas / altas de empleados--------------------- -->            
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="exampleModalLabel">Altas / Bajas de empleados</h4>
+                <div class="modal-body">
+                  <form>
+                         <div class="form-group">
+                            <label for="consult-em" class="control-label">Consultar empleados:</label>
+                             <select name="" id="" class="form-control" onchange="">
+                                <option value="Altas">Altas</option>
+                                <option value="Bajas">Bajas</option>
+                                <option value="Todos">Todos</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <button   class="btn btn-primary" type="submit"   value="">Buscar</button>
+                          </div>
+                  </form>
+                     <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+                    <div id="resultadoAltas">
+                    
+                    </div>
+                </div><!-- cierra modal-body-->
+      </div><!-- cierra modal-header-->
+    </div><!-- cierra modal-content-->
+  </div><!-- cierra modal-dialog-->
+</div>  <!-- cierra modal-fade-->
+</div><!--cierra container--> 
+<!-- ------------------------------ Formulario de reporte de empleados--------------------- -->            
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="exampleModalLabel">Reporte de empleados</h4>
           <div class="modal-body">
             <form>
