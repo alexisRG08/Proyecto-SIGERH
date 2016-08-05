@@ -133,6 +133,7 @@ function eliminarEmpleado(id,t)
    var mensaje=confirm("¿Desea marcar este dato como realizado?");
    if(mensaje==true)
    {
+    alert(id);
     conexion1=crearXMLHttpRequest2();
     var valu= window.event.srcElement.getAttribute('value');
     var variables="valor="+valu+"&id_empleado="+id;
@@ -140,8 +141,7 @@ function eliminarEmpleado(id,t)
     conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);
-    refrescar_tabla();
-   
+    
    }
     else
    {
@@ -196,6 +196,35 @@ function procesarBuscarEmpleado()
     resultad.innerHTML = 'Cargando......';
   }
   
+}
+
+function buscar_empleados() 
+{
+  var buscaEmpleados=document.getElementById('busca-empleados').value;
+  var valor= window.event.srcElement.getAttribute('value');
+  conexion1=crearXMLHttpRequest2();
+     conexion1.onreadystatechange =procesarBuscarEmpleados;
+     var variables="valor="+valor+"&buscaEmpleados="+buscaEmpleados;
+     conexion1.open("POST", "../ProyectoRH/programacion/Controlador/empleados.php", true);
+     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+     conexion1.send(variables);
+}
+
+
+function procesarBuscarEmpleados()
+
+{
+  var resultad = document.getElementById('tabla_empleados2');
+ if(conexion1.readyState == 4)
+  {
+    resultad.innerHTML = conexion1.responseText;
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
+  }
 }
 
 //***************************************

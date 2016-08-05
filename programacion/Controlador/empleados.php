@@ -50,8 +50,8 @@ if($_REQUEST['valor']=='eliminar-empleado')
    	$admin=new Administrador();
    	$admin->eliminar_empleado($id_empleado);
    	$admin->mostrar_empleados();
-   	echo "Datos eliminados correctamente";
-}
+   	echo "Datos eliminados correctamente"; 
+} 
 
 if($_REQUEST['valor']=='Refrescar')
 {
@@ -63,6 +63,12 @@ if ($_REQUEST['valor']=='buscar-empleado')
 	$buscaEmpleado = $_REQUEST['buscaEmpleado']; 
 	$admin=new Administrador();
    	$admin->buscar_empleado($buscaEmpleado); 
+}
+if ($_REQUEST['valor']=='buscar-empleados') 
+{
+	$buscarEmpleados = $_REQUEST['buscaEmpleados'];
+	$admin= new Administrador();
+	$admin->buscar_empleados($buscarEmpleados); 
 }
 
 ?>

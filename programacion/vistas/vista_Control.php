@@ -16,10 +16,10 @@ $bd=new Database();
 	<div class="container">
     	<div class="row">
         	<div class="col-md-8">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Nuevo Empleado</button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Ver Empleados</button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" data-whatever="@getbootstrap">Bajas / Altas de Empleados</button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4" data-whatever="@getbootstrap">Reporte de Empleados</button>
+	         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Nuevo Empleado</button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Ver Empleados</button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAlta" data-whatever="@getbootstrap">Altas / Bajas de empleados</button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4" data-whatever="@getbootstrap">Reporte de Empleados</button>
     		</div>
     	</div>
     </div>
@@ -119,9 +119,9 @@ $bd=new Database();
                           </div>
                      </form>
                      <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" onClick="agregarEmpleado()" value="agregar-empleado">Agregar empleado</button>
-              </div>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                      <button type="submit" class="btn btn-primary" onClick="agregarEmpleado()" value="agregar-empleado">Agregar empleado</button>
+                     </div>
                     <div id="resultadoEmpleado">
                     
                     </div>
@@ -146,10 +146,9 @@ $bd=new Database();
                         </div> 
                         <div class="form-group">
                         	<button type="button" class="btn btn-primary" onClick="buscarEmpleado()" value="buscar-empleado">Buscar empleado</button>
-                          <!--<button class="btn btn-default" type="button" onclick="buscarEmpleado();" value="buscar-empleado"><span>Busca empleador</span></button>-->
                         </div>
                       <div class="form-group" id="tabla_empleados">
-                       <!-- <div class="table-responsive">
+                       <!--<div class="table-responsive">
                           <table class="table table-bordered table-hover table-condensed table table-striped">
                           <tr>
                             <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
@@ -161,27 +160,25 @@ $bd=new Database();
                           $mostrar=new Administrador();
                           $mostrar->mostrar_empleados();
                            ?>       
-                         <!-- </table>
-                        </div> --> 
+                          </table>
+                        </div>
                        </div>
                   </form>
-
-                  
-                     <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              </div>
-                    <div id="resultadoActualizar">
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>  
+                  </div>
+                  <div id="resultadoActualizar">
                     
-                    </div>
-                </div><!-- cierra modal-body-->
+                  </div>
+            </div><!-- cierra modal-body-->
       </div><!-- cierra modal-header-->
     </div><!-- cierra modal-content-->
   </div><!-- cierra modal-dialog-->
 </div>  <!-- cierra modal-fade-->
 </div><!--cierra container--> 
 <!-- ------------------------------ Tabla de bajas / altas de empleados--------------------- -->            
-<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" >
+<div class="modal fade" id="modalAlta" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -189,20 +186,24 @@ $bd=new Database();
                 <div class="modal-body">
                   <form>
                          <div class="form-group">
-                            <label for="consult-em" class="control-label">Consultar empleados:</label>
-                             <select name="" id="" class="form-control" onchange="">
-                                <option value="Altas">Altas</option>
-                                <option value="Bajas">Bajas</option>
-                                <option value="Todos">Todos</option>
+                            <label for="consult-em-com" class="control-label">Consultar empleados:</label>
+                             <select name="" id="busca-empleados" class="form-control" onchange="">
+                                <option value="todos">Todos</option>
+                                <option value="altas">Altas</option>
+                                <option value="bajas">Bajas</option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <button   class="btn btn-primary" type="submit"   value="">Buscar</button>
+                            <button type="button" class="btn btn-primary" onClick="buscar_empleados()" value="buscar-empleados">Buscar empleados</button>
                           </div>
+                          <div class="form-group" id="tabla_empleados2">
+
+                          </div>
+
                   </form>
                      <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                     </div>
                     <div id="resultadoAltas">
                     
                     </div>
@@ -222,8 +223,8 @@ $bd=new Database();
                 <div class="modal-body">
                   <form>
                     <div class="form-group">
-                    <label for="area-name" class="control-label">Consulta de empleados:</label>
-                      <select name="" id="" class="form-control" onchange="mostrar();">
+                    <label for="" class="control-label">Consulta de empleados:</label>
+                      <select name="" id="" class="form-control">
                         <option value="">Todos</option>
                         <option value="">Bajas de empleados</option>
                         <option value="">Altas de empleados</option>
@@ -232,9 +233,9 @@ $bd=new Database();
                   </form>
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal">Generar reporte</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Generar reporte</button>
               </div>
-                    <div id="resultadoDia">
+                    <div id="resultadoAltas">
                     
                     </div>
                 </div><!-- cierra modal-body-->
@@ -246,7 +247,7 @@ $bd=new Database();
     </div>
   </div>
 </div>
-<!------------------------------------------Javascript------------------------------------------------------------------->
+<!------------------------------------------Javascript-------------------------------------------------------------------->
 <!--<script src="../../js/jquery.js"></script>
 <script src="../../js/bootstrap.min.js"></script>-->
 </body>

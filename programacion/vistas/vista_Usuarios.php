@@ -87,7 +87,7 @@ $bd=new DataBase();
                        <div id="buscar">
                        
                        </div>         
-<!--**************************************************************Generar reporte de capacitacion***************************************** -->           
+<!--**************************************************************Actualizar / Eliminar Usuario***************************************** -->           
 <div class="modal fade" id="ventana_02" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content" >
@@ -102,7 +102,7 @@ $bd=new DataBase();
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
-                    <div id="resultadoDia">
+                    <div id="resultadoUsuarioAltas">
                     
                     </div>
                 </div><!-- cierra modal-body-->
