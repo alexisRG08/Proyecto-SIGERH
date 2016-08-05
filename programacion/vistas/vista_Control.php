@@ -182,7 +182,7 @@ $bd=new Database();
 <!-- ------------------------------ Tabla de bajas / altas de empleados--------------------- -->            
 <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" >
-    <div class="modal-content" >
+    <div class="modal-content">
       <div class="modal-header">
         <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="exampleModalLabel">Altas / Bajas de empleados</h4>
@@ -193,6 +193,7 @@ $bd=new Database();
                              <select name="" id="" class="form-control" onchange="">
                                 <option value="Altas">Altas</option>
                                 <option value="Bajas">Bajas</option>
+                                <option value="Todos">Todos</option>
                             </select>
                           </div>
                           <div class="form-group">
@@ -202,7 +203,7 @@ $bd=new Database();
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
-                    <div id="resultadoDia">
+                    <div id="resultadoAltas">
                     
                     </div>
                 </div><!-- cierra modal-body-->

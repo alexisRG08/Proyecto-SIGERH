@@ -86,37 +86,37 @@ echo "Datos actualizados";
     $consulta=$bd->ejecutar($sql);
     $Num_filas=mysqli_num_rows($consulta);
     echo" <div class='table-responsive'>
-                          <table class='table table-bordered table-hover table-condensed table table-striped'>
-                          <tr>
-                            <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
-                            <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
-                            <th>Actualizar</th><th>Eliminar</th>
-                          </tr>";
+         <table class='table table-bordered table-hover table-condensed table table-striped'>
+          <tr>
+            <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
+            <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
+            <th>Actualizar</th><th>Eliminar</th>
+          </tr>";
 
         if($Num_filas>0)
         { 
-             $cont=0;
-      $cont1=0;
+          $cont=0;
+          $cont1=0;
 
-      while($fila=mysqli_fetch_array($consulta))
-      {
+        while($fila=mysqli_fetch_array($consulta))
+        {
 
-        $idd = $fila['id_empleado'];
-        $campo1 = $fila['nombre'];
-        $campo2 = $fila['apellidos'];
-        $campo3 = $fila['direccion'];
-        $campo4 = $fila['telefono'];
-        $campo5 = $fila['edad'];
-        $campo6 = $fila['fechanacimiento'];
-        $campo7 = $fila['rfc'];
-        $campo8 = $fila['escolaridad'];
-        $campo9 = $fila['Tipo_empleo_idTipo_empleo'];
-        $campo10 = $fila['departamentos_iddepartamentos'];
-        $campo11 = $fila['curp'];
-        $campo12 = $fila['nsocial'];
-        $campo13 = $fila['status'];
+          $idd = $fila['id_empleado'];
+          $campo1 = $fila['nombre'];
+          $campo2 = $fila['apellidos'];
+          $campo3 = $fila['direccion'];
+          $campo4 = $fila['telefono'];
+          $campo5 = $fila['edad'];
+          $campo6 = $fila['fechanacimiento'];
+          $campo7 = $fila['rfc'];
+          $campo8 = $fila['escolaridad'];
+          $campo9 = $fila['Tipo_empleo_idTipo_empleo'];
+          $campo10 = $fila['departamentos_iddepartamentos'];
+          $campo11 = $fila['curp'];
+          $campo12 = $fila['nsocial'];
+          $campo13 = $fila['status'];
      
-        echo"<tr>";
+          echo"<tr>";
               echo"<td contenteditable>$campo1</td>";
               echo"<td contenteditable>$campo2</td>";
               echo"<td contenteditable>$campo3</td>";
@@ -132,16 +132,16 @@ echo "Datos actualizados";
               echo"<td >$campo13</td>";
               echo"<td><button type='button' class='btn btn-primary' value='actualizar-empleado' onclick='actualizarEmpleado($idd,$cont1)'>Actualizar</button></td>";
               echo"<td><button type='button' class='btn btn-primary' value='eliminar-empleado' onclick='eliminarEmpleado($idd,$cont)'>Eliminar</button></td>";
-        echo"</tr>";
+          echo"</tr>";
        
               $cont++;
               $cont1=$cont1+15;
-      } 
+        } 
       
         }
         else
         {
-    echo'<div class="alert alert-danger">Cero resultados</div>';
+          echo'<div class="alert alert-danger">Cero resultados</div>';
         }
 
   }
