@@ -30,6 +30,7 @@ function deletevento(id_evento){
 
 }
 function updatevento(id_evento,cont){
+
   var celdas=document.getElementsByTagName('td');
   for(var i=cont;i<celdas.length;i++)   // desde contador es menor al numero de celdas 
       { 
@@ -48,7 +49,7 @@ function updatevento(id_evento,cont){
     conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
      conexionU.send(variables);
      break;
-  }
+  }  
 }
 
 

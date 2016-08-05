@@ -109,7 +109,7 @@ document.getElementById("redessociales").style.display="none";
                     
                   <div class="form-group">  
                 <div id="div-login-msg">
-                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                <div id="icon-login-msg"></div>
                 <span id="text-login-msg">Escribe tu usuario y contraseña.</span>
                 </div>
               </div>

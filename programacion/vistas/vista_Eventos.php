@@ -83,7 +83,7 @@ require_once('../../programacion/clases/Administrador.php');
                           
                           </div>
                           <div class="form-group" >
-                       <table id="tablaeventos" class="table table-bordered" >
+               <!--        <table id="tablaeventos" class="table table-bordered" >
                             <thead >
                          <tr>
                          <th>Nombre</th>
@@ -93,7 +93,7 @@ require_once('../../programacion/clases/Administrador.php');
                           <th>Eliminar</th>
                           <th>Actualizar</th>
                         </tr>
-                        </thead>  
+                        </thead>    -->
                       
                        <?php   
                         $mostrar=new Administrador();
@@ -104,7 +104,7 @@ require_once('../../programacion/clases/Administrador.php');
                        
                     
                      <div class="modal-footer">
-                <button type="button" class="btn btn-default" class="btn btn-success">Cerrar</button>
+              <!--  <button type="button" class="btn btn-default" class="btn btn-success">Cerrar</button>   -->
               </div>
                     <div id="resultadodatos">
                    

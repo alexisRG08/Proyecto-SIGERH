@@ -6,7 +6,7 @@ if($_REQUEST['valor']=='iniciar-sesion')
     $usuario = htmlspecialchars( $_POST['usuario']);
     $contrasena =  htmlspecialchars($_REQUEST['contrasena']);
     
-    $admin=new Administrador();
+    $admin=new Administrador();	
     $admin->sesion_login($usuario,$contrasena);
 }
 ?>

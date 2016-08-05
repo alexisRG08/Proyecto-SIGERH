@@ -8,16 +8,10 @@ function sesion()
   var valor= window.event.srcElement.getAttribute('value');
   conexion3=crearXMLHttpRequest2();
 if(usuario==0){
- 
- document.getElementById('usuario').style.borderColor = "red";
- document.getElementById("usuario").placeholder= "Escribir su usuario";
-  document.getElementById("usuario").placeholder.color="red";
-
+ alert("Ingresa tu usuario");
 }else{
   if(contrasena==0){
-    document.getElementById('usuario').style.borderColor = "black";
-    document.getElementById('contrasena').style.borderColor = "red";
-    document.getElementById("contrasena").placeholder= "Escribir contraseña";
+   alert("Ingresa tu contraseña");
   }else{
     conexion3.onreadystatechange =procesariniciosesion;  
    var variables="valor="+valor+"&usuario="+usuario+"&contrasena="+contrasena;

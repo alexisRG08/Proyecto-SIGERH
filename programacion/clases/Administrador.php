@@ -16,6 +16,7 @@ class Administrador
       $resultado=$bd->ejecutar($sql);
       $cont1=0;
      $cont=0;
+     echo "<table id='tablaeventos' class='table table-bordered' ";
        while($fila=mysqli_fetch_array($resultado))
       {
                   $id_evento=$fila['ideventos'];
@@ -143,11 +144,13 @@ echo "Datos actualizados";
   $resultado=$bd->ejecutar($sql);
    $count = mysqli_num_rows($resultado);
            if($count >= 1){
+            session_start();
            $_SESSION['usuario'] = $usuario;  
            echo "<br> Bienvenido! " . $_SESSION['usuario'];
-           $this->validartipo($usuario);
+        //   $this->validartipo($usuario);
            }else{
-            echo "Información Incorrecta<br>";
+            echo("Usuario Incorrecto");
+
               }   
   }
   function validartipo($dato){
