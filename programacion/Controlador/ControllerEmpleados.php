@@ -13,9 +13,21 @@ if($_REQUEST['valor']=='Agregar-Evento'){
 if ($nom_evento==null) {
   echo "Escribe el nombre del evento..";
 }else{
-  
-$Empleados=new Empleados();
-  $Empleados->agregar_evento($nom_evento,$nom_fecha,$nom_hora,$nom_descripcion,$idempleados);
+  if($nom_fecha==null){
+    echo "Escribe la fecha del evento";
+  }else{
+    if($nom_hora==null){
+      echo "Escribe la Hora del evento";
+    }else{
+      if ($nom_descripcion==null) {
+        echo "Escribe una descipción del evento";
+      }else{
+        $Empleados=new Empleados();
+        $Empleados->agregar_evento($nom_evento,$nom_fecha,$nom_hora,$nom_descripcion,$idempleados);
+      }
+    }
+  }
+
   
 }
   
