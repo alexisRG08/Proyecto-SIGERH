@@ -29,7 +29,7 @@ require_once('../../programacion/clases/Administrador.php');
 
    <!-- ------------------------------ Formulario de Nuevo evento--------------------- -->            
    <div class="modal fade" id="informacion" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-lg">
+     <div class="modal-dialog">
       <div class="modal-content" >
        <div class="modal-header">
         <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -59,7 +59,7 @@ require_once('../../programacion/clases/Administrador.php');
           <!--  <input type="submit"  class="btn btn-success"    value="Agregar Evento"> -->
           <button type="submit" class="btn btn-success" onClick="agregareventos()" value="Agregar-Evento">Agregar Evento</button>
 
-          <div id="resultadoevento">
+          <div id="resultadoevento" >
 
           </div>
         </div>
@@ -80,13 +80,14 @@ require_once('../../programacion/clases/Administrador.php');
         <div class="modal-body">
           <div class="form-group">
             <label for="curp-empleado" class="control-label">Buscar eventos</label>
-            <a href="#" data-toggle="tooltip" title="Busca un evento"><input type="text" class="form-control" id="buscar" placeholder="Busca un evento"></a> <br>
-
+            <a href="#" data-toggle="tooltip" title="Busca un evento"><input type="text" class="form-control" id="buscarevt" placeholder="Busca un evento" ></a> <br>
+             <button type="button" class="btn btn-primary " value="btn_buscar" data-toggle="tooltip" data-placement="bottom" title="Te permite buscar un evento de forma rapida" onclick="buscar_evento();">Buscar Evento</button>
           </div>
           <div class="form-group" id="tabla_eventos" >
                       <?php   
+                      $dato="todos";
                       $mostrar=new Administrador();
-                      $mostrar->mostrareventos();
+                      $mostrar->mostrareventos("");
                       ?>     
                       <div id="resultadodatos">
 

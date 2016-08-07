@@ -10,9 +10,16 @@ require_once('../../programacion/conexion/DataBase.php');
 
 class Administrador
 {
-	function mostrareventos(){
+	function mostrareventos($buscar){
+    if ($buscar=="") {
+      $sql="select * from eventos";
+    }
+    else{
+$sql="select * from eventos where nombre LIKE '$buscar%';";
+    }
     $bd=new Database();
-    $sql="select * from eventos";
+   
+    
       $resultado=$bd->ejecutar($sql);
       $cont1=0;
      $cont=0;

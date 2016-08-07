@@ -4,6 +4,7 @@ var conexionU;
 var conexion1;
 var ajax;
 var refrescar;
+var buscando;
 
 function agregareventos()
 {
@@ -43,8 +44,8 @@ function updatevento(id_evento,cont){
         x++;
       }
 
-   
-        conexionU=crearXMLHttpRequest2();
+
+      conexionU=crearXMLHttpRequest2();
       conexionU.onreadystatechange= procesar;
       var btn=window.event.srcElement.getAttribute('value');
       var variables='valor='+btn+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id_evento;
@@ -64,6 +65,17 @@ function updatevento(id_evento,cont){
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     ajax.send(variables);
   }
+  function buscar_evento(){
+  var buscarevt=document.getElementById('buscarevt').value;
+  var valor= window.event.srcElement.getAttribute('value');
+  buscando=crearXMLHttpRequest2();
+  buscando.onreadystatechange= procesarbusqueda;
+  var variables="valor="+valor+"&buscarevt="+buscarevt;
+  buscando.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+  buscando.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  buscando.send(variables);
+
+  }
   function procesarAgregarEvento()
 
   {
@@ -73,6 +85,22 @@ function updatevento(id_evento,cont){
     {
       resultad.innerHTML = conexion2.responseText;
       
+    } 
+    else 
+    {
+
+      resultad.innerHTML = 'Cargando......';
+    }
+  }
+   function procesarbusqueda()
+
+  {
+    var resultad = document.getElementById('tabla_eventos'); 
+
+    if(buscando.readyState == 4)
+    {
+      resultad.innerHTML = buscando.responseText;
+
     } 
     else 
     {

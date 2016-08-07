@@ -49,11 +49,16 @@ if($_REQUEST['valor']=='actualizar-evento'){
     }
   }
 }
+if($_REQUEST['valor']=='btn_buscar'){
+   $buscarevt=strip_tags($_POST['buscarevt']);
+  $actualizar=new Administrador();
+  $actualizar->mostrareventos($buscarevt);
 
+}
 if($_REQUEST['valor']=='refrescar_tabla'){
    $mostrar=new Administrador();
   $mostrar->mostrareventos();
-echo "refrescando hee";
+ 
 }
 
 ?>
