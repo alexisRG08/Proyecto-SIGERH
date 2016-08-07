@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../ProyectoRH/css/estilos.css"/>
   <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
+  <script src="../ProyectoRH/programacion/JavaScript/JsCapacitaciones.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/JsUsuarios.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/Jslogin.js"></script>
   <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
@@ -25,7 +26,7 @@
 
  window.onload = function() {
   document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none"; 
+  //document.getElementById("ocultarcapcitacion").style.display="none"; 
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 

@@ -291,6 +291,62 @@ echo "Datos actualizados";
             
 
 	}
+  function agregar_capacitaciones($nombrec,$fechac,$horac,$lugarc,$descripcionc)
+  {
+    $bd=new Database();
+    $sql="insert into capacitacioness (nombre,fecha,hora,lugar,descripcion) values ('$nombrec','$fechac','$horac','$lugarc','$descripcionc');";
+    $resultado=$bd->ejecutar($sql);
+    
+  }
+  function eliminar_capacitaciones()
+  {
+
+  }
+  function actualizar_capacitaciones()
+  {
+
+  }
+  function buscar_capacitaciones()
+  {
+
+  }
+  function mostrar_capacitaciones()
+  {
+    $bd=new Database();
+    $sql="select * from capacitacioness";
+    $resultado=$bd->ejecutar($sql);
+    $cont=0;
+    $cont1=0;
+    echo "<div class='table-responsive'>
+            <table class='table table-bordered table-hover table-condensed table table-striped'>
+              <tr>
+                <th>Nombre</th><th>Fecha</th><th>Hora</th><th>Lugar</th><th>Descripcion</th><th>Actualizar</th><th>Eliminar</th>
+              </tr>";
+
+                  while ($fila = mysqli_fetch_array($resultado))
+                    {
+                      $idd = $fila['idcapacitacion'];
+                      $nombre = $fila['nombre'];
+                      $fecha = $fila['fecha']; 
+                      $hora = $fila['hora'];
+                      $lugar = $fila['lugar']; 
+                      $descripcion = $fila['descripcion']; 
+                      echo "<tr>";
+                      echo "<td contenteditable> $nombre</td>";
+                      echo "<td contenteditable> $fecha</td>";
+                      echo "<td contenteditable> $hora</td>";
+                      echo "<td contenteditable> $lugar</td>";
+                      echo "<td contenteditable> $descripcion</td>";
+                      echo "<td><button type='button' class='btn btn-primary' value='actualizar-capacitacion' onclick='actualizarCapacitaciones($idd,$cont1)'>Actualizar</button></td>";
+                      echo "<td><button type='button' class='btn btn-primary' value='eliminar-capacitacion' onclick='eliminarCapacitaciones($idd,$cont)'>Eliminar</button></td>";
+                      echo "</tr>";  
+                      $cont++;
+                      $cont1=$cont1+6;  
+                    }
+                              
+    echo"   </table>
+          </div>";
+  }
   function sesion_login($usuario,$contrasena){
   $bd=new Database();
  $sql= "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contrasena='".$contrasena."';";
