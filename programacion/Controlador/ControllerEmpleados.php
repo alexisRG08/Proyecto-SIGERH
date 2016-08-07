@@ -57,7 +57,7 @@ if($_REQUEST['valor']=='btn_buscar'){
 }
 if($_REQUEST['valor']=='refrescar_tabla'){
    $mostrar=new Administrador();
-  $mostrar->mostrareventos();
+  $mostrar->mostrareventos("");
  
 }
 

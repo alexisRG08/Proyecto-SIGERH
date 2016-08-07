@@ -23,7 +23,7 @@ require_once('../../programacion/clases/Administrador.php');
 	<!-------------------------Inicio de botones para el modal-------------------------------------->                           
 	<div class="container">
    <button class="btn btn-primary" data-toggle="modal" data-target="#informacion" >Nuevo evento</button>  
-   <button class="btn btn-primary" data-toggle="modal" data-target="#informacion2" >Ver eventos</button>
+   <button class="btn btn-primary" data-toggle="modal" data-target="#informacion2" onClick="refrescareventos();" value="refrescar_tabla">Ver eventos</button>
    <button class="btn btn-primary" data-toggle="modal" data-target="#informacion3">Reporte de eventos</button>
 
 

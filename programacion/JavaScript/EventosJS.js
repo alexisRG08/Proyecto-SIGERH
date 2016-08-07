@@ -58,12 +58,15 @@ function updatevento(id_evento,cont){
     }  
   }
   function refrescareventos(){
-    var valor="refrescar_tabla";
+ //   alert("lal");
+   // var valor="refrescar_tabla";
+   buscando=crearXMLHttpRequest2();
+    buscando.onreadystatechange= procesarbusqueda;
     var valor= window.event.srcElement.getAttribute('value');
     var variables="valor="+valor;
-    ajax.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
-    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    ajax.send(variables);
+    buscando.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+    buscando.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    buscando.send(variables);
   }
   function buscar_evento(){
   var buscarevt=document.getElementById('buscarevt').value;
