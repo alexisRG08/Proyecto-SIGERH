@@ -1,6 +1,16 @@
 <?php 
 require_once('../../programacion/conexion/DataBase.php');
 $bd=new Database();
+session_start();
+if(isset($_SESSION['usuario'])) 
+{ 
+  echo $_SESSION['usuario'];
+} 
+else 
+{   
+       echo "Usuario no registrado"; 
+       exit(); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

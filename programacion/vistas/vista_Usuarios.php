@@ -1,6 +1,17 @@
 <?php 
 require_once('../../programacion/conexion/DataBase.php');
 $bd=new DataBase();
+session_start();
+if(isset($_SESSION['usuario'])) 
+{ 
+  echo $_SESSION['usuario'];
+} 
+else 
+{   
+       echo "Usuario no registrado"; 
+       /*header ("Location:../../index.php");*/
+       exit(); 
+}
 ?>
 
 <!DOCTYPE html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>SIGERH</title>
   <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">-->
-  <script language="javascript" src="programacion/JavaScript/JsMenu.js" type="text/javascript"> </script>
+  <script language="javascript" src="programacion/JavaScript/JsMenu.js" type="text/javascript"> </script> 
   <link rel="stylesheet" href="../ProyectoRH/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="../ProyectoRH/css/estilos.css"/>
   <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
@@ -74,11 +74,11 @@
           <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user"> Usuarios</span></a></li>
           <li>
             <a href="#" id="referencia4"  value="InventarioEquipo">
-              <span  id="ocultarlogout"   value="Capacitacion"> Cerrar Sesión</span>
+              <span  id="ocultarlogout"  onclick="cerrarSesion()"> Cerrar Sesión</span>
             </a>
             
           </li>
-
+          <!--<button type="submit" id="ocultarlogout"class="btn btn-primary" onclick="cerrarSesion()">Cerrar Sesion</button>-->
 
 
 
@@ -162,16 +162,19 @@
        </div>
        
      </section>
-     <br>
+     <br> 
+     
+    <div id="mostrarms"> kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+    </div>
      <footer>
      	<div class="container">
 
          <div class="row">
           <div class="col-xs-12"><br> <br>
             <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
-          </div>  
+          </div>    
          <!--    </div>
-             <div class="row">
+             <div class="row"> 
             	<div class="col-xs-6">
                 	
                 </div>

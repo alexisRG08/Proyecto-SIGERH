@@ -421,6 +421,13 @@ echo "Datos actualizados";
 
               }   
   }
+
+  function cerrar_login()
+  {
+    session_start();
+    session_unset();     
+    session_destroy();
+  }
   function validartipo($dato){
      $bd=new Database();
      $sql="SELECT * FROM usuarios WHERE usuario = '".$dato."';";

@@ -9,4 +9,12 @@ if($_REQUEST['valor']=='iniciar-sesion')
     $admin=new Administrador();	
     $admin->sesion_login($usuario,$contrasena);
 }
+
+if($_REQUEST['valor']=='logout')
+{
+    
+    $admin=new Administrador();	
+    $admin->cerrar_login();
+    echo' cerrar sesion';
+}
 ?>
