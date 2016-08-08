@@ -2,6 +2,6 @@
 define("host","localhost");
 define("usuario","root");
 define("contrasenia", "root");
-define("nombre_basedatos","sigerh");
+define("nombre_basedatos","rhumanos");
 
 ?>
