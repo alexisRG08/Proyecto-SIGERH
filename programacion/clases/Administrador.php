@@ -80,27 +80,29 @@ echo "Datos actualizados";
   {
     $bd=new Database();
     $sql="update empleados set nombre='$nombre',apellidos='$apellido',direccion='$direccion',telefono='$telefono',edad=$edad,fechanacimiento='$fechaNacimiento',rfc='$rfcEmpleado',escolaridad='$estudio',curp='$curp',nsocial='$numsocial'
-     where id_empleado=$id_empleado;";
+     where id_empleado=$id_empleado;"; 
     $bd->ejecutar($sql);
     echo $sql;
   }     
-  function buscar_empleado($buscaEmpleado)
+  function buscar_empleado($buscaEmpleado) 
   { 
 
     $bd=new Database();
-    $sql="select * from empleados where nombre LIKE '$buscaEmpleado%';";
+    $sql="select e.id_empleado,e.nombre,e.apellidos,e.direccion,e.telefono,e.edad,e.fechanacimiento,e.rfc,e.escolaridad,t.tipo,d.nombre_departamento,e.curp,
+      e.nsocial,e.status FROM empleados e INNER JOIN tipo_empleo t ON e.Tipo_empleo_idTipo_empleo=t.idTipo_empleo INNER JOIN departamentos d ON e.departamentos_iddepartamentos=d.iddepartamentos 
+      where e.nombre LIKE '$buscaEmpleado%' and e.status='Alta';";
     $consulta=$bd->ejecutar($sql);
     $Num_filas=mysqli_num_rows($consulta);
-    echo" <div class='table-responsive'>
+
+        if($Num_filas>0)
+        { 
+        echo" <div class='table-responsive'>
          <table class='table table-bordered table-hover table-condensed table table-striped'>
           <tr>
             <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
             <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
             <th>Actualizar</th><th>Eliminar</th>
-          </tr>";
-
-        if($Num_filas>0)
-        { 
+          </tr>";  
           $cont=0;
           $cont1=0;
 
@@ -116,8 +118,8 @@ echo "Datos actualizados";
           $campo6 = $fila['fechanacimiento'];
           $campo7 = $fila['rfc'];
           $campo8 = $fila['escolaridad'];
-          $campo9 = $fila['Tipo_empleo_idTipo_empleo'];
-          $campo10 = $fila['departamentos_iddepartamentos'];
+          $campo9 = $fila['tipo'];
+          $campo10 = $fila['nombre_departamento'];
           $campo11 = $fila['curp'];
           $campo12 = $fila['nsocial'];
           $campo13 = $fila['status'];
@@ -157,28 +159,34 @@ echo "Datos actualizados";
     $bd=new Database();
     if($buscarEmpleados=='todos') 
     {
-      $sql="select * from empleados;";
+      $sql="select e.id_empleado,e.nombre,e.apellidos,e.direccion,e.telefono,e.edad,e.fechanacimiento,e.rfc,e.escolaridad,t.tipo,d.nombre_departamento,e.curp,
+      e.nsocial,e.status FROM empleados e INNER JOIN tipo_empleo t ON e.Tipo_empleo_idTipo_empleo=t.idTipo_empleo INNER JOIN departamentos d ON e.departamentos_iddepartamentos=d.iddepartamentos;";
     }
     if($buscarEmpleados=='altas')
     {
-    $sql="select * from empleados where status='Alta';";
+    $sql="select e.id_empleado,e.nombre,e.apellidos,e.direccion,e.telefono,e.edad,e.fechanacimiento,e.rfc,e.escolaridad,t.tipo,d.nombre_departamento,e.curp,
+      e.nsocial,e.status FROM empleados e INNER JOIN tipo_empleo t ON e.Tipo_empleo_idTipo_empleo=t.idTipo_empleo INNER JOIN departamentos d ON e.departamentos_iddepartamentos=d.iddepartamentos 
+      WHERE e.status='Alta';";
     }
     if($buscarEmpleados=='bajas')
     {
-      $sql="select * from empleados where status='baja';";
+      $sql="select e.id_empleado,e.nombre,e.apellidos,e.direccion,e.telefono,e.edad,e.fechanacimiento,e.rfc,e.escolaridad,t.tipo,d.nombre_departamento,e.curp,
+      e.nsocial,e.status FROM empleados e INNER JOIN tipo_empleo t ON e.Tipo_empleo_idTipo_empleo=t.idTipo_empleo INNER JOIN departamentos d ON e.departamentos_iddepartamentos=d.iddepartamentos 
+      WHERE e.status='baja';";
     }
     $consulta=$bd->ejecutar($sql);
     $Num_filas=mysqli_num_rows($consulta);
-    echo" <div class='table-responsive'>
+   
+
+        if($Num_filas>0)
+        { 
+        echo" <div class='table-responsive'>
          <table class='table table-bordered table-hover table-condensed table table-striped'>
           <tr>
             <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
             <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
             <th>Actualizar</th>
           </tr>";
-
-        if($Num_filas>0)
-        { 
           $cont=0;
           $cont1=0;
 
@@ -194,8 +202,8 @@ echo "Datos actualizados";
           $campo6 = $fila['fechanacimiento'];
           $campo7 = $fila['rfc'];
           $campo8 = $fila['escolaridad'];
-          $campo9 = $fila['Tipo_empleo_idTipo_empleo'];
-          $campo10 = $fila['departamentos_iddepartamentos'];
+          $campo9 = $fila['tipo'];
+          $campo10 = $fila['nombre_departamento'];
           $campo11 = $fila['curp'];
           $campo12 = $fila['nsocial'];
           $campo13 = $fila['status'];
@@ -238,7 +246,9 @@ echo "Datos actualizados";
 	}
 	function mostrar_empleados(){ 
 		  $bd=new Database();
-      $sql="select * from empleados where status='alta'";
+      $sql="select e.id_empleado,e.nombre,e.apellidos,e.direccion,e.telefono,e.edad,e.fechanacimiento,e.rfc,e.escolaridad,t.tipo,d.nombre_departamento,e.curp,
+      e.nsocial,e.status FROM empleados e INNER JOIN tipo_empleo t ON e.Tipo_empleo_idTipo_empleo=t.idTipo_empleo INNER JOIN departamentos d ON e.departamentos_iddepartamentos=d.iddepartamentos 
+      WHERE e.status='Alta';"; 
       $resultado=$bd->ejecutar($sql);
       $cont=0;
       $cont1=0;
@@ -260,11 +270,11 @@ echo "Datos actualizados";
         $campo6 = $fila['fechanacimiento'];
         $campo7 = $fila['rfc'];
         $campo8 = $fila['escolaridad'];
-        $campo9 = $fila['Tipo_empleo_idTipo_empleo'];
-        $campo10 = $fila['departamentos_iddepartamentos'];
+        $campo9 = $fila['tipo'];
+        $campo10 = $fila['nombre_departamento'];
         $campo11 = $fila['curp'];
         $campo12 = $fila['nsocial'];
-        $campo13 = $fila['status'];
+        $campo13 = $fila['status']; 
      
         echo"<tr>";
               echo"<td contenteditable>$campo1</td>";
@@ -298,22 +308,69 @@ echo "Datos actualizados";
     $resultado=$bd->ejecutar($sql);
     
   }
-  function eliminar_capacitaciones()
+  function eliminar_capacitaciones($idcapacitacion)
   {
-
+    $bd=new Database();
+    $sql="delete  from capacitacioness where idcapacitacion = $idcapacitacion;";
+    $resultado=$bd->ejecutar($sql);
   }
-  function actualizar_capacitaciones()
+  function actualizar_capacitaciones($idcapacitacion,$nombrec,$fechac,$horac,$lugarc,$descripcionc)
   {
-
+    $bd=new Database();
+    $sql="update capacitacioness set nombre='$nombrec',fecha='$fechac',hora='$horac',lugar='$lugarc',descripcion='$descripcionc' where idcapacitacion=$idcapacitacion;";
+    $resultado=$bd->ejecutar($sql);
   }
-  function buscar_capacitaciones()
+  function buscar_capacitaciones($buscarCapacitacion)
   {
+    $bd=new Database();
+    $sql="select * from capacitacioness where nombre like '$buscarCapacitacion%';";
+    $consulta=$bd->ejecutar($sql);
+    $Num_filas=mysqli_num_rows($consulta);
+    
 
+      if($Num_filas>0)
+        { 
+        echo "<div class='table-responsive'>
+              <table class='table table-bordered table-hover table-condensed table table-striped'>
+              <tr>
+                <th>Nombre</th><th>Fecha</th><th>Hora</th><th>Lugar</th><th>Descripcion</th><th>Actualizar</th><th>Eliminar</th>
+              </tr>";
+          $cont=0;
+          $cont1=0;
+          while($fila=mysqli_fetch_array($consulta))
+          {
+
+          $idd = $fila['idcapacitacion'];
+          $nombre = $fila['nombre'];
+          $fecha = $fila['fecha']; 
+          $hora = $fila['hora'];
+          $lugar = $fila['lugar']; 
+          $descripcion = $fila['descripcion']; 
+          echo "<tr>";
+          echo "<td contenteditable> $nombre</td>";
+          echo "<td contenteditable><input type='date' value='$fecha'></td>"; 
+          echo "<td contenteditable><input type='time' value='$hora'></td></td>";
+          echo "<td contenteditable> $lugar</td>";
+          echo "<td contenteditable> $descripcion</td>";
+          echo "<td><button type='button' class='btn btn-primary' value='actualizar-capacitacion' onclick='actualizarCapacitaciones($idd,$cont1)'>Actualizar</button></td>";
+          echo "<td><button type='button' class='btn btn-primary' value='eliminar-capacitacion' onclick='eliminarCapacitaciones($idd,$cont)'>Eliminar</button></td>";
+          echo "</tr>";  
+          $cont++;
+          $cont1=$cont1+6;
+
+          } 
+      echo "</table>
+            </div>";     
+        }
+          else
+        {
+          echo'<div class="alert alert-danger">Cero resultados</div>';
+        }       
   }
   function mostrar_capacitaciones()
   {
     $bd=new Database();
-    $sql="select * from capacitacioness";
+    $sql="select * from capacitacioness"; 
     $resultado=$bd->ejecutar($sql);
     $cont=0;
     $cont1=0;
@@ -331,17 +388,18 @@ echo "Datos actualizados";
                       $hora = $fila['hora'];
                       $lugar = $fila['lugar']; 
                       $descripcion = $fila['descripcion']; 
+
                       echo "<tr>";
                       echo "<td contenteditable> $nombre</td>";
-                      echo "<td contenteditable> $fecha</td>";
-                      echo "<td contenteditable> $hora</td>";
+                      echo "<td contenteditable> <input type='date' id='fecha$cont1' value='$fecha'></td>";
+                      echo "<td contenteditable> <input type='time' id='hora$cont1' value='$hora'></td>";  
                       echo "<td contenteditable> $lugar</td>";
                       echo "<td contenteditable> $descripcion</td>";
                       echo "<td><button type='button' class='btn btn-primary' value='actualizar-capacitacion' onclick='actualizarCapacitaciones($idd,$cont1)'>Actualizar</button></td>";
                       echo "<td><button type='button' class='btn btn-primary' value='eliminar-capacitacion' onclick='eliminarCapacitaciones($idd,$cont)'>Eliminar</button></td>";
                       echo "</tr>";  
                       $cont++;
-                      $cont1=$cont1+6;  
+                      $cont1=$cont1+7;  
                     }
                               
     echo"   </table>
@@ -382,4 +440,4 @@ echo "Datos actualizados";
     }
   }
 }
-?>
+?> 

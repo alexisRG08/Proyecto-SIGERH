@@ -75,7 +75,7 @@ $bd=new Database();
                 <div class="modal-body">
                 <form>
                   <div class="form-group">
-                    <label for="curp-empleado" class="control-label">Buscar Capacitaciones</label>
+                    <label for="bus-cap" class="control-label">Buscar Capacitaciones</label>
                     <input type="text" class="form-control" id="buscar-capacitaciones" placeholder="Buscar capacitaciones">
                   </div>
                   <div class="form-group">
@@ -92,7 +92,7 @@ $bd=new Database();
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                   </div>
-                  <div id="">
+                  <div id="resultadoCapacitaciones">
                     
                   </div>
                 </div><!-- cierra modal-body-->
