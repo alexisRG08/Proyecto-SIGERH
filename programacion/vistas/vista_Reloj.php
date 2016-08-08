@@ -54,7 +54,7 @@ width: 200px;
                             <label for="num-empleado" class="control" id="control-reloj">Numero del empleado:</label>
                             <input type="number" class="form-control" id="numero_empleado" placeholder="Numero del empleado">
                       </div>
-                       <button type="button" class="btn btn-primary"  onClick="registrar()" value="registrar_entsal">Registrar Entrada</button>
+                       <button type="button" class="btn btn-primary"  onClick="registrar()" value="registrar_entsal">Registrar Hora</button>
                       <br><br>
                       <div class="form-group " id="msjregistrar">
                   </div>
