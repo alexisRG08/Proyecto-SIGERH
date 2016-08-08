@@ -9,6 +9,7 @@
 	    <meta charset="utf-8">
 	    <title>Reloj checador</title>
 		  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
+      <script src="../ProyectoRH/programacion/JavaScript/JSrchecador.js"></script>
       <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
       <link rel="stylesheet" href="../../css/estilos.css"/>
  <style type="text/css">
@@ -28,33 +29,38 @@ color: black;
 width: 200px;
 }
  </style>
+
 </head>
 <body> 
-	    <div class="container">
-    <!--    <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_1">Registro de entrada</button>  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_2" >Registro de salida</button>  -->
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3">Ver Entradas/Salidas</button> 
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_4">Reporte Entradas/Salidas</button> 
+	    <div class="container" >
+        <div id="botones">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3" >Ver Entradas/Salidas</button> 
+        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_4" >Reporte Entradas/Salidas</button> 
+         </div>
 <!--**************************************************************Registro de entrada***************************************** -->  
-<div style="text-align:center;width:400px;padding:1em 0;"> <h2><a style="text-decoration:none;" href="http://www.zeitverschiebung.net/es/city/3531673"><span style="color:gray;">Hora actual en</span><br />Cancún, México</a></h2> <iframe src="http://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&timezone=America%2FCancun" width="100%" height="150" frameborder="0" seamless></iframe> <small style="color:gray;">
-   </div>
+<!-- <div style="text-align:center;width:400px;padding:1em 0;"> <h2><a style="text-decoration:none;" href="http://www.zeitverschiebung.net/es/city/3531673"><span style="color:gray;">Hora actual en</span><br />Cancún, México</a></h2> <iframe src="http://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&timezone=America%2FCancun" width="100%" height="150" frameborder="0" seamless></iframe> <small style="color:gray;">
+   </div>  -->
 
 
-                    <form>
-                    <div class="form-group col-md-4" id="seleccionaropcion" >
+                    <form><br><br>
+                    <div class="form-group col-md-4" >
                       <label for="entrada-empleado" id="control-reloj">Elija una opción:</label>
-                      <select class="form-control">
+                      <select class="form-control" id="select_opcion">
                       <option>Entrada</option>
                       <option>Salida</option>
                       </select>
                       <br>
                       <div class="form-group">
                             <label for="num-empleado" class="control" id="control-reloj">Numero del empleado:</label>
-                            <input type="number" class="form-control" id="" placeholder="Numero del empleado">
+                            <input type="number" class="form-control" id="numero_empleado" placeholder="Numero del empleado">
                       </div>
-                       <button type="button" class="btn btn-primary" data-dismiss="modal">Registrar Entrada</button>
+                       <button type="button" class="btn btn-primary"  onClick="registrar()" value="registrar_entsal">Registrar Entrada</button>
+                      <br><br>
+                      <div class="form-group " id="msjregistrar">
+                  </div>
                     </div>
                   </form>
+                 
 
 <div class="modal fade" id="ventana_1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog" >
@@ -98,7 +104,7 @@ width: 200px;
                   </form>
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal">Registrar salida</button>
+                <button type="button" class="btn btn-success">Registrar salida</button>
               </div>
                     <div id="resultadoDia">
                     
