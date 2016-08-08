@@ -66,6 +66,36 @@ function procesariniciosesion()
   }
 }
 
+function cerrarSesion()
+{
+  var cerrarSesion = 'logout';
+  conexion3 = crearXMLHttpRequest2(); 
+  conexion3.onreadystatechange=procesarCerrarSesion;
+  var variables="valor="+cerrarSesion;
+  conexion3.open("POST", "../ProyectoRH/programacion/Controlador/login.php", true);
+  conexion3.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  conexion3.send(variables);     
+
+
+}
+
+function procesarCerrarSesion()
+{
+  {
+  var resultad = document.getElementById('mostrarms');  
+
+  if(conexion3.readyState == 4)
+  {
+    resultad.innerHTML = conexion3.responseText;
+
+  } 
+  else 
+  {
+   
+    resultad.innerHTML = 'Cargando......';
+  }
+}
+}
 
 
 
