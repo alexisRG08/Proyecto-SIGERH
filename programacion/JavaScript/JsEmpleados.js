@@ -1,4 +1,5 @@
 var conexion1;
+var reporte;
 
 function agregarEmpleado()
 {
@@ -55,7 +56,14 @@ function refrescar_tabla()
   conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion1.send(variables);
 }
-
+function reporte(){
+alert("creando reporte");
+ // var valor= window.event.srcElement.getAttribute('value');
+ // var variables="valor="+valor;
+  conexion1.open("POST", "../ProyectoRH/programacion/Controlador/ControllerReportes.php", true);
+  conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  conexion1.send(null);
+}
 function procesar1()
 
 {

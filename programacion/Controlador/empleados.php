@@ -20,7 +20,6 @@ if($_REQUEST['valor']=='agregar-empleado')
 	if($nombre==null){
      echo "<font color='red'>**Ingresa el nombre del empleado <font>";
 	}else{
-	echo "Datos ingresados correctamente";
 	$admin=new Administrador();
 	$admin->agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$puesto,$departamento,$curp,$numsocial,$estado);
 	}	

@@ -18,21 +18,20 @@
   function cerrar(){
    document.getElementById("slides").style.display="none"; 
    document.getElementById("list-group").style.display="none";
+    document.getElementById("botones").style.display="";
    
  }
  function ver(){
    document.getElementById("slides").style.display=""; 
    document.getElementById("list-group").style.display=""; 
  }
-
  window.onload = function() {
-<<<<<<< HEAD
+
   //document.getElementById("ocultarempleados").style.display="none";  
   document.getElementById("ocultarcapcitacion").style.display="none"; 
-=======
-  document.getElementById("ocultarempleados").style.display="none";  
+
+  document.getElementById("ocultarempleados").style.display="";  
   //document.getElementById("ocultarcapcitacion").style.display="none"; 
->>>>>>> origin/master
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 
@@ -175,6 +174,7 @@
          <div class="row">
           <div class="col-xs-12"><br> <br>
             <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
+            <a href="programacion/Reportes/reporte_eventos.php"  class="btn btn-danger"target="_blank">Reporte</a>
           </div>  
          <!--    </div>
              <div class="row">

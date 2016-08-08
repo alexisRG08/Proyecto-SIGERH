@@ -29,12 +29,17 @@ color: black;
 width: 200px;
 }
  </style>
-
+<script type="text/javascript">
+window.onload = function() {
+  document.getElementById("botones").style.display="none"; 
+  document.getElementById("entradas").style.display="none"; 
+  }
+</script>
 </head>
 <body> 
 	    <div class="container" >
         <div id="botones">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3" >Ver Entradas/Salidas</button> 
+        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3" id="entradas" >Ver Entradas/Salidas</button> 
         <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_4" >Reporte Entradas/Salidas</button> 
          </div>
 <!--**************************************************************Registro de entrada***************************************** -->  

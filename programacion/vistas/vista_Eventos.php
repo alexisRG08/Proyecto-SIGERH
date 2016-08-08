@@ -24,7 +24,8 @@ require_once('../../programacion/clases/Administrador.php');
 	<div class="container">
    <button class="btn btn-primary" data-toggle="modal" data-target="#informacion" >Nuevo evento</button>  
    <button class="btn btn-primary" data-toggle="modal" data-target="#informacion2" onClick="refrescareventos();" value="refrescar_tabla">Ver eventos</button>
-   <button class="btn btn-primary" data-toggle="modal" data-target="#informacion3">Reporte de eventos</button>
+  <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#informacion3">Reporte de eventos</button>  -->
+  <a href="../ProyectoRH/programacion/Reportes/pdf.php" class="btn btn-primary" target="_blank">Reporte</a>
 
 
    <!-- ------------------------------ Formulario de Nuevo evento--------------------- -->            

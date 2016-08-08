@@ -69,6 +69,7 @@ function agregar_empleado($nombre,$apellido,$direccion,$telefono,$edad,$fechaNac
   $sql="insert into empleados (nombre,apellidos,direccion,telefono,edad,fechanacimiento,rfc,escolaridad,Tipo_empleo_idTipo_empleo,departamentos_iddepartamentos,curp,nsocial,status) values
   ('$nombre','$apellido','$direccion','$telefono','$edad','$fechaNacimiento','$rfcEmpleado','$estudio','$puesto','$departamento','$curp','$numsocial','$estado')";
   $bd->ejecutar($sql); 
+  echo "Datos ingresados correctamente,";
 }
 function eliminar_empleado($id_empleado)
 {
