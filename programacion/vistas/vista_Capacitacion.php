@@ -102,7 +102,7 @@ else
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                   </div>
-                  <div id="resultadoCapacitaciones">
+                  <div id="">
                     
                   </div>
                 </div><!-- cierra modal-body-->

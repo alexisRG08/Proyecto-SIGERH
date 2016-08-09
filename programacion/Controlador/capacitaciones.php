@@ -45,7 +45,7 @@ require_once ('../../programacion/clases/Administrador.php');
 		$buscarCapacitacion = $_REQUEST['buscarCapacitacion'];
 
 		$admin=new Administrador();
-		$admin-> buscar_capacitaciones($buscarCapacitacion);
+		$admin->buscar_capacitaciones($buscarCapacitacion);
 	}
 
 	if($_REQUEST['valor']=='refrescar')

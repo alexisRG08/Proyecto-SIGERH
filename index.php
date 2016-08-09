@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../ProyectoRH/css/estilos.css"/>
   <script src="../ProyectoRH/programacion/JavaScript/JsEmpleados.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/EventosJS.js"></script>
+  <script src="../ProyectoRH/programacion/JavaScript/JSrchecador.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/JsCapacitaciones.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/JsUsuarios.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/Jslogin.js"></script>
@@ -25,17 +26,10 @@
    document.getElementById("list-group").style.display=""; 
  }
  window.onload = function() {
-<<<<<<< HEAD
-
-  //document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none"; 
-
-  document.getElementById("ocultarempleados").style.display="";  
-  //document.getElementById("ocultarcapcitacion").style.display="none"; 
-=======
+ 
+ 
   document.getElementById("ocultarempleados").style.display="none";  
   document.getElementById("ocultarcapcitacion").style.display="none"; 
->>>>>>> origin/master
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 
@@ -173,7 +167,7 @@
      </section>
      <br> 
      
-    <div id="mostrarms"> kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+    <div id="mostrarms"> 
     </div>
      <footer>
      	<div class="container">
@@ -181,12 +175,8 @@
          <div class="row">
           <div class="col-xs-12"><br> <br>
             <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
-<<<<<<< HEAD
-            <a href="programacion/Reportes/reporte_eventos.php"  class="btn btn-danger"target="_blank">Reporte</a>
           </div>  
-=======
           </div>    
->>>>>>> origin/master
          <!--    </div>
              <div class="row"> 
             	<div class="col-xs-6">

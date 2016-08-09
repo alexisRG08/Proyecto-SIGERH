@@ -3,8 +3,8 @@ require_once('class.ezpdf.php');
  
  $bd_host = "localhost:3306"; 
 	$bd_usuario = "root"; 
-	$bd_password = "root"; 
-	$bd_base = "rhumanos"; 
+	$bd_password = ""; 
+	$bd_base = "recursoshumanos"; 
 	$con = mysql_connect($bd_host, $bd_usuario, $bd_password) or die("Error con la conexión"); 
 	mysql_select_db($bd_base, $con) or die("Error al seleccionar db");
 	$sql="select*from eventos;";
