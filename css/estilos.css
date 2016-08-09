@@ -148,6 +148,8 @@ img #estrella
     height: 30px;
     line-height: 28px;
     transition: all ease-in-out 500ms;
+    font-size: 15px;
+    font-weight: bold;
 
 }
 #img_logo {
@@ -168,5 +170,30 @@ img #estrella
   font-family: verdana;
 }
 #btnsesion{
-  margin-left: 30px;
+  margin-left: 5px;
+}
+#contrasena{
+	position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+	 border-radius: 10px;
+
+}
+#usuario{
+position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+		 border-radius: 10px;
+}
+
+#recordar{
+	font-weight: normal;
+	 margin-bottom: 30px;
+}
+#iniciosesion{
+	   font-weight: bold;
 }

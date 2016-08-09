@@ -4,7 +4,7 @@ $bd=new Database();
 session_start();
 if(isset($_SESSION['usuario'])) 
 { 
-  echo $_SESSION['usuario'];
+ // echo $_SESSION['usuario'];
 } 
 else 
 {   

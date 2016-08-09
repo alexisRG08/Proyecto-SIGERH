@@ -1,5 +1,6 @@
 <?php 
 require_once('../../programacion/conexion/DataBase.php');
+require_once ('../../programacion/clases/Administrador.php');
 $bd=new Database();
 session_start();
 if(isset($_SESSION['usuario'])) 
@@ -93,7 +94,6 @@ else
                   </div>
                   <div class="form-group" id="tabla_capacitaciones">
                     <?php
-                      require_once ('../../programacion/clases/Administrador.php');
                       $mostrar=new Administrador();
                       $mostrar->mostrar_capacitaciones();
                     ?> 

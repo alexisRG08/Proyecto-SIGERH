@@ -12,12 +12,12 @@
   <script src="../ProyectoRH/programacion/JavaScript/JsCapacitaciones.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/JsUsuarios.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/Jslogin.js"></script>
+  <script src="../ProyectoRH/programacion/JavaScript/JSrchecador.js"></script>
   <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
   <script type="text/javascript">
   function cerrar(){
    document.getElementById("slides").style.display="none"; 
    document.getElementById("list-group").style.display="none";
-    document.getElementById("botones").style.display="";
    
  }
  function ver(){
@@ -25,17 +25,14 @@
    document.getElementById("list-group").style.display=""; 
  }
  window.onload = function() {
-<<<<<<< HEAD
 
   //document.getElementById("ocultarempleados").style.display="none";  
   document.getElementById("ocultarcapcitacion").style.display="none"; 
 
   document.getElementById("ocultarempleados").style.display="";  
   //document.getElementById("ocultarcapcitacion").style.display="none"; 
-=======
   document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none"; 
->>>>>>> origin/master
+  document.getElementById("ocultarcapcitacion").style.display="none";
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 
@@ -113,7 +110,7 @@
     </section>
     
     <aside class="col-md-3" id="loginform">
-     <h4 class="text-center">INICIO DE SESIÓN</h4>
+     <h4 class="text-center" id="iniciosesion">INICIO DE SESIÓN</h4>
    </br>
    <img class="img-circle img-responsive center-block" id="img_logo" src="img/user.png">
    <form id="forminicio">
@@ -137,13 +134,13 @@
   <div class="form-group">
     <div class="checkbox">
       <label>
-        <input type="checkbox"> Remember me
+        <input type="checkbox" id="recordar"> Remember me
       </label>
     </div>
   </div>
 </form>
 <div class="form-group">
-  <button type="submit" id="btnsesion"class="btn btn-primary" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
+  <button type="submit" id="btnsesion"class="btn btn-primary  btn-block" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
   
 </div>
 
@@ -173,7 +170,7 @@
      </section>
      <br> 
      
-    <div id="mostrarms"> kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+    <div id="mostrarms"> 
     </div>
      <footer>
      	<div class="container">
@@ -181,12 +178,9 @@
          <div class="row">
           <div class="col-xs-12"><br> <br>
             <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
-<<<<<<< HEAD
-            <a href="programacion/Reportes/reporte_eventos.php"  class="btn btn-danger"target="_blank">Reporte</a>
           </div>  
-=======
+
           </div>    
->>>>>>> origin/master
          <!--    </div>
              <div class="row"> 
             	<div class="col-xs-6">

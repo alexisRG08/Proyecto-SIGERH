@@ -21,6 +21,13 @@ function agregareventos()
  conexion2.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
  conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
  conexion2.send(variables);        
+ limpiar_variables();
+}
+function limpiar_variables(){
+  var nom_evento=document.getElementById('evtnombre').value="";
+  var nom_fecha=document.getElementById('evtfecha').value="";
+  var nom_hora=document.getElementById('evthora').value="";
+  var nom_descripcion=document.getElementById('evtdescripcion').value="";
 }
 function deletevento(id_evento){
   var eliminar = confirm("¿Esta Seguro de  eliminar este usuario?")
