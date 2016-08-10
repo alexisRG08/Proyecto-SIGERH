@@ -313,7 +313,7 @@ function sesion_login($usuario,$contrasena){
   if($count >= 1){
     session_start();
     $_SESSION['usuario'] = $usuario;  
-    echo "<br> Bienvenido! " . $_SESSION['usuario'];
+  //  echo "<br> Bienvenido! " . $_SESSION['usuario'];
     $this->validartipo($usuario);
   }else{
     echo("Usuario Incorrecto");

@@ -5,12 +5,12 @@ $bd=new Database();
 session_start();
 if(isset($_SESSION['usuario'])) 
 { 
-  echo $_SESSION['usuario'];
+ // echo $_SESSION['usuario'];
 } 
 else 
 {   
-       echo "Usuario no registrado"; 
-       exit(); 
+       echo "Necesita loguearse"; 
+       exit();   
 }
 ?>
 <!DOCTYPE html>
@@ -25,9 +25,24 @@ else
 </head>
 <body>                             
 	<div class="container">
-    	<button class="btn btn-primary" data-toggle="modal" data-target="#ventana1">Nueva capacitacion</button>  
+
+    <?php
+    if(isset($_SESSION['usuario'])) 
+{ 
+ echo "<button class='btn btn-primary' data-toggle='modal' data-target='#ventana1'>Nueva capacitacion</button>  ";
+ echo "<button class='btn btn-primary' data-toggle='modal' data-target='#ventana2'>Ver Capacitaciones</button>  ";
+  echo "<button class='btn btn-primary' data-toggle='modal' data-target='#ventana3'>Reporte de capacitaciones</button>  ";
+
+} 
+else 
+{   
+   //    echo "Usuario no registrado"; 
+         
+}
+    ?>
+   <!-- 	<button class="btn btn-primary" data-toggle="modal" data-target="#ventana1">Nueva capacitacion</button>  
         <button class="btn btn-primary" data-toggle="modal" data-target="#ventana2" >Ver capacitaciones</button>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana3">Reporte de capacitaciones</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana3">Reporte de capacitaciones</button>  -->
     </div>    
 <!--**************************************************************Nueva capacitacion***************************************** -->           
 <div class="modal fade" id="ventana1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">

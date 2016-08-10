@@ -1,4 +1,8 @@
 <!doctype html>
+<?php
+session_start();
+?>
+
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -25,16 +29,15 @@
    document.getElementById("list-group").style.display=""; 
  }
  window.onload = function() {
-  document.getElementById("ocultarempleados").style.display="";  
-  document.getElementById("ocultarcapcitacion").style.display=""; 
+/*  document.getElementById("ocultarempleados").style.display="none";  
+  document.getElementById("ocultarcapcitacion").style.display="none"; 
   document.getElementById("ocultarusuarios").style.display="none";
-  document.getElementById("ocultarlogout").style.display="none";  
+  document.getElementById("ocultarlogout").style.display="";  
   document.getElementById("redessociales").style.display="none"; 
-
-
+   document.getElementById("ocultareventos").style.display="none";   */
+    document.getElementById("ocultarlogout").style.display="";  
 };
 </script>
-
 </head>
 
 <body>
@@ -57,27 +60,45 @@
     <div class="collapse navbar-collapse" id="navegacion-fm"><!--navbar-->
      <ul class="nav navbar-nav">
        <li><a href="../programacion/Controlador/referencias?" id="referencia1"  value="Informacion">
-        <span id="ocultareventos" value="Eventos" class="glyphicon glyphicon-list-alt"  onclick="ver()"> Eventos</span></a></li>
+        <span id="ocultareventos" value="Eventos" class="glyphicon glyphicon-list-alt"  onclick="ver()" > Eventos</span></a></li>
         <li><a  href="../programacion/Controlador/referencias?" id="referencia2"  value="Archivos">
-          <span  id="ocultarempleados" value="Control" class="glyphicon glyphicon-file"  onclick="ver()"> Control de Empleados</span></a></li>
+          <span  id="ocultarempleados" value="Control" class="glyphicon glyphicon-file"  onclick="ver()" > Control de Empleados</span></a></li>
           
           <li><a href="../../programacion/Controlador/referencias?" id="referencia3"  value="Reporteador">
             <span  id="" class="glyphicon glyphicon-exclamation-sign"  onclick="cerrar()" value="Reloj">Reloj Checador </span></a></li>
             <li>
              <a href="../../programacion/Controlador/referencias?" id="referencia4"  value="InventarioEquipo">
-              <span  id="ocultarcapcitacion" class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion"> Capacitacion</span>
-            </a>
-            
+              <span  id="ocultarcapcitacion" class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion" > Capacitacion</span>
+            </a>      
           </li>
           
-          <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user"> Usuarios</span></a></li>
-          <li>
-            <a href="#" id="referencia4"  value="InventarioEquipo">
-              <span  id="ocultarlogout"  onclick="cerrarSesion()"> Cerrar Sesión</span>
-            </a>
+          <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user" style='display:none;'> Usuarios</span></a></li>
             
-          </li>
-          <!--<button type="submit" id="ocultarlogout"class="btn btn-primary" onclick="cerrarSesion()">Cerrar Sesion</button>-->
+          <?php
+
+          if(isset($_SESSION['usuario'])) 
+          { 
+           echo "<li>";
+           echo "<a href='#'' id='referencia4'  value='InventarioEquipo'>";
+           echo "<span  id='ocultarlogout'  onclick='cerrarSesion()'> Cerrar Sesión</span>";
+           echo "</a>";
+           echo "</li>";
+          } 
+          else 
+          {
+            echo "<li>";
+           echo "<a href='#'' id='referencia4'  value='InventarioEquipo'>";
+           echo "<span  id='ocultarlogout'  onclick='#'> Logueate</span>";
+           echo "</a>";
+           echo "</li>"; 
+          } 
+          ?>
+           <!-- <li><a href="#" id="referencia4"  value="InventarioEquipo"> <span  id="ocultarlogout"  onclick="cerrarSesion()"> Cerrar Sesión</span>
+            </a>
+           </li>    -->
+
+
+        
 
 
 
@@ -101,8 +122,16 @@
       </div>
       
     </section>
+    <?php
     
-    <aside class="col-md-3" id="loginform">
+if(isset($_SESSION['usuario'])) 
+{ 
+//  echo $_SESSION['usuario'];
+} 
+else 
+{   
+  ?>
+   <aside class="col-md-3" id="loginform">
      <h4 class="text-center" id="iniciosesion">INICIO DE SESIÓN</h4>
    </br>
    <img class="img-circle img-responsive center-block" id="img_logo" src="img/user.png">
@@ -112,6 +141,7 @@
     <div class="form-group">  
       <div id="div-login-msg">
         <div id="icon-login-msg" class="glyphicon glyphicon-home"></div>
+         
         <span id="text-login-msg">Escribe tu usuario y contraseña</span>
       </div>
     </div>
@@ -142,7 +172,13 @@
 
 
 </aside>
-<aside class="col-md-3" id="redessociales"><br><br>
+  <?php
+    //   echo "Usuario no registrado"; 
+    //   exit();   
+}
+    ?>
+ 
+<!--<aside class="col-md-3" id="redessociales"><br><br>
   <h4 style="color:#06C;">Siguenos en:</h4>
   <div class="list-group" id="list-group">
     <a href="http://www.facebook.com" target="_blank" class="list-group-item primero">
@@ -156,7 +192,7 @@
             <a href="http://www.instagram.com" target="_blank" class="list-group-item quinto"> 
              <img src="fonts/glyphicons_social/png/social-33-instagram.png"> Instagram</a>  
            </div>
-         </aside>    
+         </aside>    -->
          
        </div>
        
@@ -170,7 +206,7 @@
 
          <div class="row">
           <div class="col-xs-12"><br> <br>
-            <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
+            <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>f
           </div>  
           </div>    
          <!--    </div>

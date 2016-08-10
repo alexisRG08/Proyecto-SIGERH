@@ -20,6 +20,7 @@ if(usuario==0){
   conexion3.send(variables);     
   var user=document.getElementById('usuario').value="";
   var contrasena=document.getElementById('contrasena').value="";
+  location.reload();
   }
 }
        
@@ -68,6 +69,7 @@ function procesariniciosesion()
 
 function cerrarSesion()
 {
+  alert("Sus sesión se ha cerrado correctamente");
   var cerrarSesion = 'logout';
   conexion3 = crearXMLHttpRequest2(); 
   conexion3.onreadystatechange=procesarCerrarSesion;
@@ -75,9 +77,13 @@ function cerrarSesion()
   conexion3.open("POST", "../ProyectoRH/programacion/Controlador/login.php", true);
   conexion3.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   conexion3.send(variables);     
-
+ location.reload();
 
 }
+/* function redireccionar(){
+  window.locationf="../../index.php";
+} 
+*/setTimeout ("redireccionar()", 5000); 
 
 function procesarCerrarSesion()
 {
