@@ -101,8 +101,7 @@ function procesarAgregarEmpleado()
 
 function actualizarEmpleado(id,cont) 
 {
-  alert(cont); 
-  alert('id:'+id); 
+  
   var celdas= document.getElementsByTagName('td'); 
   for (var i = cont; i < celdas.length; i++) 
   {
