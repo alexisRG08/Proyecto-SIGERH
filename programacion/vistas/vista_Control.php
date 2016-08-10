@@ -127,13 +127,14 @@ else
                               <option value="Alta">Alta</option>
                             </select>
                           </div>
-                     </form>
+                    
                      <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                       <button type="submit" class="btn btn-primary" onClick="agregarEmpleado()" value="agregar-empleado">Agregar empleado</button>
                      </div>
+                     </form>
                     <div id="resultadoEmpleado">
-                    
+                     
                     </div>
                 </div><!-- cierra modal-body-->
       </div><!-- cierra modal-header-->

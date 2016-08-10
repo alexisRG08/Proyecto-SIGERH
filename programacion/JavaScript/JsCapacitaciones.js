@@ -47,7 +47,7 @@ function actualizarCapacitaciones(id,cont)
     var x=0;
     while(x<5)  
     {
-     alert(celdas[i+x].innerHTML);
+  //   alert(celdas[i+x].innerHTML);
      x++;
     }
     conexion1=crearXMLHttpRequest2();

@@ -48,7 +48,7 @@ function limpiar_texto()
 function refrescar_tabla()
 {
  
-  alert('entre al metodo refrescar');
+ // alert('entre al metodo refrescar');
   var valor="Refrescar";
   var valor= window.event.srcElement.getAttribute('value');
   var variables="valor="+valor;

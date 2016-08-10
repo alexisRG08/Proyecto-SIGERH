@@ -1,6 +1,6 @@
 <?php 
 require_once('../../programacion/conexion/DataBase.php');
-require_once ('../../programacion/clases/Administrador.php');
+require_once('../../programacion/clases/Administrador.php');
 $bd=new Database();
 session_start();
 if(isset($_SESSION['usuario'])) 
@@ -62,11 +62,12 @@ else
                         <label for="desc-cap" class="control-label">Descripcion</label>
                         <input type="text" class="form-control" id="cap-desc" name="capdesc" placeholder="Agrega una descripcion" required="required">
                       </div>
-                  </form>    
+              
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-primary" onClick="agregarCapacitaciones()" value="agregar-capacitaciones">Agregar empleado</button>
                   </div>
+                   </form>
                   <div id="resultadoCap">
                     
                   </div>
@@ -94,8 +95,8 @@ else
                   </div>
                   <div class="form-group" id="tabla_capacitaciones">
                     <?php
-                      $mostrar=new Administrador();
-                      $mostrar->mostrar_capacitaciones();
+                      $mostrarcap=new Administrador();
+                      $mostrarcap->mostrar_capacitaciones();
                     ?> 
                   </div>
                 </form>

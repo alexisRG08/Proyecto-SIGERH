@@ -54,11 +54,12 @@ function updatevento(id_evento,cont){
 
       conexionU=crearXMLHttpRequest2();
       conexionU.onreadystatechange= procesar;
-      var btn=window.event.srcElement.getAttribute('value');
-      var variables='valor='+btn+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id_evento;
-      conexionU.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
-      conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-      conexionU.send(variables);
+      var valor=window.event.srcElement.getAttribute('value');
+      var variables='valor='+valor+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id_evento;
+         alert(variables);
+     // conexionU.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+     // conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+     // conexionU.send(variables);
       break;
       
       

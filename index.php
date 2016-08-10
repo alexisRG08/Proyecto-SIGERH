@@ -13,7 +13,6 @@
   <script src="../ProyectoRH/programacion/JavaScript/JsCapacitaciones.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/JsUsuarios.js"></script>
   <script src="../ProyectoRH/programacion/JavaScript/Jslogin.js"></script>
-  <script src="../ProyectoRH/programacion/JavaScript/JSrchecador.js"></script>
   <link rel="stylesheet" href="../ProyectoRH/css/tablas.css"/>
   <script type="text/javascript">
   function cerrar(){
@@ -26,20 +25,11 @@
    document.getElementById("list-group").style.display=""; 
  }
  window.onload = function() {
-  //document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none"; 
-
   document.getElementById("ocultarempleados").style.display="";  
-  //document.getElementById("ocultarcapcitacion").style.display="none"; 
-  document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none";
-
-  document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none"; 
+  document.getElementById("ocultarcapcitacion").style.display=""; 
   document.getElementById("ocultarusuarios").style.display="none";
   document.getElementById("ocultarlogout").style.display="none";  
   document.getElementById("redessociales").style.display="none"; 
-  //document.getElementById("ocultareventos").style.display="none"; 
 
 
 };
