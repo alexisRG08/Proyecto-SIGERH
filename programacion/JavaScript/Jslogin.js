@@ -20,7 +20,7 @@ if(usuario==0){
   conexion3.send(variables);     
   var user=document.getElementById('usuario').value="";
   var contrasena=document.getElementById('contrasena').value="";
-  location.reload();
+ // location.reload(); 
   }
 }
        
@@ -83,7 +83,7 @@ function cerrarSesion()
 /* function redireccionar(){
   window.locationf="../../index.php";
 } 
-*/setTimeout ("redireccionar()", 5000); 
+*/
 
 function procesarCerrarSesion()
 {

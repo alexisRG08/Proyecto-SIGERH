@@ -8,7 +8,6 @@ function formulario(){
 <?php
 require_once('../../programacion/conexion/DataBase.php');
 
-
 class Administrador
 {
 	function mostrareventos($buscar){
@@ -239,14 +238,6 @@ function buscar_empleados($buscarEmpleados)
   }
 }
 
-function agregar_usuario($nickname,$password,$tipo_usuario)
-{
-  $bd=new Database();
-  $sql="insert into usuarios (usuario,contrasena,tipo) values($nickname,$password,$tipo_usuario)";
-  $bd->ejecutar($sql);
-  echo $sql;
-
-}
 function mostrar_empleados(){ 
   $bd=new Database();
  $sql="select e.id_empleado,e.nombre,e.apellidos,e.direccion,e.telefono,e.edad,e.fechanacimiento,e.rfc,e.escolaridad,t.tipo,d.nombre_departamento,e.curp,
@@ -304,21 +295,30 @@ function mostrar_empleados(){
 
 
 }
-function sesion_login($usuario,$contrasena){
+function sesion_login($usuario,$contrasena)
+{
   $bd=new Database();
-  $sql= "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contrasena='".$contrasena."';";
+  $encriptar = $_REQUEST['contrasena'];
+  $hashed= hash('sha512',$encriptar); 
 
+  $sql= "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contrasena='".$hashed."';";
+  $bd->ejecutar($sql);
+ 
+ 
   $resultado=$bd->ejecutar($sql);
   $count = mysqli_num_rows($resultado);
-  if($count >= 1){
+  if($count >= 1)
+  {
     session_start();
     $_SESSION['usuario'] = $usuario;  
-  //  echo "<br> Bienvenido! " . $_SESSION['usuario'];
+ //echo "<br> Bienvenido! " . $_SESSION['usuario'];
     $this->validartipo($usuario);
-  }else{
+  }
+  else
+  {
     echo("Usuario Incorrecto");
-
   }   
+ 
 }
 function validartipo($dato){
  $bd=new Database();
@@ -426,7 +426,7 @@ function agregar_capacitaciones($nombrec,$fechac,$horac,$lugarc,$descripcionc)
 function mostrar_capacitaciones()
  {
       $bd=new Database();
-      $sql="select * from capacitaciones"; 
+      $sql="select * from capacitacioness"; 
       $resultado=$bd->ejecutar($sql);
       $cont=0;
       $cont1=0;
@@ -520,7 +520,129 @@ function buscar_capacitaciones($buscarCapacitacion)
  $sql="update capacitaciones set nombre='$nombrec',fecha='$fechac',hora='$horac',lugar='$lugarc',descripcion='$descripcionc' where idcapacitacion=$idcapacitacion;";
  $resultado=$bd->ejecutar($sql);
 }
-function cerrar_login() {
+
+function agregar_usuario($nombreU,$password,$tipoE,$idEmpleado)
+{
+
+$bd=new Database();
+  $sql="call validar_password($idEmpleado);";
+  $resultado=$bd->ejecutar($sql);
+  $bd->cerrarConexion();
+while($fila=mysqli_fetch_array($resultado))
+            {
+              $mensaje=$fila['@mensaje'];
+            }
+
+
+            if($mensaje=='1')
+            {
+              $bd=new Database();
+              $sql="call validar_usuario('$nombreU','$password',$tipoE,$idEmpleado);";
+              $resultado=$bd->ejecutar($sql);
+              while($fila=mysqli_fetch_array($resultado))
+            {
+              $mens=$fila['@mensaje'];
+            }
+            echo $mens;
+            }
+            else
+            {
+              echo $mensaje;
+            }
+  /*$bd=new Database();
+  $sql="insert into usuarios (usuario,contrasena,tipo,empleados_id_empleado) values ('$nombreU','$password',$tipoE,$idEmpleado);";
+  $resultado=$bd->ejecutar($sql);
+  echo $sql;*/
+}
+
+function eliminar_usuario($idUsuario)
+{
+  $bd=new Database();
+  $sql="delete from usuarios where Id_user = $idUsuario ;";
+  $resultado=$bd->ejecutar($sql);
+  $bd->cerrarConexion();
+}
+function buscar_usuario($buscarUsuario)
+{
+  $bd=new Database();
+  $sql="select u.Id_user, u.usuario, u.contrasena,u.tipo,e.nombre from usuarios u INNER JOIN empleados e on u.empleados_id_empleado=e.id_empleado where u.usuario like '$buscarUsuario%';";
+  $consulta=$bd->ejecutar($sql);
+  $Num_filas=mysqli_num_rows($consulta);   
+  
+  if($Num_filas>0)
+    { 
+      $cont=0;
+      //$cont1=0;
+      echo "<div class='table-responsive'>
+            <table class='table table-bordered table-hover table-condensed table table-striped'>
+                <tr>
+                  <th>Usuario</th><th>Tipo de usuario</th><th>Nombre de empleado</th><th>Eliminar</th>
+                </tr>";
+            while($fila=mysqli_fetch_array($consulta))
+            {
+  
+            $idd = $fila['Id_user'];
+            $usuario = $fila['usuario'];
+            $contrasena = $fila['contrasena']; 
+            $tipo = $fila['tipo'];
+            $nombre = $fila['nombre'];  
+            echo "<tr>";
+            echo "<td > $usuario</td>";
+            echo "<td > $tipo</td>";  
+            echo "<td > $nombre</td>";
+            //echo "<td><button type='button' class='btn btn-primary' value='actualizar-usuario' onclick='actualizarUsuario($idd,$cont1)'>Actualizar</button></td>";
+            echo "<td><button type='button' class='btn btn-primary' value='eliminar-usuario' onclick='eliminarUsuario($idd,$cont)'>Eliminar</button></td>";
+            echo "</tr>";  
+            $cont++;
+            //$cont1=$cont1+4;
+            
+            } 
+        echo "</table>
+              </div>";     
+        }
+          else
+          {
+            echo'<div class="alert alert-danger">Cero resultados</div>';
+          }       
+}
+function mostrar_usuarios()
+{
+  $bd=new Database();
+  $sql ="select u.Id_user, u.usuario, u.contrasena,u.tipo,e.nombre from usuarios u INNER JOIN empleados e on u.empleados_id_empleado=e.id_empleado;";
+  $resultado=$bd->ejecutar($sql);
+      $cont=0;
+     //$cont1=0;
+      echo "<div class='table-responsive'>
+                <table class='table table-bordered table-hover table-condensed table table-striped'>
+                <tr>
+                  <th>Usuario</th><th>Tipo de usuario</th><th>Nombre de empleado</th><th>Eliminar</th>
+                </tr>";
+            
+            while($fila=mysqli_fetch_array($resultado))
+            {
+  
+            $idd = $fila['Id_user'];
+            $usuario = $fila['usuario'];
+            $contrasena = $fila['contrasena']; 
+            $tipo = $fila['tipo'];
+            $nombre = $fila['nombre'];  
+            echo "<tr>";
+            echo "<td > $usuario</td>";
+            echo "<td > $tipo</td>";  
+            echo "<td > $nombre</td>";
+            //echo "<td><button type='button' class='btn btn-primary' value='actualizar-usuario' onclick='actualizarUsuario($idd,$cont1)'>Actualizar</button></td>";
+            echo "<td><button type='button' class='btn btn-primary' value='eliminar-usuario' onclick='eliminarUsuario($idd,$cont)'>Eliminar</button></td>";
+            echo "</tr>";  
+            $cont++;
+            //$cont1=$cont1+4;
+  
+            } 
+        echo "</table>
+              </div>";      
+}
+
+function cerrar_login() 
+{
   session_start();
   session_unset();
   session_destroy();
