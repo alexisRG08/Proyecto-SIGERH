@@ -108,8 +108,8 @@ else
                   </div>
                   <div class="form-group" id="tabla_capacitaciones">
                     <?php
-                      $mostrarcap=new Administrador();
-                      $mostrarcap->mostrar_capacitaciones();
+                      $admin=new Administrador();
+                      $admin-> mostrar_capacitaciones();
                     ?> 
                   </div>
                 </form>

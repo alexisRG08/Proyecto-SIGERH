@@ -29,7 +29,11 @@ session_start();
    document.getElementById("list-group").style.display=""; 
  }
  window.onload = function() {
+
     document.getElementById("ocultarlogout").style.display="";  
+   document.getElementById("ocultareventos").style.display="none";   
+    document.getElementById("ocultarlogout").style.display=""; 
+    document.getElementById("ocultarusuarios").style.display=""; 
 };
 </script>
 <style type="text/css">
@@ -182,7 +186,7 @@ else
   </div>
 </form>
 <div class="form-group">
-  <button type="submit" id="btnsesion"class="btn btn-primary  btn-block" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
+  <button type="button" id="btnsesion"class="btn btn-primary  btn-block" onclick="sesion()" value="iniciar-sesion">Iniciar Sesion</button>
   
 </div>
 
@@ -224,7 +228,7 @@ else
 
          <div class="row">
           <div class="col-xs-12"><br> <br>
-            <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>f
+            <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>
           </div>  
           </div>    
               </div> 
