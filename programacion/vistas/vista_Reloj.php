@@ -1,5 +1,7 @@
 <?php
  require_once('../../programacion/conexion/DataBase.php');
+require_once ('../../programacion/clases/Administrador.php');
+
  $bd=new DataBase();
  ?>
 
@@ -29,17 +31,11 @@ color: black;
 width: 200px;
 }
  </style>
-<script type="text/javascript">
-window.onload = function() {
-  document.getElementById("botones").style.display="none"; 
-  document.getElementById("entradas").style.display="none"; 
-  }
-</script>
 </head>
 <body> 
 	    <div class="container" >
         <div id="botones">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3" id="entradas" >Ver Entradas/Salidas</button> 
+   <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_3" id="entradas" >Ver Entradas/Salidas</button> 
         <button class="btn btn-primary" data-toggle="modal" data-target="#ventana_4" >Reporte Entradas/Salidas</button> 
          </div>
 <!--**************************************************************Registro de entrada***************************************** -->  
@@ -47,7 +43,8 @@ window.onload = function() {
    </div>  -->
 
 
-                    <form><br><br>
+                    <form><br>
+                      <br>
                     <div class="form-group col-md-4" >
                       <label for="entrada-empleado" id="control-reloj">Elija una opción:</label>
                       <select class="form-control" id="select_opcion">
@@ -93,33 +90,6 @@ window.onload = function() {
   </div><!-- cierra modal-dialog-->
 </div>  <!-- cierra modal-fade-->
 </div><!--cierra container--> 
-<!--**************************************************************Registro de salida***************************************** -->           
-<div class="modal fade" id="ventana_2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
-    <div class="modal-content" >
-      <div class="modal-header">
-        <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="exampleModalLabel">Registro de salida</h4>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="salida-empleado" class="control-label">Numero de empleado:</label>
-                      <input type="number" class="form-control" id="salida-empleado" placeholder="Numero del empleado">
-                    </div>
-                  </form>
-                     <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success">Registrar salida</button>
-              </div>
-                    <div id="resultadoDia">
-                    
-                    </div>
-                </div><!-- cierra modal-body-->
-      </div><!-- cierra modal-header-->
-    </div><!-- cierra modal-content-->
-  </div><!-- cierra modal-dialog-->
-</div>  <!-- cierra modal-fade-->
-</div><!--cierra container--> 
 <!--**************************************************************Ver entradas / salidas***************************************** -->           
 <div class="modal fade" id="ventana_3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog" >
@@ -129,20 +99,22 @@ window.onload = function() {
           <h4 class="modal-title" id="exampleModalLabel">Ver Entradas / Salidas</h4>
                 <div class="modal-body">
                   <form>
-                   <div class="form-group">
-                    <label for="area-name" class="control-label">Consulta de entradas / salidas:</label>
-                      <select name="" id="" class="form-control" onchange="mostrar();">
+                     <label for="area-name" class="control-label">Consulta de entradas / salidas:</label>
+                      <select name="" id="elegir_opcion" class="form-control" onchange="mostrar();">
                         <option value="">Todos</option>
-                        <option value="">Entradas de empleados</option>
-                        <option value="">Salidas de empleados</option>
-                      </select>
-                    </div>
+                        <option value="">Entradas</option>
+                        <option value="">Salidas</option>
+                      </select> <br>
+                   <div class="form-group" id="tabla_reloj">
+                    
+                    
+                    </div> 
                   </form>
                      <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
-                    <div id="resultadoDia">
-                    
+                    <div id="msjreloj">
+              
                     </div>
                 </div><!-- cierra modal-body-->
       </div><!-- cierra modal-header-->
@@ -172,7 +144,7 @@ window.onload = function() {
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-success" data-dismiss="modal">Generar reporte</button>
               </div>
-                    <div id="resultadoDia">
+                    <div id="msjreloj">
                     
                     </div>
                 </div><!-- cierra modal-body-->

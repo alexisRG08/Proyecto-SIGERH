@@ -40,9 +40,7 @@ else
          
 }
     ?>
-   <!-- 	<button class="btn btn-primary" data-toggle="modal" data-target="#ventana1">Nueva capacitacion</button>  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana2" >Ver capacitaciones</button>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ventana3">Reporte de capacitaciones</button>  -->
+
     </div>    
 <!--**************************************************************Nueva capacitacion***************************************** -->           
 <div class="modal fade" id="ventana1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">

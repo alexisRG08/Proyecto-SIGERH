@@ -24,4 +24,10 @@ if($_REQUEST['valor']=='registrar_entsal'){
 		}
 	}
 }
+if($_REQUEST['valor']=='mostrar_tablareloj'){
+ $opcion=$_POST['opcion'];
+ $mostrartabla=new Administrador();
+$mostrartabla->mostrar_opciones($opcion);
+}
+
 ?>

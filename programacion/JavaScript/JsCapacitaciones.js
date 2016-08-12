@@ -36,11 +36,11 @@ function procesarAgregarCapacitaciones()
 
 function actualizarCapacitaciones(id,cont) 
 {
-  alert(cont); 
-  alert('id:'+id); 
+//  alert(cont); 
+//  alert('id:'+id); 
   var fecha=document.getElementById('fecha'+cont).value;
   var hora=document.getElementById('hora'+cont).value;
-  alert(hora);
+//  alert(hora);
   var celdas= document.getElementsByTagName('td'); 
   for (var i = cont; i < celdas.length; i++) 
   {
@@ -53,10 +53,11 @@ function actualizarCapacitaciones(id,cont)
     conexion1=crearXMLHttpRequest2();
     conexion1.onreadystatechange=procesarActualizarCapacitacion;
     var btn=window.event.srcElement.getAttribute('value');
-    alert('bton'+btn);
+   // alert('bton'+btn);
     var variables="&idcapacitacion="+id+'&valor='+btn+'&nombrec='+celdas[i].innerHTML+'&fechac='+fecha+'&horac='+hora+'&lugarc='+celdas[i+3].innerHTML+
     '&descripcionc='+celdas[i+4].innerHTML;
-    conexion1.open("POST", "../ProyectoRH/programacion/Controlador/capacitaciones.php", true);
+    alert(variables);
+   conexion1.open("POST", "../ProyectoRH/programacion/Controlador/capacitaciones.php", true);
     conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     conexion1.send(variables);
     break;

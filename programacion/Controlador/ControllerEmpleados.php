@@ -34,11 +34,11 @@ if ($nom_evento==null) {
     }   
 
 if($_REQUEST['valor']=='actualizar-evento'){
-  $id_evento=strip_tags($_POST['id_evento']);
-  $nombre =strip_tags($_POST['nombre']);
-  $fecha =strip_tags($_POST['fecha']); 
-  $hora = strip_tags($_POST['hora']);
-  $descripcion = strip_tags($_POST['descripcion']);
+  $id_evento=$_POST['id_evento'];
+  $nombre =$_POST['nombre'];
+  $fecha =$_POST['fecha']; 
+  $hora = $_POST['hora'];
+  $descripcion = $_POST['descripcion'];
 
   if($nombre==null){
     echo "<center>Ingresa el nombre del evento</center>";

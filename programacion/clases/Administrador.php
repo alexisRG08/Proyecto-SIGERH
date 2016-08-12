@@ -16,16 +16,15 @@ class Administrador
       $sql="select * from eventos";
     }
     else{
-      $sql="select * from eventos where nombre LIKE '$buscar%';";
+      $sql="select * from eventos where nombre like '$buscar%';";
     }
     $bd=new Database();
-
-    
     $resultado=$bd->ejecutar($sql);
+    $Num_filas=mysqli_num_rows($resultado);
     $cont1=0;
     $cont=0;
-
-    echo"  <table id='tablaeventos' class='table table-bordered table-hover table-condensed table table-striped'>
+if ($Num_filas>0) {
+  echo"  <table id='tablaeventos' class='table table-bordered table-hover table-condensed table table-striped'>
     <tr>
     <th>Nombre</th><th>Fecha</th><th>Hora</th><th>Descripción</th><th>Eliminar</th><th>Editar</th>
     </tr>";
@@ -37,18 +36,22 @@ class Administrador
       $hora = $fila['hora'];
       $descripcion = $fila['descripcion']; 
       echo "<tr>";
-      echo "<td contenteditable><center> $nombre</center></td>";
-      echo "<td contenteditable> <center>$fecha</center></td>";
-      echo "<td contenteditable><center> $hora</center></td>";
-      echo "<td contenteditable><center> $descripcion</center></td>";
+      echo "<td contenteditable> $nombre</td>";
+      echo "<td contenteditable> $fecha</td>";
+      echo "<td contenteditable> $hora</td>";
+      echo "<td contenteditable>$descripcion</td>";
       echo "<td><button type='submit'  class='btn btn-primary' onclick='deletevento($id_evento)' value='eliminar-evento'>Eliminar</button></td>"; 
       echo " <td><button type='submit' class='btn btn-primary' onclick='updatevento($id_evento,$cont1)' value='actualizar-evento'>Actualizar</button></td>";
       echo "</tr>"; 
 
       $cont++;
-      $cont1=$cont1+7;   
+      $cont1=$cont1+6;   
     }
     echo"</table>";  
+}else{
+echo'<div class="alert alert-danger">Cero resultados</div>';  
+}
+    
 
   }
 
@@ -76,7 +79,7 @@ function eliminar_empleado($id_empleado)
   $bd=new Database();
   $sql="update empleados set status='Baja' where id_empleado=$id_empleado;";
   $bd->ejecutar($sql);
-  echo $sql;
+ // echo $sql;
 }
 function actualizar_empleado($id_empleado,$nombre,$apellido,$direccion,$telefono,$edad,$fechaNacimiento,$rfcEmpleado,$estudio,$curp,$numsocial)
 {
@@ -103,8 +106,8 @@ function buscar_empleado($buscaEmpleado)
   echo" <div class='table-responsive'>
   <table class='table table-bordered table-hover table-condensed table table-striped'>
   <tr>
-  <th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Fecha de nacimiento</th><th>RFC</th>
-  <th>Nivel de estudio</th><th>Puesto</th><th>Departamento</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
+  <th>Nombre</th><th>Apellido</th><th>Fecha de nacimiento</th><th>RFC</th>
+  <th>Puesto</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
   <th>Actualizar</th><th>Eliminar</th>
   </tr>";
     $cont=0;
@@ -116,14 +119,9 @@ function buscar_empleado($buscaEmpleado)
       $idd = $fila['id_empleado'];
       $campo1 = $fila['nombre'];
       $campo2 = $fila['apellidos'];
-      $campo3 = $fila['direccion'];
-      $campo4 = $fila['telefono'];
-      $campo5 = $fila['edad'];
       $campo6 = $fila['fechanacimiento'];
       $campo7 = $fila['rfc'];
-      $campo8 = $fila['escolaridad'];
       $campo9 = $fila['tipo'];
-      $campo10 = $fila['nombre_departamento'];
       $campo11 = $fila['curp'];
       $campo12 = $fila['nsocial'];
       $campo13 = $fila['status'];
@@ -131,14 +129,10 @@ function buscar_empleado($buscaEmpleado)
       echo"<tr>";
       echo"<td contenteditable>$campo1</td>";
       echo"<td contenteditable>$campo2</td>";
-      echo"<td contenteditable>$campo3</td>";
-      echo"<td contenteditable>$campo4</td>";
-      echo"<td contenteditable>$campo5</td>";
       echo"<td contenteditable>$campo6</td>";
       echo"<td contenteditable>$campo7</td>";
-      echo"<td contenteditable>$campo8</td>";
       echo"<td >$campo9</td>";
-      echo"<td >$campo10</td>";
+
       echo"<td contenteditable>$campo11</td>";
       echo"<td contenteditable>$campo12</td>";
       echo"<td >$campo13</td>";
@@ -259,7 +253,7 @@ function mostrar_empleados(){
   <table class='table table-bordered table-hover table-condensed table table-striped'>
   <tr>
   <th>Nombre</th><th>Apellido</th><th>Fecha de nacimiento</th><th>RFC</th>
-  <th>Nivel de estudio</th><th>Puesto</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
+  <th>Puesto</th><th>Curp</th><th>Numero del seguro social</th><th>Estado</th>
   <th>Actualizar</th><th>Eliminar</th>
   </tr>";
   while($fila=mysqli_fetch_array($resultado))
@@ -272,7 +266,7 @@ function mostrar_empleados(){
 //    $campo5 = $fila['edad'];
     $campo6 = $fila['fechanacimiento'];
     $campo7 = $fila['rfc'];
-    $campo8 = $fila['escolaridad'];
+  //  $campo8 = $fila['escolaridad'];
     $campo9 = $fila['tipo'];
  //   $campo10 = $fila['nombre_departamento'];
     $campo11 = $fila['curp'];
@@ -287,7 +281,7 @@ function mostrar_empleados(){
 //    echo"<td contenteditable>$campo5</td>";
     echo"<td contenteditable>$campo6</td>";
     echo"<td contenteditable>$campo7</td>";
-    echo"<td contenteditable>$campo8</td>";
+  //  echo"<td contenteditable>$campo8</td>";
     echo"<td >$campo9</td>";
   //  echo"<td >$campo10</td>";
     echo"<td contenteditable>$campo11</td>";
@@ -327,7 +321,7 @@ function validartipo($dato){
  while($fila=mysqli_fetch_array($result))
  {
   $tipo = $fila['tipo'];
-  $this->controltipo($tipo);
+ // $this->controltipo($tipo);
 
 }
 }
@@ -520,6 +514,94 @@ function buscar_capacitaciones($buscarCapacitacion)
  $sql="update capacitaciones set nombre='$nombrec',fecha='$fechac',hora='$horac',lugar='$lugarc',descripcion='$descripcionc' where idcapacitacion=$idcapacitacion;";
  $resultado=$bd->ejecutar($sql);
 }
+function mostrar_opciones($opcion){
+  if ($opcion=="Todos") {
+  $this->todos_reloj();
+  }else{
+    if($opcion=="Entradas"){
+     $this->mostrar_entrada();
+    }else{
+     
+    $this->mostrar_salidas();
+    }
+  }
+      
+}
+function mostrar_entrada(){
+   $sql="select reloj_checador.fecha, reloj_checador.entrada, empleados.nombre from empleados, reloj_checador where empleados.id_empleado=reloj_checador.empleados_id_empleado;";
+$bd=new Database();
+ $resultado=$bd->ejecutar($sql);
+  echo "<div class='table-responsive'>
+                <table class='table table-bordered table-hover table-condensed table table-striped'>
+                <tr>
+                  <th>Fecha</th><th>Hora Entrada</th><th>Nombre Empleado</th>
+                </tr>";
+                 while($fila=mysqli_fetch_array($resultado))
+            {
+            $fecha = $fila['fecha'];
+            $entrada = $fila['entrada']; 
+            $empleados = $fila['nombre']; 
+            echo "<tr >";
+            echo "<td > $fecha</td>";
+            echo "<td >$entrada</td>"; 
+            echo "<td > $empleados</td>";
+            echo "</tr>";  
+            } 
+        echo "</table>
+              </div>";     
+}
+ function mostrar_salidas(){
+     $sql2="select reloj_checador.fecha, reloj_checador.salida, empleados.nombre from empleados, reloj_checador where empleados.id_empleado=reloj_checador.empleados_id_empleado;";
+$bd=new Database();
+ $resultado=$bd->ejecutar($sql2);
+  echo "<div class='table-responsive'>
+                <table class='table table-bordered table-hover table-condensed table table-striped'>
+                <tr>
+                  <th>Fecha</th><th>Hora Salida</th><th>Nombre Empleado</th>
+                </tr>";
+                 while($fila=mysqli_fetch_array($resultado))
+            {
+              $fecha = $fila['fecha'];
+            $entrada = $fila['salida']; 
+            $empleados = $fila['nombre']; 
+            echo "<tr>";
+            echo "<td > $fecha</td>";
+            echo "<td >$entrada</td>";
+            echo "<td > $empleados</td>";
+            echo "</tr>";  
+  
+            } 
+        echo "</table>
+              </div>";     
+ }
+ function todos_reloj(){
+    $sql="select reloj_checador.fecha, reloj_checador.entrada,reloj_checador.salida, empleados.nombre from empleados, reloj_checador where empleados.id_empleado=reloj_checador.empleados_id_empleado;";
+$bd=new Database();
+ $resultado=$bd->ejecutar($sql);
+  echo "<div class='table-responsive'>
+                <table class='table table-bordered table-hover table-condensed table table-striped'>
+                <tr>
+                  <th>Fecha</th><th>Hora Entrada</th><th>Hora Salida</th><th>Nombre Empleado</th>
+                </tr>";
+                 while($fila=mysqli_fetch_array($resultado))
+            {
+  
+          //  $idd = $fila['idreloj'];
+            $fecha = $fila['fecha'];
+            $entrada = $fila['entrada']; 
+            $salida = $fila['salida'];
+            $empleados = $fila['nombre']; 
+            echo "<tr>";
+            echo "<td > $fecha</td>";
+            echo "<td >$entrada</td>";
+            echo "<td >$salida</td>";  
+            echo "<td > $empleados</td>";
+            echo "</tr>";  
+  
+            } 
+        echo "</table>
+              </div>";     
+ }
 function cerrar_login() {
   session_start();
   session_unset();

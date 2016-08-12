@@ -80,10 +80,6 @@ function cerrarSesion()
  location.reload();
 
 }
-/* function redireccionar(){
-  window.locationf="../../index.php";
-} 
-*/setTimeout ("redireccionar()", 5000); 
 
 function procesarCerrarSesion()
 {

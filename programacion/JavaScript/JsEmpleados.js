@@ -108,7 +108,7 @@ function actualizarEmpleado(id,cont)
     var x=0;
     while(x<13) 
     {
-     alert(celdas[i+x].innerHTML);
+   //  alert(celdas[i+x].innerHTML);
      x++;
     }
     conexion1=crearXMLHttpRequest2();
@@ -175,7 +175,7 @@ function procesareliminar()
 function buscarEmpleado()
 { 
   var buscaEmpleado = document.getElementById('buscar-empleado').value;
-  alert(buscaEmpleado);
+ // alert(buscaEmpleado);
 
   var valor= window.event.srcElement.getAttribute('value');
   conexion1=crearXMLHttpRequest2();

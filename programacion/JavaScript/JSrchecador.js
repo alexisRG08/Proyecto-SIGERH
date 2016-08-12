@@ -1,4 +1,5 @@
 var conexion;
+var conexion2;
 
 function registrar(){
 	var numero_empleado=document.getElementById('numero_empleado').value;
@@ -18,6 +19,18 @@ function registrar(){
    limpiar_texto();  
 	}
 }
+function mostrar(){
+	var opcion=document.getElementById('elegir_opcion').options[document.getElementById('elegir_opcion').selectedIndex].text
+	var valor="mostrar_tablareloj";
+	//var valor= window.event.srcElement.getAttribute('value');
+	//alert(opcion);
+	conexion2=crearXMLHttpRequest2();
+	conexion2.onreadystatechange =procesarmostrar;  
+	var variables="valor="+valor+"&opcion="+opcion;
+	conexion2.open("POST", "../ProyectoRH/programacion/Controlador/Controllerreloj.php", true);
+    conexion2.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+   conexion2.send(variables);
+}
 function limpiar_texto(){
 	var numero_empleado=document.getElementById('numero_empleado').value="";
 }
@@ -28,6 +41,20 @@ function procesaregistrar()
 	if(conexion.readyState == 4)
 	{
 		resultad.innerHTML = conexion.responseText;
+	} 
+	else 
+	{
+		resultad.innerHTML = 'Cargando......';
+	}
+}
+
+function procesarmostrar()
+
+{
+	var resultad = document.getElementById('tabla_reloj'); 
+	if(conexion2.readyState == 4)
+	{
+		resultad.innerHTML = conexion2.responseText;
 	} 
 	else 
 	{

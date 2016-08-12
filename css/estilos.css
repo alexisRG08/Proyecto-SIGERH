@@ -159,8 +159,6 @@ img #estrella
 }
 #loginform{
  border-radius: 10px 10px 10px 10px;
-  /*  border-left: 1px solid #4A4A4A;
-    border-right: 1px solid #4A4A4A;  */
     padding-left: 10px;
     margin-top: 15px;
       box-shadow:0px 0px 15px 0px rgba(0,0,0,0.8); 
@@ -197,3 +195,4 @@ position: relative;
 #iniciosesion{
 	   font-weight: bold;
 }
+

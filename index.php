@@ -29,15 +29,14 @@ session_start();
    document.getElementById("list-group").style.display=""; 
  }
  window.onload = function() {
-/*  document.getElementById("ocultarempleados").style.display="none";  
-  document.getElementById("ocultarcapcitacion").style.display="none"; 
-  document.getElementById("ocultarusuarios").style.display="none";
-  document.getElementById("ocultarlogout").style.display="";  
-  document.getElementById("redessociales").style.display="none"; 
-   document.getElementById("ocultareventos").style.display="none";   */
     document.getElementById("ocultarlogout").style.display="";  
 };
 </script>
+<style type="text/css">
+#sesion{
+  margin-left: 350px;
+}
+</style>
 </head>
 
 <body>
@@ -71,9 +70,10 @@ session_start();
               <span  id="ocultarcapcitacion" class="glyphicon glyphicon-folder-open"  onclick="ver()" value="Capacitacion" > Capacitacion</span>
             </a>      
           </li>
-          
-          <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user" style='display:none;'> Usuarios</span></a></li>
-            
+
+          <li><a  href="../../programacion/Controlador/referencias?"  id="referencia5" value="Usuarios"><span  id="ocultarusuarios" value="Usuarios" class="glyphicon glyphicon-user" > Usuarios</span></a></li>
+
+
           <?php
 
           if(isset($_SESSION['usuario'])) 
@@ -93,6 +93,25 @@ session_start();
            echo "</li>"; 
           } 
           ?>
+           <li id="sesion">
+          <a href="#" >
+              
+                <?php 
+                echo "<span    value='Capacitacion' class='glyphicon glyphicon-user'><b> <font size='3px'>";
+                if(isset($_SESSION['usuario'])) 
+                { 
+                echo $_SESSION['usuario'];
+                } 
+                else 
+                {   
+                // echo "Necesita loguearse"; 
+                // exit();   
+               } 
+                 ?>
+
+              </font> </b></span>
+            </a>      
+          </li>
            <!-- <li><a href="#" id="referencia4"  value="InventarioEquipo"> <span  id="ocultarlogout"  onclick="cerrarSesion()"> Cerrar Sesión</span>
             </a>
            </li>    -->
@@ -198,27 +217,16 @@ else
        
      </section>
      <br> 
-     
     <div id="mostrarms"> 
     </div>
      <footer>
-     	<div class="container">
+     	<div class="container" >
 
          <div class="row">
           <div class="col-xs-12"><br> <br>
             <h6 class="list-inline text-center">Desarrollado por Alexis Ramírez Guzmán & Henry Morales Canche    ITIC91   </h6>f
           </div>  
           </div>    
-         <!--    </div>
-             <div class="row"> 
-            	<div class="col-xs-6">
-                	
-                </div>
-                <div class="col-xs-6">
-                	<ul class="list-inline text-left">
-                    	<li><a href="">Cerrar Sesion</a></li>
-                    </ul>
-                </div> -->
               </div> 
             </div> 
             

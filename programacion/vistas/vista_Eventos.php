@@ -1,6 +1,16 @@
 <?php
 require_once('../../programacion/conexion/DataBase.php');
 require_once('../../programacion/clases/Administrador.php');
+session_start();
+if(isset($_SESSION['usuario'])) 
+{ 
+ // echo $_SESSION['usuario'];
+} 
+else 
+{   
+       echo "Necesita loguearse"; 
+       exit();   
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,11 +100,12 @@ require_once('../../programacion/clases/Administrador.php');
                       $mostrar=new Administrador();
                       $mostrar->mostrareventos("");
                       ?>     
-                      <div id="resultadodatos">
-
-                      </div>
+                     
 
                   </div>
+                   <div id="msjeventos">
+
+                      </div>
                     </div><!--cierra modal-body--> 
                   </div><!-- cierra modal-header-->
                 </div><!-- cierra modal-content-->

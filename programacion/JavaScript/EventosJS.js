@@ -45,7 +45,7 @@ function updatevento(id_evento,cont){
   for(var i=cont;i<celdas.length;i++)   // desde contador es menor al numero de celdas 
   { 
     var x=0;
-    while(x<6)
+    while(x<5)
     {
         //    alert(celdas[i+x].innerHTML);
         x++;
@@ -53,17 +53,31 @@ function updatevento(id_evento,cont){
 
 
       conexionU=crearXMLHttpRequest2();
-      conexionU.onreadystatechange= procesar;
-      var valor=window.event.srcElement.getAttribute('value');
-      var variables='valor='+valor+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id_evento;
-         alert(variables);
-     // conexionU.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
-     // conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-     // conexionU.send(variables);
+       conexionU.onreadystatechange= procesar;
+      var btn=window.event.srcElement.getAttribute('value');
+     var variables='&valor='+btn+'&nombre='+celdas[i].innerHTML+'&fecha='+celdas[i+1].innerHTML+'&hora='+celdas[i+2].innerHTML+'&descripcion='+celdas[i+3].innerHTML+'&id_evento='+id_evento;
+      conexionU.open("POST", "../ProyectoRH/programacion/Controlador/ControllerEmpleados.php", true);
+      conexionU.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+      conexionU.send(variables);
       break;
       
       
     }  
+  }
+   function procesar()
+  {
+    var mensaje = document.getElementById('msjeventos'); 
+
+    if(conexionU.readyState == 4)
+    {
+      mensaje.innerHTML = conexionU.responseText;
+
+    } 
+    else 
+    {
+
+      mensaje.innerHTML = 'Cargando......';
+    }
   }
   function refrescareventos(){
  //   alert("lal");
@@ -119,22 +133,7 @@ function updatevento(id_evento,cont){
       resultad.innerHTML = 'Cargando......';
     }
   }
-  function procesar()
-
-  {
-    var resultad = document.getElementById('resultadodatos'); 
-
-    if(conexionU.readyState == 4)
-    {
-      resultad.innerHTML = conexionU.responseText;
-
-    } 
-    else 
-    {
-
-      resultad.innerHTML = 'Cargando......';
-    }
-  }
+ 
   function procesarEliminarEvento()
 
   {

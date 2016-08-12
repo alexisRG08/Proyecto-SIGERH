@@ -8,7 +8,7 @@ if(isset($_SESSION['usuario']))
 } 
 else 
 {   
-       echo "Usuario no registrado"; 
+       echo "Necesita Loguearse"; 
        exit(); 
 }
 ?>
